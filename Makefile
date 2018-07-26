@@ -1,4 +1,4 @@
-history.md: analyze.py apis
+index.html: analyze.py apis
 	./$< > $@
 
 apis: dumpapis.sh dumpapi.py bitcoin

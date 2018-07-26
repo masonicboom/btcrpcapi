@@ -10,8 +10,8 @@ This project collects the set of RPC API calls available in each version of Bitc
 
 ## Usage
 
-Type `make`, then view `history.md`.
+Type `make`, then view `index.html`.
 
 ## Output
 
-Pre-computed output: [history.md](history.md).
+Pre-computed output: [index.html](index.html).
