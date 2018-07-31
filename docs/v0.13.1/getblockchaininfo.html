@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>getblockchaininfo</h1>
+    <h2>v0.13.1</h2>
+    getblockchaininfo<br/>Returns an object containing various state info regarding block chain processing.<br/><br/>Result:<br/>{<br/>  "chain": "xxxx",        (string) current network name as defined in BIP70 (main, test, regtest)<br/>  "blocks": xxxxxx,         (numeric) the current number of blocks processed in the server<br/>  "headers": xxxxxx,        (numeric) the current number of headers we have validated<br/>  "bestblockhash": "...", (string) the hash of the currently best block<br/>  "difficulty": xxxxxx,     (numeric) the current difficulty<br/>  "mediantime": xxxxxx,     (numeric) median time for the current best block<br/>  "verificationprogress": xxxx, (numeric) estimate of verification progress [0..1]<br/>  "chainwork": "xxxx"     (string) total amount of work in active chain, in hexadecimal<br/>  "pruned": xx,             (boolean) if the blocks are subject to pruning<br/>  "pruneheight": xxxxxx,    (numeric) lowest-height complete block stored<br/>  "softforks": [            (array) status of softforks in progress<br/>     {<br/>        "id": "xxxx",        (string) name of softfork<br/>        "version": xx,         (numeric) block version<br/>        "enforce": {           (object) progress toward enforcing the softfork rules for new-version blocks<br/>           "status": xx,       (boolean) true if threshold reached<br/>           "found": xx,        (numeric) number of blocks with the new version found<br/>           "required": xx,     (numeric) number of blocks required to trigger<br/>           "window": xx,       (numeric) maximum size of examined window of recent blocks<br/>        },<br/>        "reject": { ... }      (object) progress toward rejecting pre-softfork blocks (same fields as "enforce")<br/>     }, ...<br/>  ],<br/>  "bip9_softforks": {          (object) status of BIP9 softforks in progress<br/>     "xxxx" : {                (string) name of the softfork<br/>        "status": "xxxx",    (string) one of "defined", "started", "locked_in", "active", "failed"<br/>        "bit": xx,             (numeric) the bit (0-28) in the block version field used to signal this softfork (only for "started" status)<br/>        "startTime": xx,       (numeric) the minimum median time past of a block at which the bit gains its meaning<br/>        "timeout": xx          (numeric) the median time past of a block at which the deployment is considered failed if not yet locked in<br/>     }<br/>  }<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getblockchaininfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockchaininfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

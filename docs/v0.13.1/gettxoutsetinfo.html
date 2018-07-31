@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>gettxoutsetinfo</h1>
+    <h2>v0.13.1</h2>
+    gettxoutsetinfo<br/><br/>Returns statistics about the unspent transaction output set.<br/>Note this call may take some time.<br/><br/>Result:<br/>{<br/>  "height":n,     (numeric) The current block height (index)<br/>  "bestblock": "hex",   (string) the best block hash hex<br/>  "transactions": n,      (numeric) The number of transactions<br/>  "txouts": n,            (numeric) The number of output transactions<br/>  "bytes_serialized": n,  (numeric) The serialized size<br/>  "hash_serialized": "hash",   (string) The serialized hash<br/>  "total_amount": x.xxx          (numeric) The total amount<br/>}<br/><br/>Examples:<br/>> bitcoin-cli gettxoutsetinfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutsetinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

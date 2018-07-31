@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>generate</h1>
+    <h2>v0.13.2</h2>
+    generate numblocks ( maxtries )<br/><br/>Mine up to numblocks blocks immediately (before the RPC call returns)<br/><br/>Arguments:<br/>1. numblocks    (numeric, required) How many blocks are generated immediately.<br/>2. maxtries     (numeric, optional) How many iterations to try (default = 1000000).<br/><br/>Result<br/>[ blockhashes ]     (array) hashes of blocks generated<br/><br/>Examples:<br/><br/>Generate 11 blocks<br/>> bitcoin-cli generate 11<br/>
+    </body>
+    </html>

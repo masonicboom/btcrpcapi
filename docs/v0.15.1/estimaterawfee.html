@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>estimaterawfee</h1>
+    <h2>v0.15.1</h2>
+    estimaterawfee conf_target (threshold)<br/><br/>WARNING: This interface is unstable and may disappear or change!<br/><br/>WARNING: This is an advanced API call that is tightly coupled to the specific<br/>         implementation of fee estimation. The parameters it can be called with<br/>         and the results it returns will change if the internal implementation changes.<br/><br/>Estimates the approximate fee per kilobyte needed for a transaction to begin<br/>confirmation within conf_target blocks if possible. Uses virtual transaction size as<br/>defined in BIP 141 (witness data is discounted).<br/><br/>Arguments:<br/>1. conf_target (numeric) Confirmation target in blocks (1 - 1008)<br/>2. threshold   (numeric, optional) The proportion of transactions in a given feerate range that must have been<br/>               confirmed within conf_target in order to consider those feerates as high enough and proceed to check<br/>               lower buckets.  Default: 0.95<br/><br/>Result:<br/>{<br/>  "short" : {            (json object, optional) estimate for short time horizon<br/>      "feerate" : x.x,        (numeric, optional) estimate fee-per-kilobyte (in BTC)<br/>      "decay" : x.x,          (numeric) exponential decay (per block) for historical moving average of confirmation data<br/>      "scale" : x,            (numeric) The resolution of confirmation targets at this time horizon<br/>      "pass" : {              (json object, optional) information about the lowest range of feerates to succeed in meeting the threshold<br/>          "startrange" : x.x,     (numeric) start of feerate range<br/>          "endrange" : x.x,       (numeric) end of feerate range<br/>          "withintarget" : x.x,   (numeric) number of txs over history horizon in the feerate range that were confirmed within target<br/>          "totalconfirmed" : x.x, (numeric) number of txs over history horizon in the feerate range that were confirmed at any point<br/>          "inmempool" : x.x,      (numeric) current number of txs in mempool in the feerate range unconfirmed for at least target blocks<br/>          "leftmempool" : x.x,    (numeric) number of txs over history horizon in the feerate range that left mempool unconfirmed after target<br/>      },<br/>      "fail" : { ... },       (json object, optional) information about the highest range of feerates to fail to meet the threshold<br/>      "errors":  [ str... ]   (json array of strings, optional) Errors encountered during processing<br/>  },<br/>  "medium" : { ... },    (json object, optional) estimate for medium time horizon<br/>  "long" : { ... }       (json object) estimate for long time horizon<br/>}<br/><br/>Results are returned for any horizon which tracks blocks up to the confirmation target.<br/><br/>Example:<br/>> bitcoin-cli estimaterawfee 6 0.9<br/>
+    </body>
+    </html>
