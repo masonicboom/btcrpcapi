@@ -42,7 +42,7 @@ def close():
 
 for line in map(str.rstrip, sys.stdin):
     if state == 'BEGIN':
-        m = re.match("^\w+ (\w+)\(.*?\)$", line)
+        m = re.match(r"^(?:static\s+)?\w+ (\w+)\(.*?\)$", line)
         if m:
             state = 'FUNC'
             name = m[1]
@@ -57,7 +57,7 @@ for line in map(str.rstrip, sys.stdin):
         m = re.match("^\s*?if \((?:\w+equest\.)?fHelp.*?\)$", line)
         if m:
             state = 'HELP'
-        else:
+        elif line == '}':
             state = 'BEGIN'
     elif state == 'HELP':
         m = re.match("\s*throw (?:std::)?runtime_error\($", line)

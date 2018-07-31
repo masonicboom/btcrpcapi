@@ -59,6 +59,7 @@ print('''
         }
         td { height: 1rem; }
         td.present { background-color: green; text-align: center; }
+        /* UNCOMMENT FOR DEBUGGING VISUALIZATION td.present a { color: pink; } */
         tbody>tr:hover>td.present { background-color: white; }
         tbody>tr:hover {
            color: white;
@@ -105,7 +106,11 @@ for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
         if vl < first:
             continue
         if v in (calls[call]):
-            print('<td title="{}" class="present"><a href="docs/{}/{}.html">?</a></td>'.format(v, v, call))
+            p = "docs/{}/{}.html".format(v, call)
+            link = ""
+            if os.path.exists(p):
+                link = '<a href="{}">?</a>'.format(p)
+            print('<td title="{}" class="present">{}</td>'.format(v, link))
         else:
             print('<td title="{}"></td>'.format(v))
     print('<td>{}</td>'.format(call))
