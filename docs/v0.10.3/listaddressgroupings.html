@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>listaddressgroupings</h1>
+    <h2>v0.10.3</h2>
+    listaddressgroupings<br/><br/>Lists groups of addresses which have had their common ownership<br/>made public by common use as inputs or as the resulting change<br/>in past transactions<br/><br/>Result:<br/>[<br/>  [<br/>    [<br/>      "bitcoinaddress",     (string) The bitcoin address<br/>      amount,                 (numeric) The amount in btc<br/>      "account"             (string, optional) The account<br/>    ]<br/>    ,...<br/>  ]<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli listaddressgroupings <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressgroupings", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

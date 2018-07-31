@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>setgenerate</h1>
+    <h2>v0.10.2</h2>
+    setgenerate generate ( genproclimit )<br/><br/>Set 'generate' true or false to turn generation on or off.<br/>Generation is limited to 'genproclimit' processors, -1 is unlimited.<br/>See the getgenerate call for the current setting.<br/><br/>Arguments:<br/>1. generate         (boolean, required) Set to true to turn on generation, off to turn off.<br/>2. genproclimit     (numeric, optional) Set the processor limit for when generation is on. Can be -1 for unlimited.<br/>                    Note: in -regtest mode, genproclimit controls how many blocks are generated immediately.<br/><br/>Result<br/>[ blockhashes ]     (array, -regtest only) hashes of blocks generated<br/><br/>Examples:<br/><br/>Set the generation on with a limit of one processor<br/>
+    </body>
+    </html>

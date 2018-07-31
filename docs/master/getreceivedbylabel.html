@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>getreceivedbylabel</h1>
+    <h2>master</h2>
+    getreceivedbylabel "label" ( minconf )<br/><br/>Returns the total amount received by addresses with <label> in transactions with at least [minconf] confirmations.<br/><br/>Arguments:<br/>1. "label"        (string, required) The selected label, may be the default label using "".<br/>2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.<br/><br/>Result:<br/>amount              (numeric) The total amount in " + CURRENCY_UNIT + " received for this label.<br/><br/>Examples:<br/><br/>Amount received by the default label with at least 1 confirmation<br/>
+    </body>
+    </html>

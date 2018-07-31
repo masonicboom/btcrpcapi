@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>setlabel</h1>
+    <h2>master</h2>
+    setlabel "address" "label"<br/><br/>Sets the label associated with the given address.<br/><br/>Arguments:<br/>1. "address"         (string, required) The bitcoin address to be associated with a label.<br/>2. "label"           (string, required) The label to assign to the address.<br/><br/>Examples:<br/>> bitcoin-cli setlabel "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" "tabby"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setlabel", "params": ["1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX", "tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

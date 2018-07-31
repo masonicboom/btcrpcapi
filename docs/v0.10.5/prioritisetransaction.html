@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>prioritisetransaction</h1>
+    <h2>v0.10.5</h2>
+    prioritisetransaction <txid> <priority delta> <fee delta><br/>Accepts the transaction into mined blocks at a higher (or lower) priority<br/><br/>Arguments:<br/>1. "txid"       (string, required) The transaction id.<br/>2. priority delta (numeric, required) The priority to add or subtract.<br/>                  The transaction selection algorithm considers the tx as it would have a higher priority.<br/>                  (priority of a transaction is calculated: coinage * value_in_satoshis / txsize) <br/>3. fee delta      (numeric, required) The fee value (in satoshis) to add (or subtract, if negative).<br/>                  The fee is not actually paid, only the algorithm for selecting transactions into a block<br/>                  considers the transaction as it would have paid a higher (or lower) fee.<br/><br/>Result<br/>true              (boolean) Returns true<br/><br/>Examples:<br/>> bitcoin-cli prioritisetransaction "txid" 0.0 10000<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "prioritisetransaction", "params": ["txid", 0.0, 10000] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

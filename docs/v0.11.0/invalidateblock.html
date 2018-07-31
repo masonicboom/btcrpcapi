@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>invalidateblock</h1>
+    <h2>v0.11.0</h2>
+    invalidateblock "hash"<br/><br/>Permanently marks a block as invalid, as if it violated a consensus rule.<br/><br/>Arguments:<br/>1. hash   (string, required) the hash of the block to mark as invalid<br/><br/>Result:<br/><br/>Examples:<br/>> bitcoin-cli invalidateblock "blockhash"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "invalidateblock", "params": ["blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

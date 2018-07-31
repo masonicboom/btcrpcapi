@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>getreceivedbyaddress</h1>
+    <h2>v0.9.0</h2>
+    getreceivedbyaddress "bitcoinaddress" ( minconf )<br/><br/>Returns the total amount received by the given bitcoinaddress in transactions with at least minconf confirmations.<br/><br/>Arguments:<br/>1. "bitcoinaddress"  (string, required) The bitcoin address for transactions.<br/>2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.<br/><br/>Result:<br/>amount   (numeric) The total amount in btc received at this address.<br/><br/>Examples:<br/><br/>The amount from transactions with at least 1 confirmation<br/>
+    </body>
+    </html>

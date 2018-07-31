@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>getaddressesbylabel</h1>
+    <h2>master</h2>
+    getaddressesbylabel "label"<br/><br/>Returns the list of addresses assigned the specified label.<br/><br/>Arguments:<br/>1. "label"  (string, required) The label.<br/><br/>Result:<br/>{ (json object with addresses as keys)<br/>  "address": { (json object with information about address)<br/>    "purpose": "string" (string)  Purpose of address ("send" for sending address, "receive" for receiving address)<br/>  },...<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getaddressesbylabel "tabby"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressesbylabel", "params": ["tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

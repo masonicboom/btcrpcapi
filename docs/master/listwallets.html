@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>listwallets</h1>
+    <h2>master</h2>
+    listwallets<br/>Returns a list of currently loaded wallets.<br/>For full information on the wallet, use "getwalletinfo"<br/><br/>Result:<br/>[                         (json array of strings)<br/>  "walletname"            (string) the wallet name<br/>   ...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli listwallets <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listwallets", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

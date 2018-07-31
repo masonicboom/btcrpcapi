@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>listaccounts</h1>
+    <h2>v0.10.2</h2>
+    listaccounts ( minconf includeWatchonly)<br/><br/>Returns Object that has account names as keys, account balances as values.<br/><br/>Arguments:<br/>1. minconf          (numeric, optional, default=1) Only include transactions with at least this many confirmations<br/>2. includeWatchonly (bool, optional, default=false) Include balances in watchonly addresses (see 'importaddress')<br/><br/>Result:<br/>{                      (json object where keys are account names, and values are numeric balances<br/>  "account": x.xxx,  (numeric) The property name is the account name, and the value is the total balance for the account.<br/>  ...<br/>}<br/><br/>Examples:<br/><br/>List account balances where there at least 1 confirmation<br/>
+    </body>
+    </html>

@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>getmininginfo</h1>
+    <h2>v0.11.0</h2>
+    getmininginfo<br/><br/>Returns a json object containing mining-related information.<br/>Result:<br/>{<br/>  "blocks": nnn,             (numeric) The current block<br/>  "currentblocksize": nnn,   (numeric) The last block size<br/>  "currentblocktx": nnn,     (numeric) The last block transaction<br/>  "difficulty": xxx.xxxxx    (numeric) The current difficulty<br/>  "errors": "..."          (string) Current errors<br/>  "generate": true|false     (boolean) If the generation is on or off (see getgenerate or setgenerate calls)<br/>  "genproclimit": n          (numeric) The processor limit for generation. -1 if no generation. (see getgenerate or setgenerate calls)<br/>  "pooledtx": n              (numeric) The size of the mem pool<br/>  "testnet": true|false      (boolean) If using testnet or not<br/>  "chain": "xxxx",         (string) current network name as defined in BIP70 (main, test, regtest)<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getmininginfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmininginfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

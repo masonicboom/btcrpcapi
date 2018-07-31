@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>importaddress</h1>
+    <h2>v0.10.2</h2>
+    importaddress "address" ( "label" rescan )<br/><br/>Adds an address or script (in hex) that can be watched as if it were in your wallet but cannot be used to spend.<br/><br/>Arguments:<br/>1. "address"          (string, required) The address<br/>2. "label"            (string, optional, default="") An optional label<br/>3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions<br/><br/>Note: This call can take minutes to complete if rescan is true.<br/><br/>Examples:<br/><br/>Import an address with rescan<br/>
+    </body>
+    </html>

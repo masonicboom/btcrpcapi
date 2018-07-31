@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>decoderawtransaction</h1>
+    <h2>v0.10.5</h2>
+    decoderawtransaction "hexstring"<br/><br/>Return a JSON object representing the serialized, hex-encoded transaction.<br/><br/>Arguments:<br/>1. "hex"      (string, required) The transaction hex string<br/><br/>Result:<br/>{<br/>  "txid" : "id",        (string) The transaction id<br/>  "version" : n,          (numeric) The version<br/>  "locktime" : ttt,       (numeric) The lock time<br/>  "vin" : [               (array of json objects)<br/>     {<br/>       "txid": "id",    (string) The transaction id<br/>       "vout": n,         (numeric) The output number<br/>       "scriptSig": {     (json object) The script<br/>         "asm": "asm",  (string) asm<br/>         "hex": "hex"   (string) hex<br/>       },<br/>       "sequence": n     (numeric) The script sequence number<br/>     }<br/>     ,...<br/>  ],<br/>  "vout" : [             (array of json objects)<br/>     {<br/>       "value" : x.xxx,            (numeric) The value in btc<br/>       "n" : n,                    (numeric) index<br/>       "scriptPubKey" : {          (json object)<br/>         "asm" : "asm",          (string) the asm<br/>         "hex" : "hex",          (string) the hex<br/>         "reqSigs" : n,            (numeric) The required sigs<br/>         "type" : "pubkeyhash",  (string) The type, eg 'pubkeyhash'<br/>         "addresses" : [           (json array of string)<br/>           "12tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc"   (string) bitcoin address<br/>           ,...<br/>         ]<br/>       }<br/>     }<br/>     ,...<br/>  ],<br/>}<br/><br/>Examples:<br/>> bitcoin-cli decoderawtransaction "hexstring"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "decoderawtransaction", "params": ["hexstring"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

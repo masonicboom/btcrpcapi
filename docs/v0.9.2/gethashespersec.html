@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>gethashespersec</h1>
+    <h2>v0.9.2</h2>
+    gethashespersec<br/><br/>Returns a recent hashes per second performance measurement while generating.<br/>See the getgenerate and setgenerate calls to turn generation on and off.<br/><br/>Result:<br/>n            (numeric) The recent hashes per second when generation is on (will return 0 if generation is off)<br/><br/>Examples:<br/>> bitcoin-cli gethashespersec <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gethashespersec", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>lockunspent</h1>
+    <h2>v0.14.1</h2>
+    lockunspent unlock ([{"txid":"txid","vout":n},...])<br/><br/>Updates list of temporarily unspendable outputs.<br/>Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.<br/>If no transaction outputs are specified when unlocking then all current locked transaction outputs are unlocked.<br/>A locked transaction output will not be chosen by automatic coin selection, when spending bitcoins.<br/>Locks are stored in memory only. Nodes start with zero locked outputs, and the locked output list<br/>is always cleared (by virtue of process exit) when a node stops or fails.<br/>Also see the listunspent call<br/><br/>Arguments:<br/>1. unlock            (boolean, required) Whether to unlock (true) or lock (false) the specified transactions<br/>2. "transactions"  (string, optional) A json array of objects. Each object the txid (string) vout (numeric)<br/>     [           (json array of json objects)<br/>       {<br/>         "txid":"id",    (string) The transaction id<br/>         "vout": n         (numeric) The output number<br/>       }<br/>       ,...<br/>     ]<br/><br/>Result:<br/>true|false    (boolean) Whether the command was successful or not<br/><br/>Examples:<br/><br/>List the unspent transactions<br/>
+    </body>
+    </html>

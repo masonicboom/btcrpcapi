@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>dumpwallet</h1>
+    <h2>master</h2>
+    dumpwallet "filename"<br/><br/>Dumps all wallet keys in a human-readable format to a server-side file. This does not allow overwriting existing files.<br/>Imported scripts are included in the dumpfile, but corresponding BIP173 addresses, etc. may not be added automatically by importwallet.<br/>Note that if your wallet contains keys which are not derived from your HD seed (e.g. imported keys), these are not covered by<br/>only backing up the seed itself, and must be backed up too (e.g. ensure you back up the whole dumpfile).<br/><br/>Arguments:<br/>1. "filename"    (string, required) The filename with path (either absolute or relative to bitcoind)<br/><br/>Result:<br/>{                           (json object)<br/>  "filename" : {        (string) The filename with full absolute path<br/>}<br/><br/>Examples:<br/>> bitcoin-cli dumpwallet "test"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumpwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

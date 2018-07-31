@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>importprivkey</h1>
+    <h2>v0.12.1</h2>
+    importprivkey "bitcoinprivkey" ( "label" rescan )<br/><br/>Adds a private key (as returned by dumpprivkey) to your wallet.<br/><br/>Arguments:<br/>1. "bitcoinprivkey"   (string, required) The private key (see dumpprivkey)<br/>2. "label"            (string, optional, default="") An optional label<br/>3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions<br/><br/>Note: This call can take minutes to complete if rescan is true.<br/><br/>Examples:<br/><br/>Dump a private key<br/>
+    </body>
+    </html>

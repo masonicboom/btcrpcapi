@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>getblockchaininfo</h1>
+    <h2>v0.9.2</h2>
+    getblockchaininfo<br/>Returns an object containing various state info regarding block chain processing.<br/><br/>Result:<br/>{<br/>  "chain": "xxxx",        (string) current chain (main, testnet3, regtest)<br/>  "blocks": xxxxxx,         (numeric) the current number of blocks processed in the server<br/>  "bestblockhash": "...", (string) the hash of the currently best block<br/>  "difficulty": xxxxxx,     (numeric) the current difficulty<br/>  "verificationprogress": xxxx, (numeric) estimate of verification progress [0..1]<br/>  "chainwork": "xxxx"     (string) total amount of work in active chain, in hexadecimal<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getblockchaininfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockchaininfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

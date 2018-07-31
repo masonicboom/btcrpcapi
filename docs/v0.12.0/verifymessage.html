@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>verifymessage</h1>
+    <h2>v0.12.0</h2>
+    verifymessage "bitcoinaddress" "signature" "message"<br/><br/>Verify a signed message<br/><br/>Arguments:<br/>1. "bitcoinaddress"  (string, required) The bitcoin address to use for the signature.<br/>2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signmessage).<br/>3. "message"         (string, required) The message that was signed.<br/><br/>Result:<br/>true|false   (boolean) If the signature is verified or not.<br/><br/>Examples:<br/><br/>Unlock the wallet for 30 seconds<br/>
+    </body>
+    </html>

@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>estimatepriority</h1>
+    <h2>v0.12.1</h2>
+    estimatepriority nblocks<br/><br/>Estimates the approximate priority a zero-fee transaction needs to begin<br/>confirmation within nblocks blocks.<br/><br/>Arguments:<br/>1. nblocks     (numeric)<br/><br/>Result:<br/>n              (numeric) estimated priority<br/><br/>A negative value is returned if not enough transactions and blocks<br/>have been observed to make an estimate.<br/><br/>Example:<br/>> bitcoin-cli estimatepriority 6<br/>
+    </body>
+    </html>

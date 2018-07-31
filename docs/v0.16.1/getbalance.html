@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>getbalance</h1>
+    <h2>v0.16.1</h2>
+    getbalance ( "account" minconf include_watchonly )<br/><br/>If account is not specified, returns the server's total available balance.<br/>The available balance is what the wallet considers currently spendable, and is<br/>thus affected by options which limit spendability such as -spendzeroconfchange.<br/>If account is specified (DEPRECATED), returns the balance in the account.<br/>Note that the account "" is not the same as leaving the parameter out.<br/>The server total may be different to the balance in the default "" account.<br/><br/>Arguments:<br/>1. "account"         (string, optional) DEPRECATED. The account string may be given as a<br/>                     specific account name to find the balance associated with wallet keys in<br/>                     a named account, or as the empty string ("") to find the balance<br/>                     associated with wallet keys not in any named account, or as "*" to find<br/>                     the balance associated with all wallet keys regardless of account.<br/>                     When this option is specified, it calculates the balance in a different<br/>                     way than when it is not specified, and which can count spends twice when<br/>                     there are conflicting pending transactions (such as those created by<br/>                     the bumpfee command), temporarily resulting in low or even negative<br/>                     balances. In general, account balance calculation is not considered<br/>                     reliable and has resulted in confusing outcomes, so it is recommended to<br/>                     avoid passing this argument.<br/>2. minconf           (numeric, optional, default=1) Only include transactions confirmed at least this many times.<br/>3. include_watchonly (bool, optional, default=false) Also include balance in watch-only addresses (see 'importaddress')<br/><br/>Result:<br/>amount              (numeric) The total amount in " + CURRENCY_UNIT + " received for this account.<br/><br/>Examples:<br/><br/>The total amount in the wallet with 1 or more confirmations<br/>
+    </body>
+    </html>

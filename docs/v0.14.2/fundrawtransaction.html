@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>fundrawtransaction</h1>
+    <h2>v0.14.2</h2>
+    fundrawtransaction "hexstring" ( options )<br/><br/>Add inputs to a transaction until it has enough in value to meet its out value.<br/>This will not modify existing inputs, and will add at most one change output to the outputs.<br/>No existing outputs will be modified unless "subtractFeeFromOutputs" is specified.<br/>Note that inputs which were signed may need to be resigned after completion since in/outputs have been added.<br/>The inputs added will not be signed, use signrawtransaction for that.<br/>Note that all existing inputs must have their previous output transaction be in the wallet.<br/>Note that all inputs selected must be of standard form and P2SH scripts must be<br/>in the wallet using importaddress or addmultisigaddress (to calculate fees).<br/>You can see whether this is the case by checking the "solvable" field in the listunspent output.<br/>Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported for watch-only<br/><br/>Arguments:<br/>1. "hexstring"           (string, required) The hex string of the raw transaction<br/>2. options                 (object, optional)<br/>   {<br/>     "changeAddress"          (string, optional, default pool address) The bitcoin address to receive the change<br/>     "changePosition"         (numeric, optional, default random) The index of the change output<br/>     "includeWatching"        (boolean, optional, default false) Also select inputs which are watch only<br/>     "lockUnspents"           (boolean, optional, default false) Lock selected unspent outputs<br/>     "reserveChangeKey"       (boolean, optional, default true) Reserves the change output key from the keypool<br/>     "feeRate"                (numeric, optional, default not set: makes wallet determine the fee) Set a specific feerate (" + CURRENCY_UNIT + " per KB)<br/>     "subtractFeeFromOutputs" (array, optional) A json array of integers.<br/>                              The fee will be equally deducted from the amount of each specified output.<br/>                              The outputs are specified by their zero-based index, before any change output is added.<br/>                              Those recipients will receive less bitcoins than you enter in their corresponding amount field.<br/>                              If no outputs are specified here, the sender pays the fee.<br/>                                  [vout_index,...]<br/>   }<br/>                         for backward compatibility: passing in a true instead of an object will result in {"includeWatching":true}<br/><br/>Result:<br/>{<br/>  "hex":       "value", (string)  The resulting raw transaction (hex-encoded string)<br/>  "fee":       n,         (numeric) Fee in " + CURRENCY_UNIT + " the resulting transaction pays<br/>  "changepos": n          (numeric) The position of the added change output, or -1<br/>}<br/><br/>Examples:<br/><br/>Create a transaction with no inputs<br/>
+    </body>
+    </html>

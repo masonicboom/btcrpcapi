@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>signrawtransaction</h1>
+    <h2>master</h2>
+    signrawtransaction "hexstring" ( [{"txid":"id","vout":n,"scriptPubKey":"hex","redeemScript":"hex"},...] ["privatekey1",...] sighashtype )<br/><br/>DEPRECATED. Sign inputs for raw transaction (serialized, hex-encoded).<br/>The second optional argument (may be null) is an array of previous transaction outputs that<br/>this transaction depends on but may not yet be in the block chain.<br/>The third optional argument (may be null) is an array of base58-encoded private<br/>keys that, if given, will be the only keys used to sign the transaction.<br/>
+    </body>
+    </html>
