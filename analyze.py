@@ -58,13 +58,14 @@ print('''
             color: green;
         }
         td { height: 1rem; }
-        td.present { background-color: green; }
+        td.present { background-color: green; text-align: center; }
         tbody>tr:hover>td.present { background-color: white; }
         tbody>tr:hover {
            color: white;
         }
         .version { width: 1rem; writing-mode: vertical-lr; transform: rotate(-180deg); }
-        a { color: green; }
+        a { color: green; text-decoration: none; }
+        a:hover { font-weight: bold; }
         table { margin-top: 5rem; }
     </style>
 </head>
@@ -104,7 +105,7 @@ for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
         if vl < first:
             continue
         if v in (calls[call]):
-            print('<td title="{}" class="present"></td>'.format(v))
+            print('<td title="{}" class="present"><a href="docs/{}/{}.html">?</a></td>'.format(v, v, call))
         else:
             print('<td title="{}"></td>'.format(v))
     print('<td>{}</td>'.format(call))

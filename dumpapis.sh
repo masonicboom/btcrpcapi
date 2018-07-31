@@ -4,6 +4,9 @@
 function dump {
     git checkout "$1"
     git grep --files-with-matches "static const CRPCCommand .*\[\] =" *.cpp | xargs cat | ../dumpapi.py > "../apis/$1"
+
+    mkdir -p "../docs/$1/"
+    git grep --files-with-matches "static const CRPCCommand .*\[\] =" *.cpp | xargs cat | ../dumpdocs.py "../docs" "$1"
 }
 
 cd bitcoin
