@@ -54,7 +54,7 @@ for line in map(str.rstrip, sys.stdin):
         else:
             state = 'BEGIN'
     elif state == 'BODY':
-        m = re.match("^\s*?if \(.*(?:\w+equest\.)?fHelp.*?\)(?:\s+\{)?$", line)
+        m = re.match("^\s*?if \(.*(?:\w+equest\.)?fHelp.*?\)?(?:\s+\{)?$", line)
         if m:
             state = 'HELP'
         elif line == '}':
@@ -74,6 +74,9 @@ for line in map(str.rstrip, sys.stdin):
             if s[3]:
                 close()
                 state = 'BEGIN'
+        elif re.match("\s*\(.*", line):
+            # Continuation of the fHelp conditional.
+            continue
         else:
             state = 'BODY'
     elif state == 'MSG':
