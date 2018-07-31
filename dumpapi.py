@@ -16,7 +16,14 @@ for line in map(str.rstrip, sys.stdin):
             m = re.search('{(?: *([^,]+),)+', line)
             assert m, 'No match to table expression: %s' % line
             parts = [p.rstrip(',') for p in m.group(0).strip("{ },").split()]
+
+            # The CRPC table format changed at some point. This handles that.
             if parts[0][0] == '"' and parts[1][0] == '"':
-                print(parts[1].strip('"'))
+                col = 1
             else:
-                print(parts[0].strip('"'))
+                col = 0
+
+            # Output call and function name because docs will be indexed by function name.
+            call_name = parts[col].strip('"')
+            func_name = parts[col+1][1:]
+            print("{}\t{}".format(call_name, func_name))

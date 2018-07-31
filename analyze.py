@@ -18,6 +18,9 @@ def list2version(vl):
 # Map from call -> version -> present.
 calls = collections.defaultdict(set)
 
+# Map from call -> function name that implements that call.
+funcs = collections.defaultdict(dict)
+
 # Map from call -> first version it appeared in.
 earliest = {}
 
@@ -37,8 +40,10 @@ for v in sorted(versions, key=lambda k: version2list(k)):
     vl = version2list(v)
     f = open('apis/{}'.format(v), 'r')
     for line in f.readlines():
-        call = line.rstrip()
+        parts = line.rstrip().split()
+        call, func = parts[0], parts[1]
         calls[call].add(v)
+        funcs[call][v] = func
 
         if call not in earliest:
             earliest[call] = vl
@@ -106,7 +111,7 @@ for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
         if vl < first:
             continue
         if v in (calls[call]):
-            p = "docs/{}/{}.html".format(v, call)
+            p = "docs/{}/{}.html".format(v, funcs[call][v])
             link = ""
             if os.path.exists(p):
                 link = '<a href="{}">?</a>'.format(p)
