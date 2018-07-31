@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>logging</h1>
+    <h2>master</h2>
+    logging ( <include> <exclude> )<br/>Gets and sets the logging configuration.<br/>When called without an argument, returns the list of categories with status that are currently being debug logged or not.<br/>When called with arguments, adds or removes categories from debug logging and return the lists above.<br/>The arguments are evaluated in order "include", "exclude".<br/>If an item is both included and excluded, it will thus end up being excluded.<br/>The valid logging categories are: " + ListLogCategories() + "<br/>In addition, the following are available as category names with special meanings:<br/>  - "all",  "1" : represent all logging categories.<br/>  - "none", "0" : even if other logging categories are specified, ignore all of them.<br/><br/>Arguments:<br/>1. "include"        (array of strings, optional) A json array of categories to add debug logging<br/>     [<br/>       "category"   (string) the valid logging category<br/>       ,...<br/>     ]<br/>2. "exclude"        (array of strings, optional) A json array of categories to remove debug logging<br/>     [<br/>       "category"   (string) the valid logging category<br/>       ,...<br/>     ]<br/><br/>Result:<br/>{                   (json object where keys are the logging categories, and values indicates its status<br/>  "category": 0|1,  (numeric) if being debug logged or not. 0:inactive, 1:active<br/>  ...<br/>}<br/><br/>Examples:<br/>> bitcoin-cli logging "[\\"all\\"]" "[\\"http\\"]"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "logging", "params": [["all"], "[libevent]"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+    </body>
+    </html>

@@ -1,0 +1,17 @@
+
+    <html>
+    <head>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: green;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>getmempoolancestors</h1>
+    <h2>v0.13.0</h2>
+    getmempoolancestors txid (verbose)<br/><br/>If txid is in the mempool, returns all in-mempool ancestors.<br/><br/>Arguments:<br/>1. "txid"                   (string, required) The transaction id (must be in mempool)<br/>2. verbose                  (boolean, optional, default=false) true for a json object, false for array of transaction ids<br/><br/>Result (for verbose=false):<br/>[                       (json array of strings)<br/>  "transactionid"           (string) The transaction id of an in-mempool ancestor transaction<br/>  ,...<br/>]<br/><br/>Result (for verbose=true):<br/>{                           (json object)<br/>  "transactionid" : {       (json object)<br/>
+    </body>
+    </html>

@@ -12,6 +12,6 @@
     <body>
     <h1>importwallet</h1>
     <h2>v0.10.0</h2>
-    importwallet "filename"<br/><br/>Imports keys from a wallet dump file (see dumpwallet).<br/><br/>Arguments:<br/>1. "filename"    (string, required) The wallet file<br/><br/>Examples:<br/><br/>Dump the wallet<br/>
+    importwallet "filename"<br/><br/>Imports keys from a wallet dump file (see dumpwallet).<br/><br/>Arguments:<br/>1. "filename"    (string, required) The wallet file<br/><br/>Examples:<br/><br/>Dump the wallet<br/>> bitcoin-cli dumpwallet "test"<br/><br/>Import the wallet<br/>> bitcoin-cli importwallet "test"<br/><br/>Import using the json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
     </body>
     </html>
