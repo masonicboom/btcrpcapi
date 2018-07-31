@@ -7,9 +7,9 @@ function dump {
     git grep --files-with-matches "static const CRPCCommand .*\[\] =" *.cpp | xargs cat | ../dumpapi.py > "../apis/$1"
 
     mkdir -p "../docs/$1/"
-    while read call; do
+    cat "../apis/$1" | cut -f 1 | while read call; do
         git grep --files-with-matches "$call(" *.cpp >> targets
-    done <"../apis/$1"
+    done
     sort targets | uniq | xargs cat | ../dumpdocs.py "../docs" "$1"
     rm targets
 }
