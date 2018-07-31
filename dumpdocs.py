@@ -54,21 +54,32 @@ for line in map(str.rstrip, sys.stdin):
         else:
             state = 'BEGIN'
     elif state == 'BODY':
-        m = re.match("^\s*?if \((?:\w+equest\.)?fHelp.*?\)$", line)
+        m = re.match("^\s*?if \(.*(?:\w+equest\.)?fHelp.*?\)(?:\s+\{)?$", line)
         if m:
             state = 'HELP'
         elif line == '}':
             state = 'BEGIN'
     elif state == 'HELP':
         m = re.match("\s*throw (?:std::)?runtime_error\($", line)
-        if m:
+        s = re.match(r"^\s*(?:.*? = )?(\"(.*)\")?(\);)?$", line, re.DOTALL)
+        if re.match("\s*\{", line):
+            continue
+        elif m:
             state = 'MSG'
+        elif s:
+            # This is a line like `string msg = "lorem ipsum"`. The `throw runtime_error` will come later.
+            if s[2]:
+                msgs.append(s[2])
+                state = 'MSG'
+            if s[3]:
+                close()
+                state = 'BEGIN'
         else:
-            state = 'BEGIN'
+            state = 'BODY'
     elif state == 'MSG':
         m = re.match(r"^\s*(\"(.*)\")?(\);)?$", line, re.DOTALL)
-        cx = re.match(r"\s*\+ HelpExampleCli\(\"(.*?)\", \"(.*)\"\)$", line)
-        rx = re.match(r"\s*\+ HelpExampleRpc\(\"(.*?)\", \"(.*)\"\)$", line)
+        cx = re.match(r"\s*\+ HelpExampleCli\(\"(.*?)\", \"(.*)\"\)(?:\s+\+)?$", line)
+        rx = re.match(r"\s*\+ HelpExampleRpc\(\"(.*?)\", \"(.*)\"\)(?:\s+\+)?$", line)
         if m:
             if m[2]:
                 msgs.append(m[2])
