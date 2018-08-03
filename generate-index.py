@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Processes API call lists for each bitcoin version into dataset containing API call, earliest release it appeared in, and latest release it appeared in.
+# Generates webpage charting RPC API calls for each Bitcoin version.
 
 import sys
 import os
