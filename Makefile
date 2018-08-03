@@ -3,7 +3,7 @@ all: index.html style.css
 style.css: generate-style.py
 	./$< > $@
 
-index.html: analyze.py apis/
+index.html: generate-index.py apis/
 	./$< > $@
 
 apis: dumpapis.sh dumpapi.py bitcoin
