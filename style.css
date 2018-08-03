@@ -1,5 +1,7 @@
 body {
     font-family: monospace;
+    /* background-color: black;
+    color: green; */
     background-color: black;
     color: green;
 }
@@ -15,6 +17,12 @@ td.present {
 
 /* UNCOMMENT FOR DEBUGGING VISUALIZATION td.present a { color: pink; } */
 
+td.present>a {
+    color: green;
+}
+tr:hover>td.present>a {
+    color: green;
+}
 tbody>tr:hover>td.present {
     background-color: white;
 }

@@ -1,6 +1,6 @@
 # btcrpcapi
 
-This project collects the set of RPC API calls available in each version of Bitcoin Core and labels them according to the first and last versions they were available in.
+This project collects the set of RPC API calls available in each version of Bitcoin Core and builds a website to view them.
 
 ## Dependencies
 
@@ -10,7 +10,9 @@ This project collects the set of RPC API calls available in each version of Bitc
 
 ## Usage
 
-Type `make`, then view `index.html`.
+Type `make`, then view `index.html` in a web browser.
+
+If you prefer a dark color scheme, do `MODE=dark make`, instead.
 
 ## Output
 
