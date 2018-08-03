@@ -22,13 +22,7 @@ def close():
     html = """
     <html>
     <head>
-    <style>
-        body {{
-            font-family: monospace;
-            background-color: black;
-            color: green;
-        }}
-    </style>
+        <link rel="stylesheet" type="text/css" href="../../style.css">
     </head>
     <body>
     <h1>{}</h1>

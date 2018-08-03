@@ -56,24 +56,7 @@ first = sorted(earliest.values())[0]
 print('''
 <html>
 <head>
-    <style>
-        body {
-            font-family: monospace;
-            background-color: black;
-            color: green;
-        }
-        td { height: 1rem; }
-        td.present { background-color: green; text-align: center; }
-        /* UNCOMMENT FOR DEBUGGING VISUALIZATION td.present a { color: pink; } */
-        tbody>tr:hover>td.present { background-color: white; }
-        tbody>tr:hover {
-           color: white;
-        }
-        .version { width: 1rem; writing-mode: vertical-lr; transform: rotate(-180deg); }
-        a { color: green; text-decoration: none; }
-        a:hover { font-weight: bold; }
-        table { margin-top: 5rem; }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
