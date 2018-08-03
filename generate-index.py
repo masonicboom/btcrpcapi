@@ -5,6 +5,8 @@ import sys
 import os
 import collections
 import datetime
+import json
+import hashlib
 
 # Functions to transform 'vX.Y.Z' <=> [X, Y, Z] for sorting.
 def version2list(v):
@@ -86,7 +88,13 @@ print('''
 <tbody>
 ''')
 
+# colorcodes is used as a circular buffer to assign different colors to the cells in a row of calls as the contents of the call's doc message changes across versions. When adjacent cells have different colors, they have different doc messages.
+colorcodes = ["a", "b", "c", "d", "e"]
+
 for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
+    msghash = None # Tracks differences in messages between versions.
+    msgindex = -1
+
     print('<tr>')
     print('<td>{}</td>'.format(call))
     for v in sorted(versions, key=lambda k: version2list(k)):
@@ -94,11 +102,28 @@ for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
         if vl < first:
             continue
         if v in (calls[call]):
-            p = "docs/{}/{}.html".format(v, funcs[call][v])
+            # Some calls map to the same function name. This accomodates those.
+            name = funcs[call][v]
+
+            p = "docs/{}/{}.html".format(v, name)
             link = ""
             if os.path.exists(p):
                 link = '<a href="{}">?</a>'.format(p)
-            print('<td title="{}" class="present">{}</td>'.format(v, link))
+            
+            # Check if the message changed from the previous version. If so, vary the color.
+            try:
+                f = open("docdata/{}/{}.json".format(v, name))
+                calldata = json.load(f)
+                newhash = hashlib.sha256(calldata["message"].encode("utf-8")).hexdigest()
+                if newhash != msghash:
+                    msgindex += 1
+                colorcode = colorcodes[msgindex % len(colorcodes)]
+                msghash = newhash
+                f.close()
+            except:
+                colorcode = None
+
+            print('<td title="{}" class="present color-{}">{}</td>'.format(v, colorcode, link))
         else:
             print('<td title="{}"></td>'.format(v))
     print('<td>{}</td>'.format(call))

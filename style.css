@@ -1,7 +1,5 @@
 body {
     font-family: monospace;
-    /* background-color: black;
-    color: green; */
     background-color: black;
     color: green;
 }
@@ -19,12 +17,37 @@ td.present {
 
 td.present>a {
     color: green;
+    opacity: 0;
+}
+tr:hover>td.present {
+    opacity: 0.5;
+}
+tr:hover>td:hover.present {
+    opacity: 1;
 }
 tr:hover>td.present>a {
-    color: green;
+    opacity: 1;
+    color: white;
 }
-tbody>tr:hover>td.present {
-    background-color: white;
+
+td.present.color-a {
+    background-color: #5EBD3E;
+}
+
+td.present.color-b {
+    background-color: #009CDF;
+}
+
+td.present.color-c {
+    background-color: #FFB900;
+}
+
+td.present.color-d {
+    background-color: #F78200;
+}
+
+td.present.color-e {
+    background-color: #E23838;
 }
 
 tbody>tr:hover {

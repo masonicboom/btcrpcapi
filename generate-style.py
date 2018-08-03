@@ -9,21 +9,33 @@ if "MODE" in os.environ and os.environ["MODE"] == "dark":
         "bg": "black",
         "fg": "green",
         "block": "green",
-        "highlight": "white"
+        "highlight": "white",
+
+        # Color codes from https://www.schemecolor.com/apple-rainbow-logo.php.
+        "code-a": "#5EBD3E",
+        "code-b": "#009CDF",
+        "code-c": "#FFB900",
+        "code-d": "#F78200",
+        "code-e": "#E23838"
     }
 else:
     colors = {
         "bg": "white",
         "fg": "#333332",
         "block": "#aaa",
-        "highlight": "rgb(247, 142, 35)"
+        "highlight": "rgb(247, 142, 35)",
+
+        # Color codes from https://www.schemecolor.com/rainbow-pastels-color-scheme.php.
+        "code-a": "#C7CEEA",
+        "code-b": "#B5EAD7",
+        "code-c": "#E2F0CB",
+        "code-d": "#FFDAC1",
+        "code-e": "#FFB7B2"
     }
 
 print("""
 body {{
     font-family: monospace;
-    /* background-color: black;
-    color: green; */
     background-color: {bg};
     color: {fg};
 }}
@@ -40,13 +52,38 @@ td.present {{
 /* UNCOMMENT FOR DEBUGGING VISUALIZATION td.present a {{ color: pink; }} */
 
 td.present>a {{
-    color: {block};
+    color: {fg};
+    opacity: 0;
+}}
+tr:hover>td.present {{
+    opacity: 0.5;
+}}
+tr:hover>td:hover.present {{
+    opacity: 1;
 }}
 tr:hover>td.present>a {{
-    color: {fg};
+    opacity: 1;
+    color: {highlight};
 }}
-tbody>tr:hover>td.present {{
-    background-color: {highlight};
+
+td.present.color-a {{
+    background-color: {code-a};
+}}
+
+td.present.color-b {{
+    background-color: {code-b};
+}}
+
+td.present.color-c {{
+    background-color: {code-c};
+}}
+
+td.present.color-d {{
+    background-color: {code-d};
+}}
+
+td.present.color-e {{
+    background-color: {code-e};
 }}
 
 tbody>tr:hover {{
