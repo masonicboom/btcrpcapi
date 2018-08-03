@@ -1,11 +1,10 @@
-
-    <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../../style.css">
-    </head>
-    <body>
-    <h1>getaddednodeinfo</h1>
-    <h2>v0.16.0</h2>
-    getaddednodeinfo ( "node" )<br/><br/>Returns information about the given added node, or all added nodes<br/>(note that onetry addnodes are not listed here)<br/><br/>Arguments:<br/>1. "node"   (string, optional) If provided, return information about this specific node, otherwise all nodes are returned.<br/><br/>Result:<br/>[<br/>  {<br/>    "addednode" : "192.168.0.201",   (string) The node IP address or name (as provided to addnode)<br/>    "connected" : true|false,          (boolean) If connected<br/>    "addresses" : [                    (list of objects) Only when connected = true<br/>       {<br/>         "address" : "192.168.0.201:8333",  (string) The bitcoin server IP and port we're connected to<br/>         "connected" : "outbound"           (string) connection, inbound or outbound<br/>       }<br/>     ]<br/>  }<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli getaddednodeinfo "192.168.0.201"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddednodeinfo", "params": ["192.168.0.201"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
-    </body>
-    </html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>getaddednodeinfo</h1>
+<h2>v0.16.0</h2>
+getaddednodeinfo ( "node" )<br/><br/>Returns information about the given added node, or all added nodes<br/>(note that onetry addnodes are not listed here)<br/><br/>Arguments:<br/>1. "node"   (string, optional) If provided, return information about this specific node, otherwise all nodes are returned.<br/><br/>Result:<br/>[<br/>  {<br/>    "addednode" : "192.168.0.201",   (string) The node IP address or name (as provided to addnode)<br/>    "connected" : true|false,          (boolean) If connected<br/>    "addresses" : [                    (list of objects) Only when connected = true<br/>       {<br/>         "address" : "192.168.0.201:8333",  (string) The bitcoin server IP and port we're connected to<br/>         "connected" : "outbound"           (string) connection, inbound or outbound<br/>       }<br/>     ]<br/>  }<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli getaddednodeinfo "192.168.0.201"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddednodeinfo", "params": ["192.168.0.201"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</body>
+</html>

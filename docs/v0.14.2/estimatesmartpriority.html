@@ -1,11 +1,10 @@
-
-    <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../../style.css">
-    </head>
-    <body>
-    <h1>estimatesmartpriority</h1>
-    <h2>v0.14.2</h2>
-    estimatesmartpriority nblocks<br/><br/>DEPRECATED. WARNING: This interface is unstable and may disappear or change!<br/><br/>Estimates the approximate priority a zero-fee transaction needs to begin<br/>confirmation within nblocks blocks if possible and return the number of blocks<br/>for which the estimate is valid.<br/><br/>Arguments:<br/>1. nblocks     (numeric, required)<br/><br/>Result:<br/>{<br/>  "priority" : x.x,    (numeric) estimated priority<br/>  "blocks" : n         (numeric) block number where estimate was found<br/>}<br/><br/>A negative value is returned if not enough transactions and blocks<br/>have been observed to make an estimate for any number of blocks.<br/>However if the mempool reject fee is set it will return 1e9 * MAX_MONEY.<br/><br/>Example:<br/>> bitcoin-cli estimatesmartpriority 6<br/>
-    </body>
-    </html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>estimatesmartpriority</h1>
+<h2>v0.14.2</h2>
+estimatesmartpriority nblocks<br/><br/>DEPRECATED. WARNING: This interface is unstable and may disappear or change!<br/><br/>Estimates the approximate priority a zero-fee transaction needs to begin<br/>confirmation within nblocks blocks if possible and return the number of blocks<br/>for which the estimate is valid.<br/><br/>Arguments:<br/>1. nblocks     (numeric, required)<br/><br/>Result:<br/>{<br/>  "priority" : x.x,    (numeric) estimated priority<br/>  "blocks" : n         (numeric) block number where estimate was found<br/>}<br/><br/>A negative value is returned if not enough transactions and blocks<br/>have been observed to make an estimate for any number of blocks.<br/>However if the mempool reject fee is set it will return 1e9 * MAX_MONEY.<br/><br/>Example:<br/>> bitcoin-cli estimatesmartpriority 6<br/>
+</body>
+</html>

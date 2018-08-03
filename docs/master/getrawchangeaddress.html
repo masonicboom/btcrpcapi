@@ -1,11 +1,10 @@
-
-    <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../../style.css">
-    </head>
-    <body>
-    <h1>getrawchangeaddress</h1>
-    <h2>master</h2>
-    getrawchangeaddress ( "address_type" )<br/><br/>Returns a new Bitcoin address, for receiving change.<br/>This is for use with raw transactions, NOT normal use.<br/><br/>Arguments:<br/>1. "address_type"           (string, optional) The address type to use. Options are "legacy", "p2sh-segwit", and "bech32". Default is set by -changetype.<br/><br/>Result:<br/>"address"    (string) The address<br/><br/>Examples:<br/>> bitcoin-cli getrawchangeaddress <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawchangeaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
-    </body>
-    </html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>getrawchangeaddress</h1>
+<h2>master</h2>
+getrawchangeaddress ( "address_type" )<br/><br/>Returns a new Bitcoin address, for receiving change.<br/>This is for use with raw transactions, NOT normal use.<br/><br/>Arguments:<br/>1. "address_type"           (string, optional) The address type to use. Options are "legacy", "p2sh-segwit", and "bech32". Default is set by -changetype.<br/><br/>Result:<br/>"address"    (string) The address<br/><br/>Examples:<br/>> bitcoin-cli getrawchangeaddress <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawchangeaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</body>
+</html>

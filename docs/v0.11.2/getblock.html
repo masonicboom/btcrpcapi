@@ -1,11 +1,10 @@
-
-    <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../../style.css">
-    </head>
-    <body>
-    <h1>getblock</h1>
-    <h2>v0.11.2</h2>
-    getblock "hash" ( verbose )<br/><br/>If verbose is false, returns a string that is serialized, hex-encoded data for block 'hash'.<br/>If verbose is true, returns an Object with information about block <hash>.<br/><br/>Arguments:<br/>1. "hash"          (string, required) The block hash<br/>2. verbose           (boolean, optional, default=true) true for a json object, false for the hex encoded data<br/><br/>Result (for verbose = true):<br/>{<br/>  "hash" : "hash",     (string) the block hash (same as provided)<br/>  "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain<br/>  "size" : n,            (numeric) The block size<br/>  "height" : n,          (numeric) The block height or index<br/>  "version" : n,         (numeric) The block version<br/>  "merkleroot" : "xxxx", (string) The merkle root<br/>  "tx" : [               (array of string) The transaction ids<br/>     "transactionid"     (string) The transaction id<br/>     ,...<br/>  ],<br/>  "time" : ttt,          (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)<br/>  "nonce" : n,           (numeric) The nonce<br/>  "bits" : "1d00ffff", (string) The bits<br/>  "difficulty" : x.xxx,  (numeric) The difficulty<br/>  "previousblockhash" : "hash",  (string) The hash of the previous block<br/>  "nextblockhash" : "hash"       (string) The hash of the next block<br/>}<br/><br/>Result (for verbose=false):<br/>"data"             (string) A string that is serialized, hex-encoded data for block 'hash'.<br/><br/>Examples:<br/>> bitcoin-cli getblock "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
-    </body>
-    </html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>getblock</h1>
+<h2>v0.11.2</h2>
+getblock "hash" ( verbose )<br/><br/>If verbose is false, returns a string that is serialized, hex-encoded data for block 'hash'.<br/>If verbose is true, returns an Object with information about block <hash>.<br/><br/>Arguments:<br/>1. "hash"          (string, required) The block hash<br/>2. verbose           (boolean, optional, default=true) true for a json object, false for the hex encoded data<br/><br/>Result (for verbose = true):<br/>{<br/>  "hash" : "hash",     (string) the block hash (same as provided)<br/>  "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain<br/>  "size" : n,            (numeric) The block size<br/>  "height" : n,          (numeric) The block height or index<br/>  "version" : n,         (numeric) The block version<br/>  "merkleroot" : "xxxx", (string) The merkle root<br/>  "tx" : [               (array of string) The transaction ids<br/>     "transactionid"     (string) The transaction id<br/>     ,...<br/>  ],<br/>  "time" : ttt,          (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)<br/>  "nonce" : n,           (numeric) The nonce<br/>  "bits" : "1d00ffff", (string) The bits<br/>  "difficulty" : x.xxx,  (numeric) The difficulty<br/>  "previousblockhash" : "hash",  (string) The hash of the previous block<br/>  "nextblockhash" : "hash"       (string) The hash of the next block<br/>}<br/><br/>Result (for verbose=false):<br/>"data"             (string) A string that is serialized, hex-encoded data for block 'hash'.<br/><br/>Examples:<br/>> bitcoin-cli getblock "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</body>
+</html>

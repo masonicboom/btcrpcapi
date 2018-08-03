@@ -1,11 +1,10 @@
-
-    <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../../style.css">
-    </head>
-    <body>
-    <h1>waitforblock</h1>
-    <h2>v0.16.1</h2>
-    waitforblock <blockhash> (timeout)<br/><br/>Waits for a specific new block and returns useful info about it.<br/><br/>Returns the current block on timeout or exit.<br/><br/>Arguments:<br/>1. "blockhash" (required, string) Block hash to wait for.<br/>2. timeout       (int, optional, default=0) Time in milliseconds to wait for a response. 0 indicates no timeout.<br/><br/>Result:<br/>{                           (json object)<br/>  "hash" : {       (string) The blockhash<br/>  "height" : {     (int) Block height<br/>}<br/><br/>Examples:<br/>> bitcoin-cli waitforblock "0000000000079f8ef3d2c688c244eb7a4570b24c9ed7b4a8c619eb02596f8862", 1000<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "waitforblock", "params": ["0000000000079f8ef3d2c688c244eb7a4570b24c9ed7b4a8c619eb02596f8862", 1000] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
-    </body>
-    </html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>waitforblock</h1>
+<h2>v0.16.1</h2>
+waitforblock <blockhash> (timeout)<br/><br/>Waits for a specific new block and returns useful info about it.<br/><br/>Returns the current block on timeout or exit.<br/><br/>Arguments:<br/>1. "blockhash" (required, string) Block hash to wait for.<br/>2. timeout       (int, optional, default=0) Time in milliseconds to wait for a response. 0 indicates no timeout.<br/><br/>Result:<br/>{                           (json object)<br/>  "hash" : {       (string) The blockhash<br/>  "height" : {     (int) Block height<br/>}<br/><br/>Examples:<br/>> bitcoin-cli waitforblock "0000000000079f8ef3d2c688c244eb7a4570b24c9ed7b4a8c619eb02596f8862", 1000<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "waitforblock", "params": ["0000000000079f8ef3d2c688c244eb7a4570b24c9ed7b4a8c619eb02596f8862", 1000] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</body>
+</html>

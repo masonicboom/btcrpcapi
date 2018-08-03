@@ -1,11 +1,10 @@
-
-    <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../../style.css">
-    </head>
-    <body>
-    <h1>combinerawtransaction</h1>
-    <h2>master</h2>
-    combinerawtransaction ["hexstring",...]<br/><br/>Combine multiple partially signed transactions into one transaction.<br/>The combined transaction may be another partially signed transaction or a <br/>fully signed transaction.<br/>Arguments:<br/>1. "txs"         (string) A json array of hex strings of partially signed transactions<br/>    [<br/>      "hexstring"     (string) A transaction hash<br/>      ,...<br/>    ]<br/><br/>Result:<br/>"hex"            (string) The hex-encoded raw transaction with signature(s)<br/><br/>Examples:<br/>> bitcoin-cli combinerawtransaction ["myhex1", "myhex2", "myhex3"]<br/>
-    </body>
-    </html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>combinerawtransaction</h1>
+<h2>master</h2>
+combinerawtransaction ["hexstring",...]<br/><br/>Combine multiple partially signed transactions into one transaction.<br/>The combined transaction may be another partially signed transaction or a <br/>fully signed transaction.<br/>Arguments:<br/>1. "txs"         (string) A json array of hex strings of partially signed transactions<br/>    [<br/>      "hexstring"     (string) A transaction hash<br/>      ,...<br/>    ]<br/><br/>Result:<br/>"hex"            (string) The hex-encoded raw transaction with signature(s)<br/><br/>Examples:<br/>> bitcoin-cli combinerawtransaction ["myhex1", "myhex2", "myhex3"]<br/>
+</body>
+</html>

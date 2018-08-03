@@ -1,11 +1,10 @@
-
-    <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../../style.css">
-    </head>
-    <body>
-    <h1>gettxoutsetinfo</h1>
-    <h2>v0.16.2</h2>
-    gettxoutsetinfo<br/><br/>Returns statistics about the unspent transaction output set.<br/>Note this call may take some time.<br/><br/>Result:<br/>{<br/>  "height":n,     (numeric) The current block height (index)<br/>  "bestblock": "hex",   (string) The hash of the block at the tip of the chain<br/>  "transactions": n,      (numeric) The number of transactions with unspent outputs<br/>  "txouts": n,            (numeric) The number of unspent transaction outputs<br/>  "bogosize": n,          (numeric) A meaningless metric for UTXO set size<br/>  "hash_serialized_2": "hash", (string) The serialized hash<br/>  "disk_size": n,         (numeric) The estimated size of the chainstate on disk<br/>  "total_amount": x.xxx          (numeric) The total amount<br/>}<br/><br/>Examples:<br/>> bitcoin-cli gettxoutsetinfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutsetinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
-    </body>
-    </html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>gettxoutsetinfo</h1>
+<h2>v0.16.2</h2>
+gettxoutsetinfo<br/><br/>Returns statistics about the unspent transaction output set.<br/>Note this call may take some time.<br/><br/>Result:<br/>{<br/>  "height":n,     (numeric) The current block height (index)<br/>  "bestblock": "hex",   (string) The hash of the block at the tip of the chain<br/>  "transactions": n,      (numeric) The number of transactions with unspent outputs<br/>  "txouts": n,            (numeric) The number of unspent transaction outputs<br/>  "bogosize": n,          (numeric) A meaningless metric for UTXO set size<br/>  "hash_serialized_2": "hash", (string) The serialized hash<br/>  "disk_size": n,         (numeric) The estimated size of the chainstate on disk<br/>  "total_amount": x.xxx          (numeric) The total amount<br/>}<br/><br/>Examples:<br/>> bitcoin-cli gettxoutsetinfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutsetinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</body>
+</html>
