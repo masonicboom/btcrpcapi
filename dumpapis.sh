@@ -6,11 +6,11 @@ function dump {
     git checkout "$1"
     git grep --files-with-matches "static const CRPCCommand .*\[\] =" *.cpp | xargs cat | ../dumpapi.py > "../apis/$1"
 
-    mkdir -p "../docs/$1/"
+    mkdir -p "../docdata/$1/"
     cat "../apis/$1" | cut -f 1 | while read call; do
         git grep --files-with-matches "$call(" *.cpp >> targets
     done
-    sort targets | uniq | xargs cat | ../dumpdocs.py "../docs" "$1"
+    sort targets | uniq | xargs cat | ../dumpdocs.py "../docdata" "$1"
     rm targets
 }
 

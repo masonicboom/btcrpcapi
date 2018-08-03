@@ -3,12 +3,13 @@
 
 import sys
 import re
+import json
 
 if len(sys.argv) < 3:
-    print("usage: dumpdocs.py <DOC_DIR> <VERSION>")
+    print("usage: dumpdocs.py <DATA_DIR> <VERSION>")
     sys.exit(1)
 
-doc_dir = sys.argv[1]
+data_dir = sys.argv[1]
 version = sys.argv[2]
 
 # Parse source code for RPC doc strings, using a state machine.
@@ -17,21 +18,14 @@ name = None
 msgs = []
 
 def close():
-    f = open("{}/{}/{}.html".format(doc_dir, version, name), "w")
+    f = open("{}/{}/{}.json".format(data_dir, version, name), "w")
     msg = "".join(msgs).replace(r"\n", "<br/>").replace(r"\"", "\"")
-    html = """
-    <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../../style.css">
-    </head>
-    <body>
-    <h1>{}</h1>
-    <h2>{}</h2>
-    {}
-    </body>
-    </html>
-""".format(name, version, msg)
-    f.write(html)
+    data = {
+        "name": name,
+        "version": version,
+        "message": msg
+    }
+    f.write(json.dumps(data))
     f.close()
 
 for line in map(str.rstrip, sys.stdin):

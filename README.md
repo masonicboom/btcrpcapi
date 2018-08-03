@@ -7,6 +7,7 @@ This project collects the set of RPC API calls available in each version of Bitc
 - git
 - make
 - python3
+- bash
 
 ## Usage
 
