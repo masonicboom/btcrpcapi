@@ -23,7 +23,8 @@ def close():
     data = {
         "name": name,
         "version": version,
-        "message": msg
+        "message": msg,
+        "deprecated": "DEPRECATED" in msg
     }
     f.write(json.dumps(data))
     f.close()

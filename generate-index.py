@@ -69,7 +69,19 @@ print('''
 print('<h3>Last updated {}.</h3>'.format(datetime.date.today()))
 
 print('''
+<div id="legend">
+<h3>Legend</h3>
 <table>
+    <tr><td class="present"></td><td>Call Active</td></tr>
+    <tr><td class="present deprecated"></td><td>Call Deprecated</td></tr>
+    <tr><td class="present msg-changed"></td><td>Message Changed (Active)</td></tr>
+    <tr><td class="present deprecated msg-changed"></td><td>Message Changed (Deprecated)</td></tr>
+</table>
+</div>
+''')
+
+print('''
+<table id="chart">
 <thead>
     <tr>
         <th>Call</th>
@@ -88,12 +100,8 @@ print('''
 <tbody>
 ''')
 
-# colorcodes is used as a circular buffer to assign different colors to the cells in a row of calls as the contents of the call's doc message changes across versions. When adjacent cells have different colors, they have different doc messages.
-colorcodes = ["a", "b", "c", "d", "e"]
-
 for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
     msghash = None # Tracks differences in messages between versions.
-    msgindex = -1
 
     print('<tr>')
     print('<td>{}</td>'.format(call))
@@ -111,19 +119,32 @@ for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
                 link = '<a href="{}">?</a>'.format(p)
             
             # Check if the message changed from the previous version. If so, vary the color.
+            msgchanged = False
+            deprecated = False
             try:
                 f = open("docdata/{}/{}.json".format(v, name))
                 calldata = json.load(f)
-                newhash = hashlib.sha256(calldata["message"].encode("utf-8")).hexdigest()
-                if newhash != msghash:
-                    msgindex += 1
-                colorcode = colorcodes[msgindex % len(colorcodes)]
-                msghash = newhash
-                f.close()
-            except:
-                colorcode = None
 
-            print('<td title="{}" class="present color-{}">{}</td>'.format(v, colorcode, link))
+                newhash = hashlib.sha256(calldata["message"].encode("utf-8")).hexdigest()
+                if msghash != None and newhash != msghash:
+                    msgchanged = True
+                msghash = newhash
+
+                deprecated = calldata["deprecated"]
+            except:
+                pass
+            finally:
+                f.close()
+
+            changedClass = ""
+            if msgchanged:
+                changedClass = "msg-changed"
+            
+            deprecatedClass = ""
+            if deprecated:
+                deprecatedClass = "deprecated"
+
+            print('<td title="{}" class="present {} {}">{}</td>'.format(v, changedClass, deprecatedClass, link))
         else:
             print('<td title="{}"></td>'.format(v))
     print('<td>{}</td>'.format(call))

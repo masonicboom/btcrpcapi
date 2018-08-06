@@ -5,32 +5,40 @@
 import os
 
 if "MODE" in os.environ and os.environ["MODE"] == "dark":
+    palette = {
+        # Colors from https://www.schemecolor.com/apple-rainbow-logo.php.
+        "green": "#5EBD3E",
+        "blue": "#009CDF",
+        "yellow": "#FFB900",
+        "orange": "#F78200",
+        "red": "#E23838"
+    }
+
     colors = {
         "bg": "black",
-        "fg": "green",
-        "block": "green",
+        "fg": palette["green"],
         "highlight": "white",
-
-        # Color codes from https://www.schemecolor.com/apple-rainbow-logo.php.
-        "code-a": "#5EBD3E",
-        "code-b": "#009CDF",
-        "code-c": "#FFB900",
-        "code-d": "#F78200",
-        "code-e": "#E23838"
+        "present": palette["green"],
+        "changed": palette["yellow"],
+        "deprecated": palette["blue"]
     }
 else:
+    palette = {
+        # Color codes from https://www.schemecolor.com/rainbow-pastels-color-scheme.php.
+        "blue": "#C7CEEA",
+        "green": "#B5EAD7",
+        "yellow": "#E2F0CB",
+        "orange": "#FFDAC1",
+        "red": "#FFB7B2"
+    }
+
     colors = {
         "bg": "white",
         "fg": "#333332",
-        "block": "#aaa",
         "highlight": "rgb(247, 142, 35)",
-
-        # Color codes from https://www.schemecolor.com/rainbow-pastels-color-scheme.php.
-        "code-a": "#C7CEEA",
-        "code-b": "#B5EAD7",
-        "code-c": "#E2F0CB",
-        "code-d": "#FFDAC1",
-        "code-e": "#FFB7B2"
+        "present": "#999",
+        "changed": palette["red"],
+        "deprecated": "#CCC"
     }
 
 print("""
@@ -44,8 +52,22 @@ td {{
     height: 1rem;
 }}
 
+#legend {{
+    margin-top: 3rem;
+}}
+
+#legend>table {{
+  width: 20rem;
+  margin-top: 0;
+}}
+
+#legend td:first-child {{
+    width: 1rem;
+    max-width: 1rem;
+}}
+
 td.present {{
-    background-color: {block};
+    background-color: {present};
     text-align: center;
 }}
 
@@ -55,38 +77,33 @@ td.present>a {{
     color: {fg};
     opacity: 0;
 }}
-tr:hover>td.present {{
+#chart tr:hover>td.present {{
     opacity: 0.5;
 }}
-tr:hover>td:hover.present {{
+#chart tr:hover>td:hover.present {{
     opacity: 1;
 }}
-tr:hover>td.present>a {{
+#chart tr:hover>td.present>a {{
     opacity: 1;
     color: {highlight};
 }}
 
-td.present.color-a {{
-    background-color: {code-a};
+td.present.deprecated {{
+    background-color: {deprecated};
 }}
 
-td.present.color-b {{
-    background-color: {code-b};
+td.present.msg-changed {{
+    background-image: linear-gradient(
+        to right top,
+        {changed} 33%,
+        transparent 33%,
+        transparent 66%,
+        {changed} 66%
+    );
+    background-size: 3px 3px;
 }}
 
-td.present.color-c {{
-    background-color: {code-c};
-}}
-
-td.present.color-d {{
-    background-color: {code-d};
-}}
-
-td.present.color-e {{
-    background-color: {code-e};
-}}
-
-tbody>tr:hover {{
+#chart tbody>tr:hover {{
     color: {highlight};
 }}
 
