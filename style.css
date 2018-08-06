@@ -1,56 +1,65 @@
 body {
     font-family: monospace;
     background-color: black;
-    color: green;
+    color: #5EBD3E;
 }
 
 td {
     height: 1rem;
 }
 
+#legend {
+    margin-top: 3rem;
+}
+
+#legend>table {
+  width: 20rem;
+  margin-top: 0;
+}
+
+#legend td:first-child {
+    width: 1rem;
+    max-width: 1rem;
+}
+
 td.present {
-    background-color: green;
+    background-color: #5EBD3E;
     text-align: center;
 }
 
 /* UNCOMMENT FOR DEBUGGING VISUALIZATION td.present a { color: pink; } */
 
 td.present>a {
-    color: green;
+    color: #5EBD3E;
     opacity: 0;
 }
-tr:hover>td.present {
+#chart tr:hover>td.present {
     opacity: 0.5;
 }
-tr:hover>td:hover.present {
+#chart tr:hover>td:hover.present {
     opacity: 1;
 }
-tr:hover>td.present>a {
+#chart tr:hover>td.present>a {
     opacity: 1;
     color: white;
 }
 
-td.present.color-a {
-    background-color: #5EBD3E;
-}
-
-td.present.color-b {
+td.present.deprecated {
     background-color: #009CDF;
 }
 
-td.present.color-c {
-    background-color: #FFB900;
+td.present.msg-changed {
+    background-image: linear-gradient(
+        to right top,
+        #FFB900 33%,
+        transparent 33%,
+        transparent 66%,
+        #FFB900 66%
+    );
+    background-size: 3px 3px;
 }
 
-td.present.color-d {
-    background-color: #F78200;
-}
-
-td.present.color-e {
-    background-color: #E23838;
-}
-
-tbody>tr:hover {
+#chart tbody>tr:hover {
     color: white;
 }
 
@@ -61,7 +70,7 @@ tbody>tr:hover {
 }
 
 a {
-    color: green;
+    color: #5EBD3E;
     text-decoration: none;
 }
 
