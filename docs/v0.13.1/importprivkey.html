@@ -6,5 +6,9 @@
 <h1>importprivkey</h1>
 <h2>v0.13.1</h2>
 importprivkey "bitcoinprivkey" ( "label" rescan )<br/><br/>Adds a private key (as returned by dumpprivkey) to your wallet.<br/><br/>Arguments:<br/>1. "bitcoinprivkey"   (string, required) The private key (see dumpprivkey)<br/>2. "label"            (string, optional, default="") An optional label<br/>3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions<br/><br/>Note: This call can take minutes to complete if rescan is true.<br/><br/>Examples:<br/><br/>Dump a private key<br/>> bitcoin-cli dumpprivkey "myaddress"<br/><br/>Import the private key with rescan<br/>> bitcoin-cli importprivkey "mykey"<br/><br/>Import using a label and without rescan<br/>> bitcoin-cli importprivkey "mykey" "testing" false<br/><br/>As a JSON-RPC call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importprivkey", "params": ["mykey", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/03422e564b552c1d3c16ae854f8471f7cb39e25d/src/wallet/rpcdump.cpp#L76-L99">src/wallet/rpcdump.cpp#L76-L99</a>.
+</div>
 </body>
 </html>

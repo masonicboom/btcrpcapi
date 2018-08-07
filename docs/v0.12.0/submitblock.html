@@ -6,5 +6,9 @@
 <h1>submitblock</h1>
 <h2>v0.12.0</h2>
 submitblock "hexdata" ( "jsonparametersobject" )<br/><br/>Attempts to submit new block to network.<br/>The 'jsonparametersobject' parameter is currently ignored.<br/>See https://en.bitcoin.it/wiki/BIP_0022 for full specification.<br/><br/>Arguments<br/>1. "hexdata"    (string, required) the hex-encoded block data to submit<br/>2. "jsonparametersobject"     (string, optional) object of optional parameters<br/>    {<br/>      "workid" : "id"    (string, optional) if the server provided a workid, it MUST be included with submissions<br/>    }<br/><br/>Result:<br/><br/>Examples:<br/>> bitcoin-cli submitblock "mydata"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "submitblock", "params": ["mydata"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/188ca9c305d3dd0fb462b9d6a44048b1d99a05f3/src/rpcmining.cpp#L610-L629">src/rpcmining.cpp#L610-L629</a>.
+</div>
 </body>
 </html>

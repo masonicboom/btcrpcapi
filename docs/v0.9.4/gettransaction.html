@@ -6,5 +6,9 @@
 <h1>gettransaction</h1>
 <h2>v0.9.4</h2>
 gettransaction "txid"<br/><br/>Get detailed information about in-wallet transaction <txid><br/><br/>Arguments:<br/>1. "txid"    (string, required) The transaction id<br/><br/>Result:<br/>{<br/>  "amount" : x.xxx,        (numeric) The transaction amount in btc<br/>  "confirmations" : n,     (numeric) The number of confirmations<br/>  "blockhash" : "hash",  (string) The block hash<br/>  "blockindex" : xx,       (numeric) The block index<br/>  "blocktime" : ttt,       (numeric) The time in seconds since epoch (1 Jan 1970 GMT)<br/>  "txid" : "transactionid",   (string) The transaction id.<br/>  "time" : ttt,            (numeric) The transaction time in seconds since epoch (1 Jan 1970 GMT)<br/>  "timereceived" : ttt,    (numeric) The time received in seconds since epoch (1 Jan 1970 GMT)<br/>  "details" : [<br/>    {<br/>      "account" : "accountname",  (string) The account name involved in the transaction, can be "" for the default account.<br/>      "address" : "bitcoinaddress",   (string) The bitcoin address involved in the transaction<br/>      "category" : "send|receive",    (string) The category, either 'send' or 'receive'<br/>      "amount" : x.xxx                  (numeric) The amount in btc<br/>    }<br/>    ,...<br/>  ],<br/>  "hex" : "data"         (string) Raw data for transaction<br/>}<br/><br/>bExamples<br/>> bitcoin-cli gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettransaction", "params": ["1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/41f94edf221019a6c4b8f78c2b17c389442f546e/src/rpcwallet.cpp#L1433-L1466">src/rpcwallet.cpp#L1433-L1466</a>.
+</div>
 </body>
 </html>

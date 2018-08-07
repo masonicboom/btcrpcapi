@@ -6,5 +6,9 @@
 <h1>getrawmempool</h1>
 <h2>v0.13.0</h2>
 getrawmempool ( verbose )<br/><br/>Returns all transaction ids in memory pool as a json array of string transaction ids.<br/><br/>Arguments:<br/>1. verbose           (boolean, optional, default=false) true for a json object, false for array of transaction ids<br/><br/>Result: (for verbose = false):<br/>[                     (json array of string)<br/>  "transactionid"     (string) The transaction id<br/>  ,...<br/>]<br/><br/>Result: (for verbose = true):<br/>{                           (json object)<br/>  "transactionid" : {       (json object)<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/a402396dce64c42ea73535b7dde4a9164d430438/src/rpc/blockchain.cpp#L269-L285">src/rpc/blockchain.cpp#L269-L285</a>.
+</div>
 </body>
 </html>

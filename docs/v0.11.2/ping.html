@@ -6,5 +6,9 @@
 <h1>ping</h1>
 <h2>v0.11.2</h2>
 ping<br/><br/>Requests that a ping be sent to all other nodes, to measure ping time.<br/>Results provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.<br/>Ping command is handled in queue with all other commands, so it measures processing backlog, not just network ping.<br/><br/>Examples:<br/>> bitcoin-cli ping <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "ping", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/7e278929df53e1fb4191bc5ba3176a177ce718bf/src/rpcnet.cpp#L41-L52">src/rpcnet.cpp#L41-L52</a>.
+</div>
 </body>
 </html>

@@ -6,5 +6,9 @@
 <h1>createmultisig</h1>
 <h2>v0.10.2</h2>
 createmultisig nrequired ["key",...]<br/><br/>Creates a multi-signature address with n signature of m keys required.<br/>It returns a json object with the address and redeemScript.<br/><br/>Arguments:<br/>1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.<br/>2. "keys"       (string, required) A json array of keys which are bitcoin addresses or hex-encoded public keys<br/>     [<br/>       "key"    (string) bitcoin address or hex-encoded public key<br/>       ,...<br/>     ]<br/><br/>Result:<br/>{<br/>  "address":"multisigaddress",  (string) The value of the new multisig address.<br/>  "redeemScript":"script"       (string) The string value of the hex-encoded redemption script.<br/>}<br/><br/>Examples:<br/><br/>Create a multisig address from 2 addresses<br/>> bitcoin-cli createmultisig 2 "[\\"16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5\\",\\"171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV\\"]"<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createmultisig", "params": [2, "[\\"16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5\\",\\"171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV\\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/16f45600c8c372a738ffef544292864256382601/src/rpcmisc.cpp#L264-L291">src/rpcmisc.cpp#L264-L291</a>.
+</div>
 </body>
 </html>

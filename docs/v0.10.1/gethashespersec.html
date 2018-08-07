@@ -6,5 +6,9 @@
 <h1>gethashespersec</h1>
 <h2>v0.10.1</h2>
 gethashespersec<br/><br/>Returns a recent hashes per second performance measurement while generating.<br/>See the getgenerate and setgenerate calls to turn generation on and off.<br/><br/>Result:<br/>n            (numeric) The recent hashes per second when generation is on (will return 0 if generation is off)<br/><br/>Examples:<br/>> bitcoin-cli gethashespersec <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gethashespersec", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/d8ac90184254fea3a7f4991fd0529dfbd750aea0/src/rpcmining.cpp#L203-L215">src/rpcmining.cpp#L203-L215</a>.
+</div>
 </body>
 </html>

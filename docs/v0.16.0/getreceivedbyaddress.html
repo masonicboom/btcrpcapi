@@ -6,5 +6,9 @@
 <h1>getreceivedbyaddress</h1>
 <h2>v0.16.0</h2>
 getreceivedbyaddress "address" ( minconf )<br/><br/>Returns the total amount received by the given address in transactions with at least minconf confirmations.<br/><br/>Arguments:<br/>1. "address"         (string, required) The bitcoin address for transactions.<br/>2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.<br/><br/>Result:<br/>amount   (numeric) The total amount in " + CURRENCY_UNIT + " received at this address.<br/><br/>Examples:<br/><br/>The amount from transactions with at least 1 confirmation<br/>> bitcoin-cli getreceivedbyaddress "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX"<br/><br/>The amount including unconfirmed transactions, zero confirmations<br/>> bitcoin-cli getreceivedbyaddress "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" 0<br/><br/>The amount with at least 6 confirmations<br/>> bitcoin-cli getreceivedbyaddress "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" 6<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getreceivedbyaddress", "params": ["1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/4b4d7eb255ca8f9a94b92479e6061d129c91a991/src/wallet/rpcwallet.cpp#L652-L677">src/wallet/rpcwallet.cpp#L652-L677</a>.
+</div>
 </body>
 </html>

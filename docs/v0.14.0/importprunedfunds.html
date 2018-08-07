@@ -6,5 +6,9 @@
 <h1>importprunedfunds</h1>
 <h2>v0.14.0</h2>
 importprunedfunds<br/><br/>Imports funds without rescan. Corresponding address or script must previously be included in wallet. Aimed towards pruned wallets. The end-user is responsible to import additional transactions that subsequently spend the imported outputs or rescan after the point in the blockchain the transaction is included.<br/><br/>Arguments:<br/>1. "rawtransaction" (string, required) A raw transaction in hex funding an already-existing address in wallet<br/>2. "txoutproof"     (string, required) The hex output from gettxoutproof that contains the transaction<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/43a987c1cbcd04b9c59052606c3c31c56abc826e/src/wallet/rpcdump.cpp#L255-L267">src/wallet/rpcdump.cpp#L255-L267</a>.
+</div>
 </body>
 </html>

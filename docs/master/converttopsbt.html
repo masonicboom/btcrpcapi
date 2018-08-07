@@ -6,5 +6,9 @@
 <h1>converttopsbt</h1>
 <h2>master</h2>
 converttopsbt "hexstring" ( permitsigdata iswitness )<br/><br/>Converts a network serialized transaction to a PSBT. This should be used only with createrawtransaction and fundrawtransaction<br/>createpsbt and walletcreatefundedpsbt should be used for new applications.<br/><br/>Arguments:<br/>1. "hexstring"              (string, required) The hex string of a raw transaction<br/>2. permitsigdata           (boolean, optional, default=false) If true, any signatures in the input will be discarded and conversion.<br/>                              will continue. If false, RPC will fail if any signatures are present.<br/>3. iswitness               (boolean, optional) Whether the transaction hex is a serialized witness transaction.<br/>                              If iswitness is not present, heuristic tests will be used in decoding. If true, only witness deserializaion<br/>                              will be tried. If false, only non-witness deserialization wil be tried. Only has an effect if<br/>                              permitsigdata is true.<br/><br/>Result:<br/>  "psbt"        (string)  The resulting raw transaction (base64-encoded string)<br/><br/>Examples:<br/><br/>Create a transaction<br/>> bitcoin-cli createrawtransaction "[{\\"txid\\":\\"myid\\",\\"vout\\":0}]" "[{\\"data\\":\\"00010203\\"}]"<br/><br/>Convert the transaction to a PSBT<br/>> bitcoin-cli converttopsbt "rawtransaction"<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/0fb9c87815d180031b7924607946e51f860c3ba8/src/rpc/rawtransaction.cpp#L1739-L1761">src/rpc/rawtransaction.cpp#L1739-L1761</a>.
+</div>
 </body>
 </html>

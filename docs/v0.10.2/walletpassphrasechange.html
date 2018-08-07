@@ -6,5 +6,9 @@
 <h1>walletpassphrasechange</h1>
 <h2>v0.10.2</h2>
 walletpassphrasechange "oldpassphrase" "newpassphrase"<br/><br/>Changes the wallet passphrase from 'oldpassphrase' to 'newpassphrase'.<br/><br/>Arguments:<br/>1. "oldpassphrase"      (string) The current passphrase<br/>2. "newpassphrase"      (string) The new passphrase<br/><br/>Examples:<br/>> bitcoin-cli walletpassphrasechange "old one" "new one"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletpassphrasechange", "params": ["old one", "new one"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/16f45600c8c372a738ffef544292864256382601/src/rpcwallet.cpp#L1709-L1721">src/rpcwallet.cpp#L1709-L1721</a>.
+</div>
 </body>
 </html>

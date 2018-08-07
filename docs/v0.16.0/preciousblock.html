@@ -6,5 +6,9 @@
 <h1>preciousblock</h1>
 <h2>v0.16.0</h2>
 preciousblock "blockhash"<br/><br/>Treats a block as if it were received before others with the same work.<br/><br/>A later preciousblock call can override the effect of an earlier one.<br/><br/>The effects of preciousblock are not retained across restarts.<br/><br/>Arguments:<br/>1. "blockhash"   (string, required) the hash of the block to mark as precious<br/><br/>Result:<br/><br/>Examples:<br/>> bitcoin-cli preciousblock "blockhash"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "preciousblock", "params": ["blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/4b4d7eb255ca8f9a94b92479e6061d129c91a991/src/rpc/blockchain.cpp#L1404-L1418">src/rpc/blockchain.cpp#L1404-L1418</a>.
+</div>
 </body>
 </html>

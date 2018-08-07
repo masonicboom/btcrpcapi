@@ -6,5 +6,9 @@
 <h1>createrawtransaction</h1>
 <h2>v0.11.2</h2>
 createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,...}<br/><br/>Create a transaction spending the given inputs and sending to the given addresses.<br/>Returns hex-encoded raw transaction.<br/>Note that the transaction's inputs are not signed, and<br/>it is not stored in the wallet or transmitted to the network.<br/><br/>Arguments:<br/>1. "transactions"        (string, required) A json array of json objects<br/>     [<br/>       {<br/>         "txid":"id",  (string, required) The transaction id<br/>         "vout":n        (numeric, required) The output number<br/>       }<br/>       ,...<br/>     ]<br/>2. "addresses"           (string, required) a json object with addresses as keys and amounts as values<br/>    {<br/>      "address": x.xxx   (numeric, required) The key is the bitcoin address, the value is the btc amount<br/>      ,...<br/>    }<br/><br/>Result:<br/>"transaction"            (string) hex string of the transaction<br/><br/>Examples<br/>> bitcoin-cli createrawtransaction "[{\\"txid\\":\\"myid\\",\\"vout\\":0}]" "{\\"address\\":0.01}"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\\"txid\\":\\"myid\\",\\"vout\\":0}]", "{\\"address\\":0.01}"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/7e278929df53e1fb4191bc5ba3176a177ce718bf/src/rpcrawtransaction.cpp#L311-L342">src/rpcrawtransaction.cpp#L311-L342</a>.
+</div>
 </body>
 </html>

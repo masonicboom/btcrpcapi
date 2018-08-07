@@ -6,5 +6,9 @@
 <h1>createwitnessaddress</h1>
 <h2>v0.13.0</h2>
 createwitnessaddress "script"<br/><br/>Creates a witness address for a particular script.<br/>It returns a json object with the address and witness script.<br/><br/>Arguments:<br/>1. "script"       (string, required) A hex encoded script<br/><br/>Result:<br/>{<br/>  "address":"multisigaddress",  (string) The value of the new address (P2SH of witness script).<br/>  "witnessScript":"script"      (string) The string value of the hex-encoded witness script.<br/>}<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/a402396dce64c42ea73535b7dde4a9164d430438/src/rpc/misc.cpp#L322-L338">src/rpc/misc.cpp#L322-L338</a>.
+</div>
 </body>
 </html>

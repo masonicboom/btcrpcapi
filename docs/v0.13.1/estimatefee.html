@@ -6,5 +6,9 @@
 <h1>estimatefee</h1>
 <h2>v0.13.1</h2>
 estimatefee nblocks<br/><br/>Estimates the approximate fee per kilobyte needed for a transaction to begin<br/>confirmation within nblocks blocks.<br/><br/>Arguments:<br/>1. nblocks     (numeric)<br/><br/>Result:<br/>n              (numeric) estimated fee-per-kilobyte<br/><br/>A negative value is returned if not enough transactions and blocks<br/>have been observed to make an estimate.<br/><br/>Example:<br/>> bitcoin-cli estimatefee 6<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/03422e564b552c1d3c16ae854f8471f7cb39e25d/src/rpc/mining.cpp#L779-L795">src/rpc/mining.cpp#L779-L795</a>.
+</div>
 </body>
 </html>

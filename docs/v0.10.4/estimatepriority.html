@@ -6,5 +6,9 @@
 <h1>estimatepriority</h1>
 <h2>v0.10.4</h2>
 estimatepriority nblocks<br/><br/>Estimates the approximate priority<br/>a zero-fee transaction needs to begin confirmation<br/>within nblocks blocks.<br/><br/>Arguments:<br/>1. nblocks     (numeric)<br/><br/>Result:<br/>n :    (numeric) estimated priority<br/><br/>-1.0 is returned if not enough transactions and<br/>blocks have been observed to make an estimate.<br/><br/>Example:<br/>> bitcoin-cli estimatepriority 6<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/c2e7baf2bdb2e2c163bcadaebe68ee00c9a27e7c/src/rpcmining.cpp#L706-L723">src/rpcmining.cpp#L706-L723</a>.
+</div>
 </body>
 </html>

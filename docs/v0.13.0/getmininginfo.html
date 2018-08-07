@@ -6,5 +6,9 @@
 <h1>getmininginfo</h1>
 <h2>v0.13.0</h2>
 getmininginfo<br/><br/>Returns a json object containing mining-related information.<br/>Result:<br/>{<br/>  "blocks": nnn,             (numeric) The current block<br/>  "currentblocksize": nnn,   (numeric) The last block size<br/>  "currentblockweight": nnn, (numeric) The last block weight<br/>  "currentblocktx": nnn,     (numeric) The last block transaction<br/>  "difficulty": xxx.xxxxx    (numeric) The current difficulty<br/>  "errors": "..."          (string) Current errors<br/>  "pooledtx": n              (numeric) The size of the mem pool<br/>  "testnet": true|false      (boolean) If using testnet or not<br/>  "chain": "xxxx",         (string) current network name as defined in BIP70 (main, test, regtest)<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getmininginfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmininginfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/a402396dce64c42ea73535b7dde4a9164d430438/src/rpc/mining.cpp#L216-L237">src/rpc/mining.cpp#L216-L237</a>.
+</div>
 </body>
 </html>

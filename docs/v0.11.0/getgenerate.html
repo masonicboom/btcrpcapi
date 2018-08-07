@@ -6,5 +6,9 @@
 <h1>getgenerate</h1>
 <h2>v0.11.0</h2>
 getgenerate<br/><br/>Return if the server is set to generate coins or not. The default is false.<br/>It is set with the command line argument -gen (or bitcoin.conf setting gen)<br/>It can also be set with the setgenerate call.<br/><br/>Result<br/>true|false      (boolean) If the server is set to generate coins or not<br/><br/>Examples:<br/>> bitcoin-cli getgenerate <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getgenerate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/d26f951802c762de04fb68e1a112d611929920ba/src/rpcmining.cpp#L97-L110">src/rpcmining.cpp#L97-L110</a>.
+</div>
 </body>
 </html>

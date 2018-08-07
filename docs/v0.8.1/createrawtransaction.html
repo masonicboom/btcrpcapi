@@ -6,5 +6,9 @@
 <h1>createrawtransaction</h1>
 <h2>v0.8.1</h2>
 createrawtransaction [{"txid":txid,"vout":n},...] {address:amount,...}<br/>Create a transaction spending given inputs<br/>(array of objects containing transaction id and output number),<br/>sending to given address(es).<br/>Returns hex-encoded raw transaction.<br/>Note that the transaction's inputs are not signed, and<br/>it is not stored in the wallet or transmitted to the network.
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/34d62a8efe4c51b2dd73d56fa03001d4accee4ad/src/rpcrawtransaction.cpp#L247-L257">src/rpcrawtransaction.cpp#L247-L257</a>.
+</div>
 </body>
 </html>

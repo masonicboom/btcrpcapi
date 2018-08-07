@@ -6,5 +6,9 @@
 <h1>estimatesmartfee</h1>
 <h2>v0.16.1</h2>
 estimatesmartfee conf_target ("estimate_mode")<br/><br/>Estimates the approximate fee per kilobyte needed for a transaction to begin<br/>confirmation within conf_target blocks if possible and return the number of blocks<br/>for which the estimate is valid. Uses virtual transaction size as defined<br/>in BIP 141 (witness data is discounted).<br/><br/>Arguments:<br/>1. conf_target     (numeric) Confirmation target in blocks (1 - 1008)<br/>2. "estimate_mode" (string, optional, default=CONSERVATIVE) The fee estimate mode.<br/>                   Whether to return a more conservative estimate which also satisfies<br/>                   a longer history. A conservative estimate potentially returns a<br/>                   higher feerate and is more likely to be sufficient for the desired<br/>                   target, but is not as responsive to short term drops in the<br/>                   prevailing fee market.  Must be one of:<br/>       "UNSET" (defaults to CONSERVATIVE)<br/>       "ECONOMICAL"<br/>       "CONSERVATIVE"<br/><br/>Result:<br/>{<br/>  "feerate" : x.x,     (numeric, optional) estimate fee rate in " + CURRENCY_UNIT + "/kB<br/>  "errors": [ str... ] (json array of strings, optional) Errors encountered during processing<br/>  "blocks" : n         (numeric) block number where estimate was found<br/>}<br/><br/>The request target will be clamped between 2 and the highest target<br/>fee estimation is able to return based on how long it has been running.<br/>An error is returned if not enough transactions and blocks<br/>have been observed to make an estimate for any number of blocks.<br/><br/>Example:<br/>> bitcoin-cli estimatesmartfee 6<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/dac5d68fc6cf136e0d7b21b9ed4fa053d54e6059/src/rpc/mining.cpp#L813-L846">src/rpc/mining.cpp#L813-L846</a>.
+</div>
 </body>
 </html>

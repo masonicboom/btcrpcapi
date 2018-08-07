@@ -6,5 +6,9 @@
 <h1>backupwallet</h1>
 <h2>v0.16.2</h2>
 backupwallet "destination"<br/><br/>Safely copies current wallet file to destination, which can be a directory or a path with filename.<br/><br/>Arguments:<br/>1. "destination"   (string) The destination directory or file<br/><br/>Examples:<br/>> bitcoin-cli backupwallet "backup.dat"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "backupwallet", "params": ["backup.dat"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/2848aa808fde462c27bc36de982d7ed74e882a7b/src/wallet/rpcwallet.cpp#L2230-L2246">src/wallet/rpcwallet.cpp#L2230-L2246</a>.
+</div>
 </body>
 </html>

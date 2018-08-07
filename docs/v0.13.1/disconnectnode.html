@@ -6,5 +6,9 @@
 <h1>disconnectnode</h1>
 <h2>v0.13.1</h2>
 disconnectnode "node" <br/><br/>Immediately disconnects from the specified node.<br/><br/>Arguments:<br/>1. "node"     (string, required) The node (see getpeerinfo for nodes)<br/><br/>Examples:<br/>> bitcoin-cli disconnectnode "192.168.0.6:8333"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "disconnectnode", "params": ["192.168.0.6:8333"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/03422e564b552c1d3c16ae854f8471f7cb39e25d/src/rpc/net.cpp#L247-L258">src/rpc/net.cpp#L247-L258</a>.
+</div>
 </body>
 </html>

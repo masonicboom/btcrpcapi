@@ -6,5 +6,9 @@
 <h1>pruneblockchain</h1>
 <h2>v0.14.2</h2>
 pruneblockchain<br/><br/>Arguments:<br/>1. "height"       (numeric, required) The block height to prune up to. May be set to a discrete height, or a unix timestamp<br/>                  to prune blocks whose block time is at least 2 hours older than the provided timestamp.<br/><br/>Result:<br/>n    (numeric) Height of the last block pruned.<br/><br/>Examples:<br/>> bitcoin-cli pruneblockchain 1000<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/fc61c8322bd7288f7546d18ad04c36c345be13cd/src/rpc/blockchain.cpp#L816-L828">src/rpc/blockchain.cpp#L816-L828</a>.
+</div>
 </body>
 </html>

@@ -6,5 +6,9 @@
 <h1>listaddressgroupings</h1>
 <h2>v0.16.0</h2>
 listaddressgroupings<br/><br/>Lists groups of addresses which have had their common ownership<br/>made public by common use as inputs or as the resulting change<br/>in past transactions<br/><br/>Result:<br/>[<br/>  [<br/>    [<br/>      "address",            (string) The bitcoin address<br/>      amount,                 (numeric) The amount in " + CURRENCY_UNIT + "<br/>      "account"             (string, optional) DEPRECATED. The account<br/>    ]<br/>    ,...<br/>  ]<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli listaddressgroupings <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressgroupings", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/4b4d7eb255ca8f9a94b92479e6061d129c91a991/src/wallet/rpcwallet.cpp#L532-L560">src/wallet/rpcwallet.cpp#L532-L560</a>.
+</div>
 </body>
 </html>

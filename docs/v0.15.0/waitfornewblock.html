@@ -6,5 +6,9 @@
 <h1>waitfornewblock</h1>
 <h2>v0.15.0</h2>
 waitfornewblock (timeout)<br/><br/>Waits for a specific new block and returns useful info about it.<br/><br/>Returns the current block on timeout or exit.<br/><br/>Arguments:<br/>1. timeout (int, optional, default=0) Time in milliseconds to wait for a response. 0 indicates no timeout.<br/><br/>Result:<br/>{                           (json object)<br/>  "hash" : {       (string) The blockhash<br/>  "height" : {     (int) Block height<br/>}<br/><br/>Examples:<br/>> bitcoin-cli waitfornewblock 1000<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "waitfornewblock", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/3751912e8e044958d5ccea847a3f8eab0b026dc1/src/rpc/blockchain.cpp#L193-L210">src/rpc/blockchain.cpp#L193-L210</a>.
+</div>
 </body>
 </html>

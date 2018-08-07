@@ -6,5 +6,9 @@
 <h1>removeprunedfunds</h1>
 <h2>v0.14.1</h2>
 removeprunedfunds "txid"<br/><br/>Deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds. This will effect wallet balances.<br/><br/>Arguments:<br/>1. "txid"           (string, required) The hex-encoded id of the transaction you are deleting<br/><br/>Examples:<br/>> bitcoin-cli removeprunedfunds "a8d0c0184dde994a09ec054286f1ce581bebf46446a512166eae7628734ea0a5"<br/><br/>As a JSON-RPC call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "removprunedfunds", "params": ["a8d0c0184dde994a09ec054286f1ce581bebf46446a512166eae7628734ea0a5"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/964a185cc83af34587194a6ecda3ed9cf6b49263/src/wallet/rpcdump.cpp#L316-L331">src/wallet/rpcdump.cpp#L316-L331</a>.
+</div>
 </body>
 </html>

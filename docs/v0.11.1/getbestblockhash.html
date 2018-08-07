@@ -6,5 +6,9 @@
 <h1>getbestblockhash</h1>
 <h2>v0.11.1</h2>
 getbestblockhash<br/><br/>Returns the hash of the best (tip) block in the longest block chain.<br/><br/>Result<br/>"hex"      (string) the block hash hex encoded<br/><br/>Examples<br/>> bitcoin-cli getbestblockhash <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbestblockhash", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/cf33f196e79b1e61d6266f8e5190a0c4bfae7224/src/rpcblockchain.cpp#L113-L124">src/rpcblockchain.cpp#L113-L124</a>.
+</div>
 </body>
 </html>

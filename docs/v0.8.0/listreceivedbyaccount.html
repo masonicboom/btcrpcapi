@@ -6,5 +6,9 @@
 <h1>listreceivedbyaccount</h1>
 <h2>v0.8.0</h2>
 listreceivedbyaccount [minconf=1] [includeempty=false]<br/>[minconf] is the minimum number of confirmations before payments are included.<br/>[includeempty] whether to include accounts that haven't received any payments.<br/>Returns an array of objects containing:<br/>  "account" : the account of the receiving addresses<br/>  "amount" : total amount received by addresses with this account<br/>  "confirmations" : number of confirmations of the most recent transaction included
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/44d7f4cbebd446f8f4a48ff9048d4549c0e2448a/src/rpcwallet.cpp#L928-L938">src/rpcwallet.cpp#L928-L938</a>.
+</div>
 </body>
 </html>

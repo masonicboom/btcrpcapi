@@ -6,5 +6,9 @@
 <h1>verifychain</h1>
 <h2>v0.9.0</h2>
 verifychain ( checklevel numblocks )<br/><br/>Verifies blockchain database.<br/><br/>Arguments:<br/>1. checklevel   (numeric, optional, 0-4, default=3) How thorough the block verification is.<br/>2. numblocks    (numeric, optional, default=288, 0=all) The number of blocks to check.<br/><br/>Result:<br/>true|false       (boolean) Verified or not<br/><br/>Examples:<br/>> bitcoin-cli verifychain <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifychain", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/92d25e4eebbc20c4b056faeab688b2cef5790bac/src/rpcblockchain.cpp#L405-L419">src/rpcblockchain.cpp#L405-L419</a>.
+</div>
 </body>
 </html>

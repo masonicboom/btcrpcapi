@@ -6,5 +6,9 @@
 <h1>generatetoaddress</h1>
 <h2>master</h2>
 generatetoaddress nblocks address (maxtries)<br/><br/>Mine blocks immediately to a specified address (before the RPC call returns)<br/><br/>Arguments:<br/>1. nblocks      (numeric, required) How many blocks are generated immediately.<br/>2. address      (string, required) The address to send the newly generated bitcoin to.<br/>3. maxtries     (numeric, optional) How many iterations to try (default = 1000000).<br/><br/>Result:<br/>[ blockhashes ]     (array) hashes of blocks generated<br/><br/>Examples:<br/><br/>Generate 11 blocks to myaddress<br/>> bitcoin-cli generatetoaddress 11 "myaddress"<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/0fb9c87815d180031b7924607946e51f860c3ba8/src/rpc/mining.cpp#L153-L168">src/rpc/mining.cpp#L153-L168</a>.
+</div>
 </body>
 </html>

@@ -6,5 +6,9 @@
 <h1>invalidateblock</h1>
 <h2>v0.13.1</h2>
 invalidateblock "hash"<br/><br/>Permanently marks a block as invalid, as if it violated a consensus rule.<br/><br/>Arguments:<br/>1. hash   (string, required) the hash of the block to mark as invalid<br/><br/>Result:<br/><br/>Examples:<br/>> bitcoin-cli invalidateblock "blockhash"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "invalidateblock", "params": ["blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/03422e564b552c1d3c16ae854f8471f7cb39e25d/src/rpc/blockchain.cpp#L1113-L1125">src/rpc/blockchain.cpp#L1113-L1125</a>.
+</div>
 </body>
 </html>

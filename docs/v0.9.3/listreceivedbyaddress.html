@@ -6,5 +6,9 @@
 <h1>listreceivedbyaddress</h1>
 <h2>v0.9.3</h2>
 listreceivedbyaddress ( minconf includeempty )<br/><br/>List balances by receiving address.<br/><br/>Arguments:<br/>1. minconf       (numeric, optional, default=1) The minimum number of confirmations before payments are included.<br/>2. includeempty  (numeric, optional, dafault=false) Whether to include addresses that haven't received any payments.<br/><br/>Result:<br/>[<br/>  {<br/>    "address" : "receivingaddress",  (string) The receiving address<br/>    "account" : "accountname",       (string) The account of the receiving address. The default account is "".<br/>    "amount" : x.xxx,                  (numeric) The total amount in btc received by the address<br/>    "confirmations" : n                (numeric) The number of confirmations of the most recent transaction included<br/>  }<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli listreceivedbyaddress <br/>> bitcoin-cli listreceivedbyaddress 6 true<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listreceivedbyaddress", "params": [6, true] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/40d20412ff173e8eea2f456fd749663c8cabda18/src/rpcwallet.cpp#L1031-L1056">src/rpcwallet.cpp#L1031-L1056</a>.
+</div>
 </body>
 </html>

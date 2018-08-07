@@ -6,5 +6,9 @@
 <h1>dumpprivkey</h1>
 <h2>v0.14.0</h2>
 dumpprivkey "address"<br/><br/>Reveals the private key corresponding to 'address'.<br/>Then the importprivkey can be used with this output<br/><br/>Arguments:<br/>1. "address"   (string, required) The bitcoin address for the private key<br/><br/>Result:<br/>"key"                (string) The private key<br/><br/>Examples:<br/>> bitcoin-cli dumpprivkey "myaddress"<br/>> bitcoin-cli importprivkey "mykey"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumpprivkey", "params": ["myaddress"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/43a987c1cbcd04b9c59052606c3c31c56abc826e/src/wallet/rpcdump.cpp#L514-L532">src/wallet/rpcdump.cpp#L514-L532</a>.
+</div>
 </body>
 </html>

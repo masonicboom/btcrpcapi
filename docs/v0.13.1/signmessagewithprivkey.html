@@ -6,5 +6,9 @@
 <h1>signmessagewithprivkey</h1>
 <h2>v0.13.1</h2>
 signmessagewithprivkey "privkey" "message"<br/><br/>Sign a message with the private key of an address<br/><br/>Arguments:<br/>1. "privkey"         (string, required) The private key to sign the message with.<br/>2. "message"         (string, required) The message to create a signature of.<br/><br/>Result:<br/>"signature"          (string) The signature of the message encoded in base 64<br/><br/>Examples:<br/><br/>Create the signature<br/>> bitcoin-cli signmessagewithprivkey "privkey" "my message"<br/><br/>Verify the signature<br/>> bitcoin-cli verifymessage "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XZ" "signature" "my message"<br/><br/>As json rpc<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "signmessagewithprivkey", "params": ["privkey", "my message"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/03422e564b552c1d3c16ae854f8471f7cb39e25d/src/rpc/misc.cpp#L376-L394">src/rpc/misc.cpp#L376-L394</a>.
+</div>
 </body>
 </html>

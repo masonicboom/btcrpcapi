@@ -6,5 +6,9 @@
 <h1>listreceivedbyaccount</h1>
 <h2>v0.10.3</h2>
 listreceivedbyaccount ( minconf includeempty includeWatchonly)<br/><br/>List balances by account.<br/><br/>Arguments:<br/>1. minconf      (numeric, optional, default=1) The minimum number of confirmations before payments are included.<br/>2. includeempty (boolean, optional, default=false) Whether to include accounts that haven't received any payments.<br/>3. includeWatchonly (bool, optional, default=false) Whether to include watchonly addresses (see 'importaddress').<br/><br/>Result:<br/>[<br/>  {<br/>    "involvesWatchonly" : "true",    (bool) Only returned if imported addresses were involved in transaction<br/>    "account" : "accountname",  (string) The account name of the receiving account<br/>    "amount" : x.xxx,             (numeric) The total amount received by addresses with this account<br/>    "confirmations" : n           (numeric) The number of confirmations of the most recent transaction included<br/>  }<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli listreceivedbyaccount <br/>> bitcoin-cli listreceivedbyaccount 6 true<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listreceivedbyaccount", "params": [6, true, true] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/8d598c26e34e36619180f73926043a43bfe68879/src/rpcwallet.cpp#L1123-L1149">src/rpcwallet.cpp#L1123-L1149</a>.
+</div>
 </body>
 </html>

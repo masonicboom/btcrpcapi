@@ -6,5 +6,9 @@
 <h1>getaddressesbyaccount</h1>
 <h2>v0.11.0</h2>
 getaddressesbyaccount "account"<br/><br/>DEPRECATED. Returns the list of addresses for the given account.<br/><br/>Arguments:<br/>1. "account"  (string, required) The account name.<br/><br/>Result:<br/>[                     (json array of string)<br/>  "bitcoinaddress"  (string) a bitcoin address associated with the given account<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli getaddressesbyaccount "tabby"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressesbyaccount", "params": ["tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/d26f951802c762de04fb68e1a112d611929920ba/src/wallet/rpcwallet.cpp#L313-L332">src/wallet/rpcwallet.cpp#L313-L332</a>.
+</div>
 </body>
 </html>

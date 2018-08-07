@@ -6,5 +6,9 @@
 <h1>waitforblockheight</h1>
 <h2>master</h2>
 waitforblockheight <height> (timeout)<br/><br/>Waits for (at least) block height and returns the height and hash<br/>of the current tip.<br/><br/>Returns the current block on timeout or exit.<br/><br/>Arguments:<br/>1. height  (required, int) Block height to wait for (int)<br/>2. timeout (int, optional, default=0) Time in milliseconds to wait for a response. 0 indicates no timeout.<br/><br/>Result:<br/>{                           (json object)<br/>  "hash" : {       (string) The blockhash<br/>  "height" : {     (int) Block height<br/>}<br/><br/>Examples:<br/>> bitcoin-cli waitforblockheight "100", 1000<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "waitforblockheight", "params": ["100", 1000] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/0fb9c87815d180031b7924607946e51f860c3ba8/src/rpc/blockchain.cpp#L281-L300">src/rpc/blockchain.cpp#L281-L300</a>.
+</div>
 </body>
 </html>

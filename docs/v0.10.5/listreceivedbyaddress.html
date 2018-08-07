@@ -6,5 +6,9 @@
 <h1>listreceivedbyaddress</h1>
 <h2>v0.10.5</h2>
 listreceivedbyaddress ( minconf includeempty includeWatchonly)<br/><br/>List balances by receiving address.<br/><br/>Arguments:<br/>1. minconf       (numeric, optional, default=1) The minimum number of confirmations before payments are included.<br/>2. includeempty  (numeric, optional, default=false) Whether to include addresses that haven't received any payments.<br/>3. includeWatchonly (bool, optional, default=false) Whether to include watchonly addresses (see 'importaddress').<br/><br/>Result:<br/>[<br/>  {<br/>    "involvesWatchonly" : "true",    (bool) Only returned if imported addresses were involved in transaction<br/>    "address" : "receivingaddress",  (string) The receiving address<br/>    "account" : "accountname",       (string) The account of the receiving address. The default account is "".<br/>    "amount" : x.xxx,                  (numeric) The total amount in btc received by the address<br/>    "confirmations" : n                (numeric) The number of confirmations of the most recent transaction included<br/>  }<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli listreceivedbyaddress <br/>> bitcoin-cli listreceivedbyaddress 6 true<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listreceivedbyaddress", "params": [6, true, true] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/9cea1698132ab68b0d6b204ff5c8d154d9192b19/src/rpcwallet.cpp#L1091-L1118">src/rpcwallet.cpp#L1091-L1118</a>.
+</div>
 </body>
 </html>

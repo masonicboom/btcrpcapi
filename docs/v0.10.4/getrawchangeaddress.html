@@ -6,5 +6,9 @@
 <h1>getrawchangeaddress</h1>
 <h2>v0.10.4</h2>
 getrawchangeaddress<br/><br/>Returns a new Bitcoin address, for receiving change.<br/>This is for use with raw transactions, NOT normal use.<br/><br/>Result:<br/>"address"    (string) The address<br/><br/>Examples:<br/>> bitcoin-cli getrawchangeaddress <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawchangeaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/c2e7baf2bdb2e2c163bcadaebe68ee00c9a27e7c/src/rpcwallet.cpp#L181-L193">src/rpcwallet.cpp#L181-L193</a>.
+</div>
 </body>
 </html>

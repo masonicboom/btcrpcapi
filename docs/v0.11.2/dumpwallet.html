@@ -6,5 +6,9 @@
 <h1>dumpwallet</h1>
 <h2>v0.11.2</h2>
 dumpwallet "filename"<br/><br/>Dumps all wallet keys in a human-readable format.<br/><br/>Arguments:<br/>1. "filename"    (string, required) The filename<br/><br/>Examples:<br/>> bitcoin-cli dumpwallet "test"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumpwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/7e278929df53e1fb4191bc5ba3176a177ce718bf/src/wallet/rpcdump.cpp#L361-L375">src/wallet/rpcdump.cpp#L361-L375</a>.
+</div>
 </body>
 </html>

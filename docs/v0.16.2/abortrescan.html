@@ -6,5 +6,9 @@
 <h1>abortrescan</h1>
 <h2>v0.16.2</h2>
 abortrescan<br/><br/>Stops current wallet rescan triggered by an RPC call, e.g. by an importprivkey call.<br/><br/>Examples:<br/><br/>Import a private key<br/>> bitcoin-cli importprivkey "mykey"<br/><br/>Abort the running wallet rescan<br/>> bitcoin-cli abortrescan <br/><br/>As a JSON-RPC call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "abortrescan", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/2848aa808fde462c27bc36de982d7ed74e882a7b/src/wallet/rpcdump.cpp#L189-L207">src/wallet/rpcdump.cpp#L189-L207</a>.
+</div>
 </body>
 </html>

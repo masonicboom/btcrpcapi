@@ -6,5 +6,9 @@
 <h1>getbalance</h1>
 <h2>v0.13.1</h2>
 getbalance ( "account" minconf includeWatchonly )<br/><br/>If account is not specified, returns the server's total available balance.<br/>If account is specified (DEPRECATED), returns the balance in the account.<br/>Note that the account "" is not the same as leaving the parameter out.<br/>The server total may be different to the balance in the default "" account.<br/><br/>Arguments:<br/>1. "account"      (string, optional) DEPRECATED. The selected account, or "*" for entire wallet. It may be the default account using "".<br/>2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.<br/>3. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')<br/><br/>Result:<br/>amount              (numeric) The total amount in " + CURRENCY_UNIT + " received for this account.<br/><br/>Examples:<br/><br/>The total amount in the wallet<br/>> bitcoin-cli getbalance <br/><br/>The total amount in the wallet at least 5 blocks confirmed<br/>> bitcoin-cli getbalance "*" 6<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbalance", "params": ["*", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/03422e564b552c1d3c16ae854f8471f7cb39e25d/src/wallet/rpcwallet.cpp#L649-L674">src/wallet/rpcwallet.cpp#L649-L674</a>.
+</div>
 </body>
 </html>

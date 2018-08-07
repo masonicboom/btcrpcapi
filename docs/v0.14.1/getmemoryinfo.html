@@ -6,5 +6,9 @@
 <h1>getmemoryinfo</h1>
 <h2>v0.14.1</h2>
 getmemoryinfo<br/>Returns an object containing information about memory usage.<br/><br/>Result:<br/>{<br/>  "locked": {               (json object) Information about locked memory manager<br/>    "used": xxxxx,          (numeric) Number of bytes used<br/>    "free": xxxxx,          (numeric) Number of bytes available in current arenas<br/>    "total": xxxxxxx,       (numeric) Total number of bytes managed<br/>    "locked": xxxxxx,       (numeric) Amount of bytes that succeeded locking. If this number is smaller than total, locking pages failed at some point and key data could be swapped to disk.<br/>    "chunks_used": xxxxx,   (numeric) Number allocated chunks<br/>    "chunks_free": xxxxx,   (numeric) Number unused chunks<br/>  }<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getmemoryinfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmemoryinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/964a185cc83af34587194a6ecda3ed9cf6b49263/src/rpc/misc.cpp#L469-L492">src/rpc/misc.cpp#L469-L492</a>.
+</div>
 </body>
 </html>

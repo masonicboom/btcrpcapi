@@ -6,5 +6,9 @@
 <h1>importwallet</h1>
 <h2>v0.9.5</h2>
 importwallet "filename"<br/><br/>Imports keys from a wallet dump file (see dumpwallet).<br/><br/>Arguments:<br/>1. "filename"    (string, required) The wallet file<br/><br/>Examples:<br/><br/>Dump the wallet<br/>> bitcoin-cli dumpwallet "test"<br/><br/>Import the wallet<br/>> bitcoin-cli importwallet "test"<br/><br/>Import using the json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/b880967f74aadc6b817cdb46a33548bc55bfc117/src/rpcdump.cpp#L135-L150">src/rpcdump.cpp#L135-L150</a>.
+</div>
 </body>
 </html>

@@ -6,5 +6,9 @@
 <h1>listunspent</h1>
 <h2>v0.7.2</h2>
 listunspent [minconf=1] [maxconf=9999999]  ["address",...]<br/>Returns array of unspent transaction outputs<br/>with between minconf and maxconf (inclusive) confirmations.<br/>Optionally filtered to only include txouts paid to specified addresses.<br/>Results are an array of Objects, each of which has:<br/>{txid, vout, scriptPubKey, amount, confirmations}
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/32a928e1d7b8c2db1f6fa8c2b5e716706c528fe3/src/rpcrawtransaction.cpp#L136-L145">src/rpcrawtransaction.cpp#L136-L145</a>.
+</div>
 </body>
 </html>

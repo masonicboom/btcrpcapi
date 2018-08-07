@@ -6,5 +6,9 @@
 <h1>settxfee</h1>
 <h2>v0.10.4</h2>
 settxfee amount<br/><br/>Set the transaction fee per kB.<br/><br/>Arguments:<br/>1. amount         (numeric, required) The transaction fee in BTC/kB rounded to the nearest 0.00000001<br/><br/>Result<br/>true|false        (boolean) Returns true if successful<br/><br/>Examples:<br/>> bitcoin-cli settxfee 0.00001<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "settxfee", "params": [0.00001] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/c2e7baf2bdb2e2c163bcadaebe68ee00c9a27e7c/src/rpcwallet.cpp#L1959-L1972">src/rpcwallet.cpp#L1959-L1972</a>.
+</div>
 </body>
 </html>

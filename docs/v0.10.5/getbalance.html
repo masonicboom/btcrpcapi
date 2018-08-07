@@ -6,5 +6,9 @@
 <h1>getbalance</h1>
 <h2>v0.10.5</h2>
 getbalance ( "account" minconf includeWatchonly )<br/><br/>If account is not specified, returns the server's total available balance.<br/>If account is specified, returns the balance in the account.<br/>Note that the account "" is not the same as leaving the parameter out.<br/>The server total may be different to the balance in the default "" account.<br/><br/>Arguments:<br/>1. "account"      (string, optional) The selected account, or "*" for entire wallet. It may be the default account using "".<br/>2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.<br/>3. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')<br/><br/>Result:<br/>amount              (numeric) The total amount in btc received for this account.<br/><br/>Examples:<br/><br/>The total amount in the server across all accounts<br/>> bitcoin-cli getbalance <br/><br/>The total amount in the server across all accounts, with at least 5 confirmations<br/>> bitcoin-cli getbalance "*" 6<br/><br/>The total amount in the default account with at least 1 confirmation<br/>> bitcoin-cli getbalance ""<br/><br/>The total amount in the account named tabby with at least 6 confirmations<br/>> bitcoin-cli getbalance "tabby" 6<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbalance", "params": ["tabby", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/9cea1698132ab68b0d6b204ff5c8d154d9192b19/src/rpcwallet.cpp#L625-L651">src/rpcwallet.cpp#L625-L651</a>.
+</div>
 </body>
 </html>
