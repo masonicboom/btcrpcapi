@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>encryptwallet</h1>
+<h2>wallet</h2>
 <h2>v0.15.1</h2>
 encryptwallet "passphrase"<br/><br/>Encrypts the wallet with 'passphrase'. This is for first time encryption.<br/>After this, any calls that interact with private keys such as sending or signing <br/>will require the passphrase to be set prior the making these calls.<br/>Use the walletpassphrase call for this, and then walletlock call.<br/>If the wallet is already encrypted, use the walletpassphrasechange call.<br/>Note that this will shutdown the server.<br/><br/>Arguments:<br/>1. "passphrase"    (string) The pass phrase to encrypt the wallet with. It must be at least 1 character, but should be long.<br/><br/>Examples:<br/><br/>Encrypt your wallet<br/>> bitcoin-cli encryptwallet "my pass phrase"<br/><br/>Now set the passphrase to use the wallet, such as for signing or sending bitcoin<br/>> bitcoin-cli walletpassphrase "my pass phrase"<br/><br/>Now we can do something like sign<br/>> bitcoin-cli signmessage "address" "test message"<br/><br/>Now lock the wallet again by removing the passphrase<br/>> bitcoin-cli walletlock <br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "encryptwallet", "params": ["my pass phrase"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

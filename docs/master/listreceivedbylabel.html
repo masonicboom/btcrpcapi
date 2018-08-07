@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>listreceivedbylabel</h1>
+<h2>wallet</h2>
 <h2>master</h2>
 listreceivedbylabel ( minconf include_empty include_watchonly)<br/><br/>List received transactions by label.<br/><br/>Arguments:<br/>1. minconf           (numeric, optional, default=1) The minimum number of confirmations before payments are included.<br/>2. include_empty     (bool, optional, default=false) Whether to include labels that haven't received any payments.<br/>3. include_watchonly (bool, optional, default=false) Whether to include watch-only addresses (see 'importaddress').<br/><br/>Result:<br/>[<br/>  {<br/>    "involvesWatchonly" : true,   (bool) Only returned if imported addresses were involved in transaction<br/>    "account" : "accountname",  (string) DEPRECATED. Backwards compatible alias for label.<br/>    "amount" : x.xxx,             (numeric) The total amount received by addresses with this label<br/>    "confirmations" : n,          (numeric) The number of confirmations of the most recent transaction included<br/>    "label" : "label"           (string) The label of the receiving address. The default label is "".<br/>  }<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli listreceivedbylabel <br/>> bitcoin-cli listreceivedbylabel 6 true<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listreceivedbylabel", "params": [6, true, true] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

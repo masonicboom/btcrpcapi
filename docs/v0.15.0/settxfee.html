@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>settxfee</h1>
+<h2>wallet</h2>
 <h2>v0.15.0</h2>
 settxfee amount<br/><br/>Set the transaction fee per kB. Overwrites the paytxfee parameter.<br/><br/>Arguments:<br/>1. amount         (numeric or string, required) The transaction fee in " + CURRENCY_UNIT + "/kB<br/><br/>Result<br/>true|false        (boolean) Returns true if successful<br/><br/>Examples:<br/>> bitcoin-cli settxfee 0.00001<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "settxfee", "params": [0.00001] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

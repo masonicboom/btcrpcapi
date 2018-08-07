@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>movecmd</h1>
+<h2>wallet</h2>
 <h2>v0.10.0</h2>
 move "fromaccount" "toaccount" amount ( minconf "comment" )<br/><br/>Move a specified amount from one account in your wallet to another.<br/><br/>Arguments:<br/>1. "fromaccount"   (string, required) The name of the account to move funds from. May be the default account using "".<br/>2. "toaccount"     (string, required) The name of the account to move funds to. May be the default account using "".<br/>3. minconf           (numeric, optional, default=1) Only use funds with at least this many confirmations.<br/>4. "comment"       (string, optional) An optional comment, stored in the wallet only.<br/><br/>Result:<br/>true|false           (boolean) true if successfull.<br/><br/>Examples:<br/><br/>Move 0.01 btc from the default account to the account named tabby<br/>> bitcoin-cli move "" "tabby" 0.01<br/><br/>Move 0.01 btc timotei to akiko with a comment and funds have 6 confirmations<br/>> bitcoin-cli move "timotei" "akiko" 0.01 6 "happy birthday!"<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "move", "params": ["timotei", "akiko", 0.01, 6, "happy birthday!"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>getrawmempool</h1>
+<h2>blockchain</h2>
 <h2>v0.16.0</h2>
 getrawmempool ( verbose )<br/><br/>Returns all transaction ids in memory pool as a json array of string transaction ids.<br/><br/>Hint: use getmempoolentry to fetch a specific transaction from the mempool.<br/><br/>Arguments:<br/>1. verbose (boolean, optional, default=false) True for a json object, false for array of transaction ids<br/><br/>Result: (for verbose = false):<br/>[                     (json array of string)<br/>  "transactionid"     (string) The transaction id<br/>  ,...<br/>]<br/><br/>Result: (for verbose = true):<br/>{                           (json object)<br/>  "transactionid" : {       (json object)<br/>
 

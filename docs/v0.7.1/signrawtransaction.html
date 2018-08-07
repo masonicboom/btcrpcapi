@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>signrawtransaction</h1>
+<h2></h2>
 <h2>v0.7.1</h2>
 signrawtransaction <hex string> [{"txid":txid,"vout":n,"scriptPubKey":hex},...] [<privatekey1>,...] [sighashtype="ALL"]<br/>Sign inputs for raw transaction (serialized, hex-encoded).<br/>Second optional argument (may be null) is an array of previous transaction outputs that<br/>this transaction depends on but may not yet be in the blockchain.<br/>Third optional argument (may be null) is an array of base58-encoded private<br/>keys that, if given, will be the only keys used to sign the transaction.<br/>Fourth optional argument is a string that is one of six values; ALL, NONE, SINGLE or<br/>ALL|ANYONECANPAY, NONE|ANYONECANPAY, SINGLE|ANYONECANPAY.<br/>Returns json object with keys:<br/>  hex : raw transaction with signature(s) (hex-encoded string)<br/>  complete : 1 if transaction has a complete set of signature (0 if not)
 

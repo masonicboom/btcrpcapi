@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>getnetworkinfo</h1>
+<h2></h2>
 <h2>v0.9.5</h2>
 getnetworkinfo<br/>Returns an object containing various state info regarding P2P networking.<br/><br/>Result:<br/>{<br/>  "version": xxxxx,           (numeric) the server version<br/>  "protocolversion": xxxxx,   (numeric) the protocol version<br/>  "timeoffset": xxxxx,        (numeric) the time offset<br/>  "connections": xxxxx,       (numeric) the number of connections<br/>  "proxy": "host:port",     (string, optional) the proxy used by the server<br/>  "relayfee": x.xxxx,         (numeric) minimum relay fee for non-free transactions in btc/kb<br/>  "localaddresses": [,        (array) list of local addresses<br/>    "address": "xxxx",      (string) network address<br/>    "port": xxx,              (numeric) network port<br/>    "score": xxx              (numeric) relative score<br/>  ]<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getnetworkinfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworkinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

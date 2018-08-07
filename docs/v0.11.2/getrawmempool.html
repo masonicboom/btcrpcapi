@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>getrawmempool</h1>
+<h2>blockchain</h2>
 <h2>v0.11.2</h2>
 getrawmempool ( verbose )<br/><br/>Returns all transaction ids in memory pool as a json array of string transaction ids.<br/><br/>Arguments:<br/>1. verbose           (boolean, optional, default=false) true for a json object, false for array of transaction ids<br/><br/>Result: (for verbose = false):<br/>[                     (json array of string)<br/>  "transactionid"     (string) The transaction id<br/>  ,...<br/>]<br/><br/>Result: (for verbose = true):<br/>{                           (json object)<br/>  "transactionid" : {       (json object)<br/>    "size" : n,             (numeric) transaction size in bytes<br/>    "fee" : n,              (numeric) transaction fee in bitcoins<br/>    "time" : n,             (numeric) local time transaction entered pool in seconds since 1 Jan 1970 GMT<br/>    "height" : n,           (numeric) block height when transaction entered pool<br/>    "startingpriority" : n, (numeric) priority when transaction entered pool<br/>    "currentpriority" : n,  (numeric) transaction priority now<br/>    "depends" : [           (array) unconfirmed transactions used as inputs for this transaction<br/>        "transactionid",    (string) parent transaction id<br/>       ... ]<br/>  }, ...<br/>}<br/><br/>Examples<br/>> bitcoin-cli getrawmempool true<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawmempool", "params": [true] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

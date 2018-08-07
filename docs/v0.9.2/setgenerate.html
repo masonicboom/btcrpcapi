@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>setgenerate</h1>
+<h2></h2>
 <h2>v0.9.2</h2>
 setgenerate generate ( genproclimit )<br/><br/>Set 'generate' true or false to turn generation on or off.<br/>Generation is limited to 'genproclimit' processors, -1 is unlimited.<br/>See the getgenerate call for the current setting.<br/><br/>Arguments:<br/>1. generate         (boolean, required) Set to true to turn on generation, off to turn off.<br/>2. genproclimit     (numeric, optional) Set the processor limit for when generation is on. Can be -1 for unlimited.<br/>                    Note: in -regtest mode, genproclimit controls how many blocks are generated immediately.<br/><br/>Examples:<br/><br/>Set the generation on with a limit of one processor<br/>> bitcoin-cli setgenerate true 1<br/><br/>Check the setting<br/>> bitcoin-cli getgenerate <br/><br/>Turn off generation<br/>> bitcoin-cli setgenerate false<br/><br/>Using json rpc<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setgenerate", "params": [true, 1] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

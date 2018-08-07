@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>getblocktemplate</h1>
+<h2></h2>
 <h2>v0.8.3</h2>
 getblocktemplate [params]<br/>Returns data needed to construct a block to work on:<br/>  "version" : block version<br/>  "previousblockhash" : hash of current highest block<br/>  "transactions" : contents of non-coinbase transactions that should be included in the next block<br/>  "coinbaseaux" : data that should be included in coinbase<br/>  "coinbasevalue" : maximum allowable input to coinbase transaction, including the generation award and transaction fees<br/>  "target" : hash target<br/>  "mintime" : minimum timestamp appropriate for next block<br/>  "curtime" : current timestamp<br/>  "mutable" : list of ways the block template may be changed<br/>  "noncerange" : range of valid nonces<br/>  "sigoplimit" : limit of sigops in blocks<br/>  "sizelimit" : limit of block size<br/>  "bits" : compressed target of next block<br/>  "height" : height of the next block<br/>See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
 

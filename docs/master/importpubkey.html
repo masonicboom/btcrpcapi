@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>importpubkey</h1>
+<h2>wallet</h2>
 <h2>master</h2>
 importpubkey "pubkey" ( "label" rescan )<br/><br/>Adds a public key (in hex) that can be watched as if it were in your wallet but cannot be used to spend. Requires a new wallet backup.<br/><br/>Arguments:<br/>1. "pubkey"           (string, required) The hex-encoded public key<br/>2. "label"            (string, optional, default="") An optional label<br/>3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions<br/><br/>Note: This call can take minutes to complete if rescan is true, during that time, other rpc calls<br/>may report that the imported pubkey exists but related transactions are still missing, leading to temporarily incorrect/bogus balances and unspent outputs until rescan completes.<br/><br/>Examples:<br/><br/>Import a public key with rescan<br/>> bitcoin-cli importpubkey "mypubkey"<br/><br/>Import using a label without rescan<br/>> bitcoin-cli importpubkey "mypubkey" "testing" false<br/><br/>As a JSON-RPC call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importpubkey", "params": ["mypubkey", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 
