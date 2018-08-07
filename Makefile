@@ -23,5 +23,6 @@ bitcoin:
 clean:
 	rm -rf apis/
 	rm -rf docs/
+	rm -rf docdata/
 	rm -f index.html
 	rm -f style.css
