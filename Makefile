@@ -13,7 +13,7 @@ apis: dumpapis.sh dumpapi.py bitcoin
 	mkdir -p $@
 	./$<
 
-docdata: dumpapis.sh dumpdocs.py bitcoin
+docdata: dumpapis.sh dumpdocs.py bitcoin apis/
 	mkdir -p $@
 	./$<
 

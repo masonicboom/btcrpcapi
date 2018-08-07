@@ -17,8 +17,12 @@ for line in map(str.rstrip, sys.stdin):
             assert m, 'No match to table expression: %s' % line
             parts = [p.rstrip(',') for p in m.group(0).strip("{ },").split()]
 
+            category = ""
+
             # The CRPC table format changed at some point. This handles that.
             if parts[0][0] == '"' and parts[1][0] == '"':
+                # Column 0 is the category.
+                category = parts[0].strip('"')
                 col = 1
             else:
                 col = 0
@@ -26,4 +30,4 @@ for line in map(str.rstrip, sys.stdin):
             # Output call and function name because docs will be indexed by function name.
             call_name = parts[col].strip('"')
             func_name = parts[col+1][1:]
-            print("{}\t{}".format(call_name, func_name))
+            print("{}\t{}\t{}".format(call_name, func_name, category))

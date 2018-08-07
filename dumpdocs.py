@@ -6,13 +6,21 @@ import re
 import json
 
 if len(sys.argv) < 4:
-    print("usage: dumpdocs.py <DATA_DIR> <VERSION> <FILEPATH> <GIT_HASH>")
+    print("usage: dumpdocs.py <DATA_DIR> <VERSION> <FILEPATH> <GIT_HASH> <API_FILE>")
     sys.exit(1)
 
 data_dir = sys.argv[1]
 version = sys.argv[2]
 filepath = sys.argv[3]
 githash = sys.argv[4]
+apifile = sys.argv[5]
+
+# Load category map from apifile (table of [category, name, func]).
+categories = {}
+with open(apifile) as f:
+    for line in f:
+        [name, func, cat] = re.split(r'\t', line.rstrip('\n'))
+        categories[func] = cat
 
 # Parse source code for RPC doc strings, using a state machine.
 state = 'BEGIN'
@@ -26,6 +34,7 @@ def close():
     msg = "".join(msgs).replace(r"\n", "<br/>").replace(r"\"", "\"")
     data = {
         "name": name,
+        "category": categories[name],
         "version": version,
         "message": msg,
         "deprecated": "DEPRECATED" in msg,

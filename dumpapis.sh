@@ -4,17 +4,19 @@
 function dump {
     git clean -fdx
     git checkout "$1"
-    git grep --files-with-matches "static const CRPCCommand .*\[\] =" *.cpp | xargs cat | ../dumpapi.py > "../apis/$1"
+
+    apifile="../apis/$1"
+    git grep --files-with-matches "static const CRPCCommand .*\[\] =" *.cpp | xargs cat | ../dumpapi.py > "$apifile"
 
     mkdir -p "../docdata/$1/"
-    cat "../apis/$1" | cut -f 1 | while read call; do
+    cat "$apifile" | cut -f 1 | while read call; do
         git grep --files-with-matches "$call(" *.cpp >> targets
     done
 
     githash=$(git rev-parse HEAD)
 
     sort targets | uniq | while read filepath; do
-        ../dumpdocs.py "../docdata" "$1" "$filepath" "$githash" < "$filepath"
+        ../dumpdocs.py "../docdata" "$1" "$filepath" "$githash" "$apifile" < "$filepath"
     done
     rm targets
 }

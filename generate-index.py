@@ -17,6 +17,10 @@ def version2list(v):
 def list2version(vl):
     return 'v{}'.format('.'.join([str(v) for v in vl]))
 
+# Path to the JSON file describing API call name at version v.
+def docdatapath(v, name):
+    return "docdata/{}/{}.json".format(v, name)
+
 # Map from call -> version -> present.
 calls = collections.defaultdict(set)
 
@@ -53,6 +57,21 @@ for v in sorted(versions, key=lambda k: version2list(k)):
 
 # Very first version with any calls.
 first = sorted(earliest.values())[0]
+
+# Compute category for each call (last wins).
+categories = {}
+for call in calls.keys():
+    for v in sorted(versions, key=lambda k: version2list(k)):
+        if v not in (calls[call]):
+            continue
+
+        name = funcs[call][v]
+        try:
+            with open(docdatapath(v, name)) as f:
+                calldata = json.load(f)
+                categories[call] = calldata["category"]
+        except:
+            pass
 
 # Dump output as HTML.
 print('''
@@ -95,13 +114,17 @@ for v in sorted(versions, key=lambda k: version2list(k)):
 
 print('''
         <th>Call</th>
+        <th>Category</th>
     </tr>
 </thead>
 <tbody>
 ''')
 
-for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
+for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], categories.get(k, ''), k)):
+# for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
     msghash = None # Tracks differences in messages between versions.
+
+    category = categories.get(call, '')
 
     print('<tr>')
     print('<td>{}</td>'.format(call))
@@ -122,7 +145,7 @@ for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
             msgchanged = False
             deprecated = False
             try:
-                f = open("docdata/{}/{}.json".format(v, name))
+                f = open(docdatapath(v, name))
                 calldata = json.load(f)
 
                 newhash = hashlib.sha256(calldata["message"].encode("utf-8")).hexdigest()
@@ -148,6 +171,7 @@ for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
         else:
             print('<td title="{}"></td>'.format(v))
     print('<td>{}</td>'.format(call))
+    print('<td>{}</td>'.format(category))
     print('</tr>')
 
 print('''
