@@ -125,4 +125,12 @@ a:hover {{
 table {{
     margin-top: 5rem;
 }}
+
+.source {{
+    margin-top: 2rem;
+}}
+
+.source a {{
+    text-decoration: underline;
+}}
 """.format(**colors).strip())

@@ -10,7 +10,12 @@ function dump {
     cat "../apis/$1" | cut -f 1 | while read call; do
         git grep --files-with-matches "$call(" *.cpp >> targets
     done
-    sort targets | uniq | xargs cat | ../dumpdocs.py "../docdata" "$1"
+
+    githash=$(git rev-parse HEAD)
+
+    sort targets | uniq | while read filepath; do
+        ../dumpdocs.py "../docdata" "$1" "$filepath" "$githash" < "$filepath"
+    done
     rm targets
 }
 

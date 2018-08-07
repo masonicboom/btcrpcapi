@@ -15,6 +15,10 @@ html = """
 <h1>{name}</h1>
 <h2>{version}</h2>
 {message}
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/{githash}/{filepath}#L{startLine}-L{endLine}">{filepath}#L{startLine}-L{endLine}</a>.
+</div>
 </body>
 </html>
 """.format(**data)

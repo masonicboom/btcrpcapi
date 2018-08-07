@@ -5,17 +5,21 @@ import sys
 import re
 import json
 
-if len(sys.argv) < 3:
-    print("usage: dumpdocs.py <DATA_DIR> <VERSION>")
+if len(sys.argv) < 4:
+    print("usage: dumpdocs.py <DATA_DIR> <VERSION> <FILEPATH> <GIT_HASH>")
     sys.exit(1)
 
 data_dir = sys.argv[1]
 version = sys.argv[2]
+filepath = sys.argv[3]
+githash = sys.argv[4]
 
 # Parse source code for RPC doc strings, using a state machine.
 state = 'BEGIN'
 name = None
 msgs = []
+startLine = -1
+endLine = -1
 
 def close():
     f = open("{}/{}/{}.json".format(data_dir, version, name), "w")
@@ -24,18 +28,23 @@ def close():
         "name": name,
         "version": version,
         "message": msg,
-        "deprecated": "DEPRECATED" in msg
+        "deprecated": "DEPRECATED" in msg,
+        "githash": githash,
+        "filepath": filepath,
+        "startLine": startLine,
+        "endLine": endLine
     }
     f.write(json.dumps(data))
     f.close()
 
-for line in map(str.rstrip, sys.stdin):
+for lineNum, line in enumerate(map(str.rstrip, sys.stdin)):
     if state == 'BEGIN':
         m = re.match(r"^(?:static\s+)?\w+ (\w+)\(.*?\)$", line)
         if m:
             state = 'FUNC'
             name = m[1]
             msgs = []
+            startLine = lineNum
     elif state == 'FUNC':
         m = re.match("^{", line)
         if m:
@@ -76,6 +85,7 @@ for line in map(str.rstrip, sys.stdin):
             if m[2]:
                 msgs.append(m[2])
             if m[3]:
+                endLine = lineNum
                 close()
                 state = 'BEGIN'
         elif cx:
@@ -85,5 +95,6 @@ for line in map(str.rstrip, sys.stdin):
             # RPC Example.
             msgs.append(r"> curl --user myusername --data-binary '{{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", \"method\": \"{}\", \"params\": [{}] }}' -H 'content-type: text/plain;' http://127.0.0.1:8332/\n".format(rx[1], rx[2]))
         else:
+            endLine = lineNum
             close()
             state = 'BEGIN'
