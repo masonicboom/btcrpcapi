@@ -5,7 +5,7 @@ import sys
 import re
 import json
 
-if len(sys.argv) < 4:
+if len(sys.argv) < 6:
     print("usage: dumpdocs.py <DATA_DIR> <VERSION> <FILEPATH> <GIT_HASH> <API_FILE>")
     sys.exit(1)
 
