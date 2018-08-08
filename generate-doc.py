@@ -13,7 +13,7 @@ html = """
 </head>
 <body>
 <h1>{name}</h1>
-<h2>{category}</h2>
+<h2><a href="../../cats/{category}.html">{category}</a></h2>
 <h2>{version}</h2>
 {message}
 

@@ -1,10 +1,13 @@
-all: index.html style.css
+all: index.html style.css cats/
 
 style.css: generate-style.py
 	./$< > $@
 
 index.html: generate-index.py apis/ docs/
 	./$< > $@
+
+cats: generate-cats.sh generate-index.py
+	./$<
 
 docs: generate-docs.sh docdata/
 	./$<
@@ -24,5 +27,6 @@ clean:
 	rm -rf apis/
 	rm -rf docs/
 	rm -rf docdata/
+	rm -rf cats/
 	rm -f index.html
 	rm -f style.css

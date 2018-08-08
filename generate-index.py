@@ -73,110 +73,148 @@ for call in calls.keys():
         except:
             pass
 
-# Dump output as HTML.
-print('''
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+def print_header(relpath=""):
+    print('''
+        <html>
+        <head>
+            <link rel="stylesheet" type="text/css" href="{}style.css">
+        </head>
+        <body>
+    '''.format(relpath))
 
-<h1>A Map of the Bitcoin Core RPC API across Versions</h1>
-<h3>By <a href="https://masonsimon.com">Mason Simon</a></h3>
-''')
+def print_footer():
+    print('''
+    </body>
+    </html>
+    ''')
 
-print('<h3>Last updated {}.</h3>'.format(datetime.date.today()))
+def print_legend():
+    print('''
+    <div id="legend">
+    <h3>Legend</h3>
+    <table>
+        <tr><td class="present"></td><td>Call Active</td></tr>
+        <tr><td class="present deprecated"></td><td>Call Deprecated</td></tr>
+        <tr><td class="present msg-changed"></td><td>Message Changed (Active)</td></tr>
+        <tr><td class="present deprecated msg-changed"></td><td>Message Changed (Deprecated)</td></tr>
+    </table>
+    </div>
+    ''')
 
-print('''
-<div id="legend">
-<h3>Legend</h3>
-<table>
-    <tr><td class="present"></td><td>Call Active</td></tr>
-    <tr><td class="present deprecated"></td><td>Call Deprecated</td></tr>
-    <tr><td class="present msg-changed"></td><td>Message Changed (Active)</td></tr>
-    <tr><td class="present deprecated msg-changed"></td><td>Message Changed (Deprecated)</td></tr>
-</table>
-</div>
-''')
+# If cat is specified, restricts chart output to only calls in that category.
+def print_chart(cat=None, relpath=""):
+    print('''
+    <table id="chart">
+    <thead>
+        <tr>
+            <th>Call</th>
+    ''')
 
-print('''
-<table id="chart">
-<thead>
-    <tr>
-        <th>Call</th>
-''')
-
-for v in sorted(versions, key=lambda k: version2list(k)):
-    vl = version2list(v)
-    if vl < first:
-        continue
-    print('<th><span class="version">{}</span></th>'.format(v))
-
-print('''
-        <th>Call</th>
-        <th>Category</th>
-    </tr>
-</thead>
-<tbody>
-''')
-
-for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], categories.get(k, ''), k)):
-# for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
-    msghash = None # Tracks differences in messages between versions.
-
-    category = categories.get(call, '')
-
-    print('<tr>')
-    print('<td>{}</td>'.format(call))
     for v in sorted(versions, key=lambda k: version2list(k)):
         vl = version2list(v)
         if vl < first:
             continue
-        if v in (calls[call]):
-            # Some calls map to the same function name. This accomodates those.
-            name = funcs[call][v]
+        print('<th><span class="version">{}</span></th>'.format(v))
 
-            p = "docs/{}/{}.html".format(v, name)
-            link = ""
-            if os.path.exists(p):
-                link = '<a href="{}">?</a>'.format(p)
-            
-            # Check if the message changed from the previous version. If so, vary the color.
-            msgchanged = False
-            deprecated = False
-            try:
-                f = open(docdatapath(v, name))
-                calldata = json.load(f)
+    print('<th>Call</th>')
+    if cat == None:
+        print('<th>Category</th>')
+    
+    print('''            
+        </tr>
+    </thead>
+    <tbody>
+    ''')
 
-                newhash = hashlib.sha256(calldata["message"].encode("utf-8")).hexdigest()
-                if msghash != None and newhash != msghash:
-                    msgchanged = True
-                msghash = newhash
+    for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], categories.get(k, ''), k)):
+    # for call in sorted(calls.keys(), key=lambda k: (earliest[k], latest[k], k)):
+        msghash = None # Tracks differences in messages between versions.
 
-                deprecated = calldata["deprecated"]
-            except:
-                pass
-            finally:
-                f.close()
+        category = categories.get(call, '')
 
-            changedClass = ""
-            if msgchanged:
-                changedClass = "msg-changed"
-            
-            deprecatedClass = ""
-            if deprecated:
-                deprecatedClass = "deprecated"
+        if cat != None and category != cat:
+            continue
 
-            print('<td title="{}" class="present {} {}">{}</td>'.format(v, changedClass, deprecatedClass, link))
-        else:
-            print('<td title="{}"></td>'.format(v))
-    print('<td>{}</td>'.format(call))
-    print('<td>{}</td>'.format(category))
-    print('</tr>')
+        print('<tr>')
+        print('<td>{}</td>'.format(call))
+        for v in sorted(versions, key=lambda k: version2list(k)):
+            vl = version2list(v)
+            if vl < first:
+                continue
+            if v in (calls[call]):
+                # Some calls map to the same function name. This accomodates those.
+                name = funcs[call][v]
 
-print('''
-    </tbody>
-</table>
-</body>
-</html>
-''')
+                p = "docs/{}/{}.html".format(v, name)
+                link = ""
+                if os.path.exists(p):
+                    link = '<a href="{}{}">?</a>'.format(relpath, p)
+                
+                # Check if the message changed from the previous version. If so, vary the color.
+                msgchanged = False
+                deprecated = False
+                try:
+                    with open(docdatapath(v, name)) as f:
+                        calldata = json.load(f)
+
+                        newhash = hashlib.sha256(calldata["message"].encode("utf-8")).hexdigest()
+                        if msghash != None and newhash != msghash:
+                            msgchanged = True
+                        msghash = newhash
+
+                        deprecated = calldata["deprecated"]
+                except:
+                    pass
+
+                changedClass = ""
+                if msgchanged:
+                    changedClass = "msg-changed"
+                
+                deprecatedClass = ""
+                if deprecated:
+                    deprecatedClass = "deprecated"
+
+                print('<td title="{}" class="present {} {}">{}</td>'.format(v, changedClass, deprecatedClass, link))
+            else:
+                print('<td title="{}"></td>'.format(v))
+        print('<td>{}</td>'.format(call))
+        if cat == None:
+            print('<td><a href="cats/{}.html">{}</a></td>'.format(category, category))
+        print('</tr>')
+
+    print('''
+        </tbody>
+    </table>
+    ''')
+
+
+# Support restricting chart to a single category.
+category_filter = None
+if len(sys.argv) >= 2:
+    category_filter = sys.argv[1]
+    if category_filter == "":
+        category_filter = None
+
+# In this case (single-category), the file will be nested one dir deep.
+relpath = ""
+if category_filter != None:
+    relpath = "../"
+
+# Dump output as HTML.
+print_header(relpath=relpath)
+
+if category_filter == None:
+    print('''
+    <h1>A Map of the Bitcoin Core RPC API across Versions</h1>
+    <h3>By <a href="https://masonsimon.com">Mason Simon</a></h3>
+    ''')
+else:
+    print('<h1>{}</h1>'.format(category_filter))
+
+print('<h3>Last updated {}.</h3>'.format(datetime.date.today()))
+
+print_legend()
+
+print_chart(cat=category_filter, relpath=relpath)
+
+print_footer()
