@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>unloadwallet</h1>
-<h2>wallet</h2>
+<h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>master</h2>
 unloadwallet ( "wallet_name" )<br/>Unloads the wallet referenced by the request endpoint otherwise unloads the wallet specified in the argument.<br/>Specifying the wallet name on a wallet endpoint is invalid.<br/>Arguments:<br/>1. "wallet_name"    (string, optional) The name of the wallet to unload.<br/><br/>Examples:<br/>> bitcoin-cli unloadwallet wallet_name<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "unloadwallet", "params": [wallet_name] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

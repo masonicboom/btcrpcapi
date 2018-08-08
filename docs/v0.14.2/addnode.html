@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>addnode</h1>
-<h2>network</h2>
+<h2><a href="../../cats/network.html">network</a></h2>
 <h2>v0.14.2</h2>
 addnode "node" "add|remove|onetry"<br/><br/>Attempts add or remove a node from the addnode list.<br/>Or try a connection to a node once.<br/><br/>Arguments:<br/>1. "node"     (string, required) The node (see getpeerinfo for nodes)<br/>2. "command"  (string, required) 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once<br/><br/>Examples:<br/>> bitcoin-cli addnode "192.168.0.6:8333" "onetry"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "addnode", "params": ["192.168.0.6:8333", "onetry"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

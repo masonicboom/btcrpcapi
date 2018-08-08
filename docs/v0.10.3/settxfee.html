@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>settxfee</h1>
-<h2>wallet</h2>
+<h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>v0.10.3</h2>
 settxfee amount<br/><br/>Set the transaction fee per kB.<br/><br/>Arguments:<br/>1. amount         (numeric, required) The transaction fee in BTC/kB rounded to the nearest 0.00000001<br/><br/>Result<br/>true|false        (boolean) Returns true if successful<br/><br/>Examples:<br/>> bitcoin-cli settxfee 0.00001<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "settxfee", "params": [0.00001] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

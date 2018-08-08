@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>gettxoutproof</h1>
-<h2>blockchain</h2>
+<h2><a href="../../cats/blockchain.html">blockchain</a></h2>
 <h2>v0.11.0</h2>
 gettxoutproof ["txid",...] ( blockhash )<br/><br/>Returns a hex-encoded proof that "txid" was included in a block.<br/><br/>NOTE: By default this function only works sometimes. This is when there is an<br/>unspent output in the utxo for this transaction. To make it always work,<br/>you need to maintain a transaction index, using the -txindex command line option or<br/>specify the block in which the transaction is included in manually (by blockhash).<br/><br/>Return the raw transaction data.<br/><br/>Arguments:<br/>1. "txids"       (string) A json array of txids to filter<br/>    [<br/>      "txid"     (string) A transaction hash<br/>      ,...<br/>    ]<br/>2. "block hash"  (string, optional) If specified, looks for txid in the block with this hash<br/><br/>Result:<br/>"data"           (string) A string that is a serialized, hex-encoded data for the proof.<br/>
 

@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>verifychain</h1>
-<h2></h2>
+<h2><a href="../../cats/.html"></a></h2>
 <h2>v0.9.5</h2>
 verifychain ( checklevel numblocks )<br/><br/>Verifies blockchain database.<br/><br/>Arguments:<br/>1. checklevel   (numeric, optional, 0-4, default=3) How thorough the block verification is.<br/>2. numblocks    (numeric, optional, default=288, 0=all) The number of blocks to check.<br/><br/>Result:<br/>true|false       (boolean) Verified or not<br/><br/>Examples:<br/>> bitcoin-cli verifychain <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifychain", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

@@ -1,31 +1,32 @@
 
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+        <html>
+        <head>
+            <link rel="stylesheet" type="text/css" href="style.css">
+        </head>
+        <body>
+    
 
-<h1>A Map of the Bitcoin Core RPC API across Versions</h1>
-<h3>By <a href="https://masonsimon.com">Mason Simon</a></h3>
+    <h1>A Map of the Bitcoin Core RPC API across Versions</h1>
+    <h3>By <a href="https://masonsimon.com">Mason Simon</a></h3>
+    
+<h3>Last updated 2018-08-08.</h3>
 
-<h3>Last updated 2018-08-07.</h3>
+    <div id="legend">
+    <h3>Legend</h3>
+    <table>
+        <tr><td class="present"></td><td>Call Active</td></tr>
+        <tr><td class="present deprecated"></td><td>Call Deprecated</td></tr>
+        <tr><td class="present msg-changed"></td><td>Message Changed (Active)</td></tr>
+        <tr><td class="present deprecated msg-changed"></td><td>Message Changed (Deprecated)</td></tr>
+    </table>
+    </div>
+    
 
-<div id="legend">
-<h3>Legend</h3>
-<table>
-    <tr><td class="present"></td><td>Call Active</td></tr>
-    <tr><td class="present deprecated"></td><td>Call Deprecated</td></tr>
-    <tr><td class="present msg-changed"></td><td>Message Changed (Active)</td></tr>
-    <tr><td class="present deprecated msg-changed"></td><td>Message Changed (Deprecated)</td></tr>
-</table>
-</div>
-
-
-<table id="chart">
-<thead>
-    <tr>
-        <th>Call</th>
-
+    <table id="chart">
+    <thead>
+        <tr>
+            <th>Call</th>
+    
 <th><span class="version">v0.6.1</span></th>
 <th><span class="version">v0.6.2</span></th>
 <th><span class="version">v0.6.3</span></th>
@@ -69,13 +70,13 @@
 <th><span class="version">v0.16.1</span></th>
 <th><span class="version">v0.16.2</span></th>
 <th><span class="version">master</span></th>
-
-        <th>Call</th>
-        <th>Category</th>
-    </tr>
-</thead>
-<tbody>
-
+<th>Call</th>
+<th>Category</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    
 <tr>
 <td>getblocknumber</td>
 <td title="v0.6.1" class="present  "><a href="docs/v0.6.1/getblocknumber.html">?</a></td>
@@ -122,7 +123,7 @@
 <td title="v0.16.2"></td>
 <td title="master"></td>
 <td>getblocknumber</td>
-<td></td>
+<td><a href="cats/.html"></a></td>
 </tr>
 <tr>
 <td>getmemorypool</td>
@@ -170,7 +171,7 @@
 <td title="v0.16.2"></td>
 <td title="master"></td>
 <td>getmemorypool</td>
-<td></td>
+<td><a href="cats/.html"></a></td>
 </tr>
 <tr>
 <td>getwork</td>
@@ -218,7 +219,7 @@
 <td title="v0.16.2"></td>
 <td title="master"></td>
 <td>getwork</td>
-<td></td>
+<td><a href="cats/.html"></a></td>
 </tr>
 <tr>
 <td>gethashespersec</td>
@@ -266,7 +267,7 @@
 <td title="v0.16.2"></td>
 <td title="master"></td>
 <td>gethashespersec</td>
-<td>generating</td>
+<td><a href="cats/generating.html">generating</a></td>
 </tr>
 <tr>
 <td>getgenerate</td>
@@ -314,7 +315,7 @@
 <td title="v0.16.2"></td>
 <td title="master"></td>
 <td>getgenerate</td>
-<td>generating</td>
+<td><a href="cats/generating.html">generating</a></td>
 </tr>
 <tr>
 <td>setgenerate</td>
@@ -362,7 +363,7 @@
 <td title="v0.16.2"></td>
 <td title="master"></td>
 <td>setgenerate</td>
-<td>generating</td>
+<td><a href="cats/generating.html">generating</a></td>
 </tr>
 <tr>
 <td>getblock</td>
@@ -410,7 +411,7 @@
 <td title="v0.16.2" class="present msg-changed "><a href="docs/v0.16.2/getblock.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getblock.html">?</a></td>
 <td>getblock</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getblockcount</td>
@@ -458,7 +459,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getblockcount.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getblockcount.html">?</a></td>
 <td>getblockcount</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getblockhash</td>
@@ -506,7 +507,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getblockhash.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getblockhash.html">?</a></td>
 <td>getblockhash</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getdifficulty</td>
@@ -554,7 +555,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getdifficulty.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getdifficulty.html">?</a></td>
 <td>getdifficulty</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getinfo</td>
@@ -602,7 +603,7 @@
 <td title="v0.16.2" class="present  "></td>
 <td title="master" class="present  "></td>
 <td>getinfo</td>
-<td>control</td>
+<td><a href="cats/control.html">control</a></td>
 </tr>
 <tr>
 <td>help</td>
@@ -650,7 +651,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/help.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/help.html">?</a></td>
 <td>help</td>
-<td>control</td>
+<td><a href="cats/control.html">control</a></td>
 </tr>
 <tr>
 <td>stop</td>
@@ -698,7 +699,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/stop.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/stop.html">?</a></td>
 <td>stop</td>
-<td>control</td>
+<td><a href="cats/control.html">control</a></td>
 </tr>
 <tr>
 <td>getmininginfo</td>
@@ -746,7 +747,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/getmininginfo.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/getmininginfo.html">?</a></td>
 <td>getmininginfo</td>
-<td>mining</td>
+<td><a href="cats/mining.html">mining</a></td>
 </tr>
 <tr>
 <td>getconnectioncount</td>
@@ -794,7 +795,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getconnectioncount.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getconnectioncount.html">?</a></td>
 <td>getconnectioncount</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>validateaddress</td>
@@ -842,7 +843,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/validateaddress.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/validateaddress.html">?</a></td>
 <td>validateaddress</td>
-<td>util</td>
+<td><a href="cats/util.html">util</a></td>
 </tr>
 <tr>
 <td>verifymessage</td>
@@ -890,7 +891,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/verifymessage.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/verifymessage.html">?</a></td>
 <td>verifymessage</td>
-<td>util</td>
+<td><a href="cats/util.html">util</a></td>
 </tr>
 <tr>
 <td>addmultisigaddress</td>
@@ -938,7 +939,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/addmultisigaddress.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/addmultisigaddress.html">?</a></td>
 <td>addmultisigaddress</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>backupwallet</td>
@@ -986,7 +987,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/backupwallet.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/backupwallet.html">?</a></td>
 <td>backupwallet</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>dumpprivkey</td>
@@ -1034,7 +1035,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/dumpprivkey.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/dumpprivkey.html">?</a></td>
 <td>dumpprivkey</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>encryptwallet</td>
@@ -1082,7 +1083,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/encryptwallet.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/encryptwallet.html">?</a></td>
 <td>encryptwallet</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getaccount</td>
@@ -1130,7 +1131,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/getaccount.html">?</a></td>
 <td title="master" class="present  deprecated"><a href="docs/master/getaccount.html">?</a></td>
 <td>getaccount</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getaccountaddress</td>
@@ -1178,7 +1179,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/getaccountaddress.html">?</a></td>
 <td title="master" class="present msg-changed deprecated"><a href="docs/master/getaccountaddress.html">?</a></td>
 <td>getaccountaddress</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getaddressesbyaccount</td>
@@ -1226,7 +1227,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/getaddressesbyaccount.html">?</a></td>
 <td title="master" class="present  deprecated"><a href="docs/master/getaddressesbyaccount.html">?</a></td>
 <td>getaddressesbyaccount</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getbalance</td>
@@ -1274,7 +1275,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/getbalance.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/getbalance.html">?</a></td>
 <td>getbalance</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getnewaddress</td>
@@ -1322,7 +1323,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/getnewaddress.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/getnewaddress.html">?</a></td>
 <td>getnewaddress</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getreceivedbyaccount</td>
@@ -1370,7 +1371,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/getreceivedbyaccount.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/getreceivedbylabel.html">?</a></td>
 <td>getreceivedbyaccount</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getreceivedbyaddress</td>
@@ -1418,7 +1419,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getreceivedbyaddress.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getreceivedbyaddress.html">?</a></td>
 <td>getreceivedbyaddress</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>gettransaction</td>
@@ -1466,7 +1467,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/gettransaction.html">?</a></td>
 <td title="master" class="present msg-changed deprecated"><a href="docs/master/gettransaction.html">?</a></td>
 <td>gettransaction</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>importprivkey</td>
@@ -1514,7 +1515,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/importprivkey.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/importprivkey.html">?</a></td>
 <td>importprivkey</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>keypoolrefill</td>
@@ -1562,7 +1563,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/keypoolrefill.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/keypoolrefill.html">?</a></td>
 <td>keypoolrefill</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>listaccounts</td>
@@ -1610,7 +1611,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/listaccounts.html">?</a></td>
 <td title="master" class="present  deprecated"><a href="docs/master/listaccounts.html">?</a></td>
 <td>listaccounts</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>listreceivedbyaccount</td>
@@ -1658,7 +1659,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/listreceivedbyaccount.html">?</a></td>
 <td title="master" class="present msg-changed deprecated"><a href="docs/master/listreceivedbylabel.html">?</a></td>
 <td>listreceivedbyaccount</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>listreceivedbyaddress</td>
@@ -1706,7 +1707,7 @@
 <td title="v0.16.2" class="present msg-changed deprecated"><a href="docs/v0.16.2/listreceivedbyaddress.html">?</a></td>
 <td title="master" class="present msg-changed deprecated"><a href="docs/master/listreceivedbyaddress.html">?</a></td>
 <td>listreceivedbyaddress</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>listsinceblock</td>
@@ -1754,7 +1755,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/listsinceblock.html">?</a></td>
 <td title="master" class="present msg-changed deprecated"><a href="docs/master/listsinceblock.html">?</a></td>
 <td>listsinceblock</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>listtransactions</td>
@@ -1802,7 +1803,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/listtransactions.html">?</a></td>
 <td title="master" class="present  "></td>
 <td>listtransactions</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>move</td>
@@ -1850,7 +1851,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/movecmd.html">?</a></td>
 <td title="master" class="present  deprecated"><a href="docs/master/movecmd.html">?</a></td>
 <td>move</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>sendfrom</td>
@@ -1898,7 +1899,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/sendfrom.html">?</a></td>
 <td title="master" class="present  deprecated"><a href="docs/master/sendfrom.html">?</a></td>
 <td>sendfrom</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>sendmany</td>
@@ -1946,7 +1947,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/sendmany.html">?</a></td>
 <td title="master" class="present  "></td>
 <td>sendmany</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>sendtoaddress</td>
@@ -1994,7 +1995,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/sendtoaddress.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/sendtoaddress.html">?</a></td>
 <td>sendtoaddress</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>setaccount</td>
@@ -2042,7 +2043,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/setaccount.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/setlabel.html">?</a></td>
 <td>setaccount</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>settxfee</td>
@@ -2090,7 +2091,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/settxfee.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/settxfee.html">?</a></td>
 <td>settxfee</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>signmessage</td>
@@ -2138,7 +2139,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/signmessage.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/signmessage.html">?</a></td>
 <td>signmessage</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>walletlock</td>
@@ -2186,7 +2187,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/walletlock.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/walletlock.html">?</a></td>
 <td>walletlock</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>walletpassphrase</td>
@@ -2234,7 +2235,7 @@
 <td title="v0.16.2" class="present msg-changed "><a href="docs/v0.16.2/walletpassphrase.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/walletpassphrase.html">?</a></td>
 <td>walletpassphrase</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>walletpassphrasechange</td>
@@ -2282,7 +2283,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/walletpassphrasechange.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/walletpassphrasechange.html">?</a></td>
 <td>walletpassphrasechange</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getrawmempool</td>
@@ -2330,7 +2331,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getrawmempool.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getrawmempool.html">?</a></td>
 <td>getrawmempool</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getblocktemplate</td>
@@ -2378,7 +2379,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getblocktemplate.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/getblocktemplate.html">?</a></td>
 <td>getblocktemplate</td>
-<td>mining</td>
+<td><a href="cats/mining.html">mining</a></td>
 </tr>
 <tr>
 <td>submitblock</td>
@@ -2426,7 +2427,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/submitblock.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/submitblock.html">?</a></td>
 <td>submitblock</td>
-<td>mining</td>
+<td><a href="cats/mining.html">mining</a></td>
 </tr>
 <tr>
 <td>getpeerinfo</td>
@@ -2474,7 +2475,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getpeerinfo.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getpeerinfo.html">?</a></td>
 <td>getpeerinfo</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>createrawtransaction</td>
@@ -2522,7 +2523,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/createrawtransaction.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/createrawtransaction.html">?</a></td>
 <td>createrawtransaction</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>decoderawtransaction</td>
@@ -2570,7 +2571,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/decoderawtransaction.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/decoderawtransaction.html">?</a></td>
 <td>decoderawtransaction</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>getrawtransaction</td>
@@ -2618,7 +2619,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/getrawtransaction.html">?</a></td>
 <td title="master" class="present msg-changed deprecated"><a href="docs/master/getrawtransaction.html">?</a></td>
 <td>getrawtransaction</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>sendrawtransaction</td>
@@ -2666,7 +2667,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/sendrawtransaction.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/sendrawtransaction.html">?</a></td>
 <td>sendrawtransaction</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>signrawtransaction</td>
@@ -2714,7 +2715,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/signrawtransaction.html">?</a></td>
 <td title="master" class="present msg-changed deprecated"><a href="docs/master/signrawtransaction.html">?</a></td>
 <td>signrawtransaction</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>listaddressgroupings</td>
@@ -2762,7 +2763,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/listaddressgroupings.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/listaddressgroupings.html">?</a></td>
 <td>listaddressgroupings</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>listunspent</td>
@@ -2810,7 +2811,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/listunspent.html">?</a></td>
 <td title="master" class="present msg-changed deprecated"><a href="docs/master/listunspent.html">?</a></td>
 <td>listunspent</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>gettxout</td>
@@ -2858,7 +2859,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/gettxout.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/gettxout.html">?</a></td>
 <td>gettxout</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>gettxoutsetinfo</td>
@@ -2906,7 +2907,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/gettxoutsetinfo.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/gettxoutsetinfo.html">?</a></td>
 <td>gettxoutsetinfo</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>addnode</td>
@@ -2954,7 +2955,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/addnode.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/addnode.html">?</a></td>
 <td>addnode</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>getaddednodeinfo</td>
@@ -3002,7 +3003,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getaddednodeinfo.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getaddednodeinfo.html">?</a></td>
 <td>getaddednodeinfo</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>createmultisig</td>
@@ -3050,7 +3051,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/createmultisig.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/createmultisig.html">?</a></td>
 <td>createmultisig</td>
-<td>util</td>
+<td><a href="cats/util.html">util</a></td>
 </tr>
 <tr>
 <td>listlockunspent</td>
@@ -3098,7 +3099,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/listlockunspent.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/listlockunspent.html">?</a></td>
 <td>listlockunspent</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>lockunspent</td>
@@ -3146,7 +3147,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/lockunspent.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/lockunspent.html">?</a></td>
 <td>lockunspent</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getbestblockhash</td>
@@ -3194,7 +3195,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getbestblockhash.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getbestblockhash.html">?</a></td>
 <td>getbestblockhash</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>verifychain</td>
@@ -3242,7 +3243,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/verifychain.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/verifychain.html">?</a></td>
 <td>verifychain</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getnetworkhashps</td>
@@ -3290,7 +3291,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getnetworkhashps.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getnetworkhashps.html">?</a></td>
 <td>getnetworkhashps</td>
-<td>mining</td>
+<td><a href="cats/mining.html">mining</a></td>
 </tr>
 <tr>
 <td>getnettotals</td>
@@ -3338,7 +3339,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getnettotals.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getnettotals.html">?</a></td>
 <td>getnettotals</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>ping</td>
@@ -3386,7 +3387,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/ping.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/ping.html">?</a></td>
 <td>ping</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>decodescript</td>
@@ -3434,7 +3435,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/decodescript.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/decodescript.html">?</a></td>
 <td>decodescript</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>dumpwallet</td>
@@ -3482,7 +3483,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/dumpwallet.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/dumpwallet.html">?</a></td>
 <td>dumpwallet</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getrawchangeaddress</td>
@@ -3530,7 +3531,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getrawchangeaddress.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getrawchangeaddress.html">?</a></td>
 <td>getrawchangeaddress</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getunconfirmedbalance</td>
@@ -3578,7 +3579,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getunconfirmedbalance.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getunconfirmedbalance.html">?</a></td>
 <td>getunconfirmedbalance</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>importwallet</td>
@@ -3626,7 +3627,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/importwallet.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/importwallet.html">?</a></td>
 <td>importwallet</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getblockchaininfo</td>
@@ -3674,7 +3675,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getblockchaininfo.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getblockchaininfo.html">?</a></td>
 <td>getblockchaininfo</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getnetworkinfo</td>
@@ -3722,7 +3723,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getnetworkinfo.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getnetworkinfo.html">?</a></td>
 <td>getnetworkinfo</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>getwalletinfo</td>
@@ -3770,7 +3771,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getwalletinfo.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/getwalletinfo.html">?</a></td>
 <td>getwalletinfo</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>estimatepriority</td>
@@ -3818,7 +3819,7 @@
 <td title="v0.16.2"></td>
 <td title="master"></td>
 <td>estimatepriority</td>
-<td>util</td>
+<td><a href="cats/util.html">util</a></td>
 </tr>
 <tr>
 <td>getchaintips</td>
@@ -3866,7 +3867,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getchaintips.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getchaintips.html">?</a></td>
 <td>getchaintips</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getmempoolinfo</td>
@@ -3914,7 +3915,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getmempoolinfo.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getmempoolinfo.html">?</a></td>
 <td>getmempoolinfo</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>invalidateblock</td>
@@ -3962,7 +3963,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/invalidateblock.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/invalidateblock.html">?</a></td>
 <td>invalidateblock</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>reconsiderblock</td>
@@ -4010,7 +4011,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/reconsiderblock.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/reconsiderblock.html">?</a></td>
 <td>reconsiderblock</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>setmocktime</td>
@@ -4058,7 +4059,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/setmocktime.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/setmocktime.html">?</a></td>
 <td>setmocktime</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>prioritisetransaction</td>
@@ -4106,7 +4107,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/prioritisetransaction.html">?</a></td>
 <td title="master" class="present msg-changed deprecated"><a href="docs/master/prioritisetransaction.html">?</a></td>
 <td>prioritisetransaction</td>
-<td>mining</td>
+<td><a href="cats/mining.html">mining</a></td>
 </tr>
 <tr>
 <td>estimatefee</td>
@@ -4154,7 +4155,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/estimatefee.html">?</a></td>
 <td title="master" class="present  "></td>
 <td>estimatefee</td>
-<td>util</td>
+<td><a href="cats/util.html">util</a></td>
 </tr>
 <tr>
 <td>importaddress</td>
@@ -4202,7 +4203,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/importaddress.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/importaddress.html">?</a></td>
 <td>importaddress</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>gettxoutproof</td>
@@ -4250,7 +4251,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/gettxoutproof.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/gettxoutproof.html">?</a></td>
 <td>gettxoutproof</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>verifytxoutproof</td>
@@ -4298,7 +4299,7 @@
 <td title="v0.16.2" class="present msg-changed "><a href="docs/v0.16.2/verifytxoutproof.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/verifytxoutproof.html">?</a></td>
 <td>verifytxoutproof</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>generate</td>
@@ -4346,7 +4347,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/generate.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/generate.html">?</a></td>
 <td>generate</td>
-<td>generating</td>
+<td><a href="cats/generating.html">generating</a></td>
 </tr>
 <tr>
 <td>resendwallettransactions</td>
@@ -4394,7 +4395,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/resendwallettransactions.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/resendwallettransactions.html">?</a></td>
 <td>resendwallettransactions</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>estimatesmartpriority</td>
@@ -4442,7 +4443,7 @@
 <td title="v0.16.2"></td>
 <td title="master"></td>
 <td>estimatesmartpriority</td>
-<td>util</td>
+<td><a href="cats/util.html">util</a></td>
 </tr>
 <tr>
 <td>getblockheader</td>
@@ -4490,7 +4491,7 @@
 <td title="v0.16.2" class="present msg-changed "><a href="docs/v0.16.2/getblockheader.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getblockheader.html">?</a></td>
 <td>getblockheader</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>clearbanned</td>
@@ -4538,7 +4539,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/clearbanned.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/clearbanned.html">?</a></td>
 <td>clearbanned</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>disconnectnode</td>
@@ -4586,7 +4587,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/disconnectnode.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/disconnectnode.html">?</a></td>
 <td>disconnectnode</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>listbanned</td>
@@ -4634,7 +4635,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/listbanned.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/listbanned.html">?</a></td>
 <td>listbanned</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>setban</td>
@@ -4682,7 +4683,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/setban.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/setban.html">?</a></td>
 <td>setban</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>fundrawtransaction</td>
@@ -4730,7 +4731,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/fundrawtransaction.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/fundrawtransaction.html">?</a></td>
 <td>fundrawtransaction</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>estimatesmartfee</td>
@@ -4778,7 +4779,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/estimatesmartfee.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/estimatesmartfee.html">?</a></td>
 <td>estimatesmartfee</td>
-<td>util</td>
+<td><a href="cats/util.html">util</a></td>
 </tr>
 <tr>
 <td>abandontransaction</td>
@@ -4826,7 +4827,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/abandontransaction.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/abandontransaction.html">?</a></td>
 <td>abandontransaction</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>importpubkey</td>
@@ -4874,7 +4875,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/importpubkey.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/importpubkey.html">?</a></td>
 <td>importpubkey</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>createwitnessaddress</td>
@@ -4922,7 +4923,7 @@
 <td title="v0.16.2"></td>
 <td title="master"></td>
 <td>createwitnessaddress</td>
-<td>util</td>
+<td><a href="cats/util.html">util</a></td>
 </tr>
 <tr>
 <td>getmempoolancestors</td>
@@ -4970,7 +4971,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getmempoolancestors.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getmempoolancestors.html">?</a></td>
 <td>getmempoolancestors</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getmempooldescendants</td>
@@ -5018,7 +5019,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getmempooldescendants.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getmempooldescendants.html">?</a></td>
 <td>getmempooldescendants</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getmempoolentry</td>
@@ -5066,7 +5067,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getmempoolentry.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getmempoolentry.html">?</a></td>
 <td>getmempoolentry</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>generatetoaddress</td>
@@ -5114,7 +5115,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/generatetoaddress.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/generatetoaddress.html">?</a></td>
 <td>generatetoaddress</td>
-<td>generating</td>
+<td><a href="cats/generating.html">generating</a></td>
 </tr>
 <tr>
 <td>addwitnessaddress</td>
@@ -5162,7 +5163,7 @@
 <td title="v0.16.2" class="present  deprecated"><a href="docs/v0.16.2/addwitnessaddress.html">?</a></td>
 <td title="master" class="present  deprecated"><a href="docs/master/addwitnessaddress.html">?</a></td>
 <td>addwitnessaddress</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>signmessagewithprivkey</td>
@@ -5210,7 +5211,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/signmessagewithprivkey.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/signmessagewithprivkey.html">?</a></td>
 <td>signmessagewithprivkey</td>
-<td>util</td>
+<td><a href="cats/util.html">util</a></td>
 </tr>
 <tr>
 <td>importprunedfunds</td>
@@ -5258,7 +5259,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/importprunedfunds.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/importprunedfunds.html">?</a></td>
 <td>importprunedfunds</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>removeprunedfunds</td>
@@ -5306,7 +5307,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/removeprunedfunds.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/removeprunedfunds.html">?</a></td>
 <td>removeprunedfunds</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>rpcNestedTest</td>
@@ -5354,7 +5355,7 @@
 <td title="v0.16.2" class="present  "></td>
 <td title="master" class="present  "></td>
 <td>rpcNestedTest</td>
-<td></td>
+<td><a href="cats/.html"></a></td>
 </tr>
 <tr>
 <td>preciousblock</td>
@@ -5402,7 +5403,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/preciousblock.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/preciousblock.html">?</a></td>
 <td>preciousblock</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>pruneblockchain</td>
@@ -5450,7 +5451,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/pruneblockchain.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/pruneblockchain.html">?</a></td>
 <td>pruneblockchain</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>getmemoryinfo</td>
@@ -5498,7 +5499,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getmemoryinfo.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/getmemoryinfo.html">?</a></td>
 <td>getmemoryinfo</td>
-<td>control</td>
+<td><a href="cats/control.html">control</a></td>
 </tr>
 <tr>
 <td>echo</td>
@@ -5546,7 +5547,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/echo.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/echo.html">?</a></td>
 <td>echo</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>echojson</td>
@@ -5594,7 +5595,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/echo.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/echo.html">?</a></td>
 <td>echojson</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>waitforblock</td>
@@ -5642,7 +5643,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/waitforblock.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/waitforblock.html">?</a></td>
 <td>waitforblock</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>waitforblockheight</td>
@@ -5690,7 +5691,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/waitforblockheight.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/waitforblockheight.html">?</a></td>
 <td>waitforblockheight</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>waitfornewblock</td>
@@ -5738,7 +5739,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/waitfornewblock.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/waitfornewblock.html">?</a></td>
 <td>waitfornewblock</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>setnetworkactive</td>
@@ -5786,7 +5787,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/setnetworkactive.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/setnetworkactive.html">?</a></td>
 <td>setnetworkactive</td>
-<td>network</td>
+<td><a href="cats/network.html">network</a></td>
 </tr>
 <tr>
 <td>bumpfee</td>
@@ -5834,7 +5835,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/bumpfee.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/bumpfee.html">?</a></td>
 <td>bumpfee</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>importmulti</td>
@@ -5882,7 +5883,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/importmulti.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/importmulti.html">?</a></td>
 <td>importmulti</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getchaintxstats</td>
@@ -5930,7 +5931,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/getchaintxstats.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/getchaintxstats.html">?</a></td>
 <td>getchaintxstats</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>logging</td>
@@ -5978,7 +5979,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/logging.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/logging.html">?</a></td>
 <td>logging</td>
-<td>control</td>
+<td><a href="cats/control.html">control</a></td>
 </tr>
 <tr>
 <td>uptime</td>
@@ -6026,7 +6027,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/uptime.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/uptime.html">?</a></td>
 <td>uptime</td>
-<td>control</td>
+<td><a href="cats/control.html">control</a></td>
 </tr>
 <tr>
 <td>estimaterawfee</td>
@@ -6074,7 +6075,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/estimaterawfee.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/estimaterawfee.html">?</a></td>
 <td>estimaterawfee</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>combinerawtransaction</td>
@@ -6122,7 +6123,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/combinerawtransaction.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/combinerawtransaction.html">?</a></td>
 <td>combinerawtransaction</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>abortrescan</td>
@@ -6170,7 +6171,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/abortrescan.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/abortrescan.html">?</a></td>
 <td>abortrescan</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>listwallets</td>
@@ -6218,7 +6219,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/listwallets.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/listwallets.html">?</a></td>
 <td>listwallets</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>savemempool</td>
@@ -6266,7 +6267,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/savemempool.html">?</a></td>
 <td title="master" class="present msg-changed "><a href="docs/master/savemempool.html">?</a></td>
 <td>savemempool</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>syncwithvalidationinterfacequeue</td>
@@ -6314,7 +6315,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/syncwithvalidationinterfacequeue.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/syncwithvalidationinterfacequeue.html">?</a></td>
 <td>syncwithvalidationinterfacequeue</td>
-<td>hidden</td>
+<td><a href="cats/hidden.html">hidden</a></td>
 </tr>
 <tr>
 <td>rescanblockchain</td>
@@ -6362,7 +6363,7 @@
 <td title="v0.16.2" class="present  "><a href="docs/v0.16.2/rescanblockchain.html">?</a></td>
 <td title="master" class="present  "><a href="docs/master/rescanblockchain.html">?</a></td>
 <td>rescanblockchain</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getblockstats</td>
@@ -6410,7 +6411,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/getblockstats.html">?</a></td>
 <td>getblockstats</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>scantxoutset</td>
@@ -6458,7 +6459,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/scantxoutset.html">?</a></td>
 <td>scantxoutset</td>
-<td>blockchain</td>
+<td><a href="cats/blockchain.html">blockchain</a></td>
 </tr>
 <tr>
 <td>combinepsbt</td>
@@ -6506,7 +6507,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/combinepsbt.html">?</a></td>
 <td>combinepsbt</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>converttopsbt</td>
@@ -6554,7 +6555,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/converttopsbt.html">?</a></td>
 <td>converttopsbt</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>createpsbt</td>
@@ -6602,7 +6603,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/createpsbt.html">?</a></td>
 <td>createpsbt</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>decodepsbt</td>
@@ -6650,7 +6651,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/decodepsbt.html">?</a></td>
 <td>decodepsbt</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>finalizepsbt</td>
@@ -6698,7 +6699,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/finalizepsbt.html">?</a></td>
 <td>finalizepsbt</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>signrawtransactionwithkey</td>
@@ -6746,7 +6747,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/signrawtransactionwithkey.html">?</a></td>
 <td>signrawtransactionwithkey</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>testmempoolaccept</td>
@@ -6794,7 +6795,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/testmempoolaccept.html">?</a></td>
 <td>testmempoolaccept</td>
-<td>rawtransactions</td>
+<td><a href="cats/rawtransactions.html">rawtransactions</a></td>
 </tr>
 <tr>
 <td>createwallet</td>
@@ -6842,7 +6843,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/createwallet.html">?</a></td>
 <td>createwallet</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getaddressesbylabel</td>
@@ -6890,7 +6891,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/getaddressesbylabel.html">?</a></td>
 <td>getaddressesbylabel</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getaddressinfo</td>
@@ -6938,7 +6939,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  deprecated"><a href="docs/master/getaddressinfo.html">?</a></td>
 <td>getaddressinfo</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>getreceivedbylabel</td>
@@ -6986,7 +6987,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/getreceivedbylabel.html">?</a></td>
 <td>getreceivedbylabel</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>listlabels</td>
@@ -7034,7 +7035,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/listlabels.html">?</a></td>
 <td>listlabels</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>listreceivedbylabel</td>
@@ -7082,7 +7083,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  deprecated"><a href="docs/master/listreceivedbylabel.html">?</a></td>
 <td>listreceivedbylabel</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>loadwallet</td>
@@ -7130,7 +7131,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/loadwallet.html">?</a></td>
 <td>loadwallet</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>sethdseed</td>
@@ -7178,7 +7179,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/sethdseed.html">?</a></td>
 <td>sethdseed</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>setlabel</td>
@@ -7226,7 +7227,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/setlabel.html">?</a></td>
 <td>setlabel</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>signrawtransactionwithwallet</td>
@@ -7274,7 +7275,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/signrawtransactionwithwallet.html">?</a></td>
 <td>signrawtransactionwithwallet</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>unloadwallet</td>
@@ -7322,7 +7323,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/unloadwallet.html">?</a></td>
 <td>unloadwallet</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>walletcreatefundedpsbt</td>
@@ -7370,7 +7371,7 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/walletcreatefundedpsbt.html">?</a></td>
 <td>walletcreatefundedpsbt</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 <tr>
 <td>walletprocesspsbt</td>
@@ -7418,11 +7419,13 @@
 <td title="v0.16.2"></td>
 <td title="master" class="present  "><a href="docs/master/walletprocesspsbt.html">?</a></td>
 <td>walletprocesspsbt</td>
-<td>wallet</td>
+<td><a href="cats/wallet.html">wallet</a></td>
 </tr>
 
-    </tbody>
-</table>
-</body>
-</html>
+        </tbody>
+    </table>
+    
 
+    </body>
+    </html>
+    

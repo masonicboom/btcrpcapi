@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>disconnectnode</h1>
-<h2>network</h2>
+<h2><a href="../../cats/network.html">network</a></h2>
 <h2>v0.14.0</h2>
 disconnectnode "node" <br/><br/>Immediately disconnects from the specified node.<br/><br/>Arguments:<br/>1. "node"     (string, required) The node (see getpeerinfo for nodes)<br/><br/>Examples:<br/>> bitcoin-cli disconnectnode "192.168.0.6:8333"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "disconnectnode", "params": ["192.168.0.6:8333"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

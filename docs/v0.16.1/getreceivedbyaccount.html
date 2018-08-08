@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>getreceivedbyaccount</h1>
-<h2>wallet</h2>
+<h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>v0.16.1</h2>
 getreceivedbyaccount "account" ( minconf )<br/><br/>DEPRECATED. Returns the total amount received by addresses with <account> in transactions with at least [minconf] confirmations.<br/><br/>Arguments:<br/>1. "account"      (string, required) The selected account, may be the default account using "".<br/>2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.<br/><br/>Result:<br/>amount              (numeric) The total amount in " + CURRENCY_UNIT + " received for this account.<br/><br/>Examples:<br/><br/>Amount received by the default account with at least 1 confirmation<br/>> bitcoin-cli getreceivedbyaccount ""<br/><br/>Amount received at the tabby account including unconfirmed amounts with zero confirmations<br/>> bitcoin-cli getreceivedbyaccount "tabby" 0<br/><br/>The amount with at least 6 confirmations<br/>> bitcoin-cli getreceivedbyaccount "tabby" 6<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getreceivedbyaccount", "params": ["tabby", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

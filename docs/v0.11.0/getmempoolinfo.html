@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>getmempoolinfo</h1>
-<h2>blockchain</h2>
+<h2><a href="../../cats/blockchain.html">blockchain</a></h2>
 <h2>v0.11.0</h2>
 getmempoolinfo<br/><br/>Returns details on the active state of the TX memory pool.<br/><br/>Result:<br/>{<br/>  "size": xxxxx                (numeric) Current tx count<br/>  "bytes": xxxxx               (numeric) Sum of all tx sizes<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getmempoolinfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>backupwallet</h1>
-<h2>wallet</h2>
+<h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>v0.11.3</h2>
 backupwallet "destination"<br/><br/>Safely copies wallet.dat to destination, which can be a directory or a path with filename.<br/><br/>Arguments:<br/>1. "destination"   (string) The destination directory or file<br/><br/>Examples:<br/>> bitcoin-cli backupwallet "backup.dat"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "backupwallet", "params": ["backup.dat"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

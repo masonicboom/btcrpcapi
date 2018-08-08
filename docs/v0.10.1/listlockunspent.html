@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>listlockunspent</h1>
-<h2>wallet</h2>
+<h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>v0.10.1</h2>
 listlockunspent<br/><br/>Returns list of temporarily unspendable outputs.<br/>See the lockunspent call to lock and unlock transactions for spending.<br/><br/>Result:<br/>[<br/>  {<br/>    "txid" : "transactionid",     (string) The transaction id locked<br/>    "vout" : n                      (numeric) The vout value<br/>  }<br/>  ,...<br/>]<br/><br/>Examples:<br/><br/>List the unspent transactions<br/>> bitcoin-cli listunspent <br/><br/>Lock an unspent transaction<br/>> bitcoin-cli lockunspent false "[{\\"txid\\":\\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\\",\\"vout\\":1}]"<br/><br/>List the locked transactions<br/>> bitcoin-cli listlockunspent <br/><br/>Unlock the transaction again<br/>> bitcoin-cli lockunspent true "[{\\"txid\\":\\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\\",\\"vout\\":1}]"<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listlockunspent", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 

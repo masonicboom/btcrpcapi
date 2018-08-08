@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>waitfornewblock</h1>
-<h2>hidden</h2>
+<h2><a href="../../cats/hidden.html">hidden</a></h2>
 <h2>v0.15.0</h2>
 waitfornewblock (timeout)<br/><br/>Waits for a specific new block and returns useful info about it.<br/><br/>Returns the current block on timeout or exit.<br/><br/>Arguments:<br/>1. timeout (int, optional, default=0) Time in milliseconds to wait for a response. 0 indicates no timeout.<br/><br/>Result:<br/>{                           (json object)<br/>  "hash" : {       (string) The blockhash<br/>  "height" : {     (int) Block height<br/>}<br/><br/>Examples:<br/>> bitcoin-cli waitfornewblock 1000<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "waitfornewblock", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 
