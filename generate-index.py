@@ -114,7 +114,7 @@ def print_chart(cat=None, relpath=""):
         vl = version2list(v)
         if vl < first:
             continue
-        print('<th><span class="version">{}</span></th>'.format(v))
+        print('<th><span class="version"><a href="tags/{}.html">{}</a></span></th>'.format(v, v))
 
     print('<th>Call</th>')
     if cat == None:

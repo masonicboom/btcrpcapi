@@ -120,6 +120,7 @@ a {{
 
 a:hover {{
     font-weight: bold;
+    text-decoration: underline;
 }}
 
 table {{

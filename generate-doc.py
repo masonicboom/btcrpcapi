@@ -14,7 +14,7 @@ html = """
 <body>
 <h1>{name}</h1>
 <h2><a href="../../cats/{category}.html">{category}</a></h2>
-<h2>{version}</h2>
+<h2><a href="../../tags/{version}.html">{version}</a></h2>
 
 <pre>
 {message}
