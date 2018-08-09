@@ -5,7 +5,7 @@
 <body>
 <h1>walletpassphrasechange</h1>
 <h2><a href="../../cats/wallet.html">wallet</a></h2>
-<h2>v0.14.1</h2>
+<h2><a href="../../tags/v0.14.1.html">v0.14.1</a></h2>
 
 <pre>
 walletpassphrasechange "oldpassphrase" "newpassphrase"<br/><br/>Changes the wallet passphrase from 'oldpassphrase' to 'newpassphrase'.<br/><br/>Arguments:<br/>1. "oldpassphrase"      (string) The current passphrase<br/>2. "newpassphrase"      (string) The new passphrase<br/><br/>Examples:<br/>> bitcoin-cli walletpassphrasechange "old one" "new one"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletpassphrasechange", "params": ["old one", "new one"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>

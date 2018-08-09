@@ -5,7 +5,7 @@
 <body>
 <h1>importaddress</h1>
 <h2><a href="../../cats/wallet.html">wallet</a></h2>
-<h2>v0.13.2</h2>
+<h2><a href="../../tags/v0.13.2.html">v0.13.2</a></h2>
 
 <pre>
 importaddress "address" ( "label" rescan p2sh )<br/><br/>Adds a script (in hex) or address that can be watched as if it were in your wallet but cannot be used to spend.<br/><br/>Arguments:<br/>1. "script"           (string, required) The hex-encoded script (or address)<br/>2. "label"            (string, optional, default="") An optional label<br/>3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions<br/>4. p2sh                 (boolean, optional, default=false) Add the P2SH version of the script as well<br/><br/>Note: This call can take minutes to complete if rescan is true.<br/>If you have the full public key, you should call importpubkey instead of this.<br/><br/>Note: If you import a non-standard raw script in hex form, outputs sending to it will be treated<br/>as change, and not show up in many RPCs.<br/><br/>Examples:<br/><br/>Import a script with rescan<br/>> bitcoin-cli importaddress "myscript"<br/><br/>Import using a label without rescan<br/>> bitcoin-cli importaddress "myscript" "testing" false<br/><br/>As a JSON-RPC call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importaddress", "params": ["myscript", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>

@@ -5,14 +5,14 @@
 <body>
 <h1>submitblock</h1>
 <h2><a href="../../cats/mining.html">mining</a></h2>
-<h2>master</h2>
+<h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
 submitblock "hexdata"  ( "dummy" )<br/><br/>Attempts to submit new block to network.<br/>See https://en.bitcoin.it/wiki/BIP_0022 for full specification.<br/><br/>Arguments<br/>1. "hexdata"        (string, required) the hex-encoded block data to submit<br/>2. "dummy"          (optional) dummy value, for compatibility with BIP22. This value is ignored.<br/><br/>Result:<br/><br/>Examples:<br/>> bitcoin-cli submitblock "mydata"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "submitblock", "params": ["mydata"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/0fb9c87815d180031b7924607946e51f860c3ba8/src/rpc/mining.cpp#L696-L712">src/rpc/mining.cpp#L696-L712</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/rpc/mining.cpp#L696-L712">src/rpc/mining.cpp#L696-L712</a>.
 </div>
 </body>
 </html>

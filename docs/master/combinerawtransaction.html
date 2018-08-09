@@ -5,14 +5,14 @@
 <body>
 <h1>combinerawtransaction</h1>
 <h2><a href="../../cats/rawtransactions.html">rawtransactions</a></h2>
-<h2>master</h2>
+<h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
 combinerawtransaction ["hexstring",...]<br/><br/>Combine multiple partially signed transactions into one transaction.<br/>The combined transaction may be another partially signed transaction or a <br/>fully signed transaction.<br/>Arguments:<br/>1. "txs"         (string) A json array of hex strings of partially signed transactions<br/>    [<br/>      "hexstring"     (string) A transaction hash<br/>      ,...<br/>    ]<br/><br/>Result:<br/>"hex"            (string) The hex-encoded raw transaction with signature(s)<br/><br/>Examples:<br/>> bitcoin-cli combinerawtransaction ["myhex1", "myhex2", "myhex3"]<br/>
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/0fb9c87815d180031b7924607946e51f860c3ba8/src/rpc/rawtransaction.cpp#L678-L700">src/rpc/rawtransaction.cpp#L678-L700</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/rpc/rawtransaction.cpp#L678-L700">src/rpc/rawtransaction.cpp#L678-L700</a>.
 </div>
 </body>
 </html>

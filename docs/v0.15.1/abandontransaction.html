@@ -5,7 +5,7 @@
 <body>
 <h1>abandontransaction</h1>
 <h2><a href="../../cats/wallet.html">wallet</a></h2>
-<h2>v0.15.1</h2>
+<h2><a href="../../tags/v0.15.1.html">v0.15.1</a></h2>
 
 <pre>
 abandontransaction "txid"<br/><br/>Mark in-wallet transaction <txid> as abandoned<br/>This will mark this transaction and all its in-wallet descendants as abandoned which will allow<br/>for their inputs to be respent.  It can be used to replace "stuck" or evicted transactions.<br/>It only works on transactions which are not included in a block and are not currently in the mempool.<br/>It has no effect on transactions which are already conflicted or abandoned.<br/><br/>Arguments:<br/>1. "txid"    (string, required) The transaction id<br/><br/>Result:<br/><br/>Examples:<br/>> bitcoin-cli abandontransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "abandontransaction", "params": ["1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>

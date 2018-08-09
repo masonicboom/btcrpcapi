@@ -5,7 +5,7 @@
 <body>
 <h1>combinerawtransaction</h1>
 <h2><a href="../../cats/rawtransactions.html">rawtransactions</a></h2>
-<h2>v0.15.1</h2>
+<h2><a href="../../tags/v0.15.1.html">v0.15.1</a></h2>
 
 <pre>
 combinerawtransaction ["hexstring",...]<br/><br/>Combine multiple partially signed transactions into one transaction.<br/>The combined transaction may be another partially signed transaction or a <br/>fully signed transaction.<br/>Arguments:<br/>1. "txs"         (string) A json array of hex strings of partially signed transactions<br/>    [<br/>      "hexstring"     (string) A transaction hash<br/>      ,...<br/>    ]<br/><br/>Result:<br/>"hex"            (string) The hex-encoded raw transaction with signature(s)<br/><br/>Examples:<br/>> bitcoin-cli combinerawtransaction ["myhex1", "myhex2", "myhex3"]<br/>

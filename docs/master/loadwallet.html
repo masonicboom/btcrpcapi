@@ -5,14 +5,14 @@
 <body>
 <h1>loadwallet</h1>
 <h2><a href="../../cats/wallet.html">wallet</a></h2>
-<h2>master</h2>
+<h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
 loadwallet "filename"<br/><br/>Loads a wallet from a wallet file or directory.<br/>Note that all wallet command-line options used when starting bitcoind will be<br/>applied to the new wallet (eg -zapwallettxes, upgradewallet, rescan, etc).<br/><br/>Arguments:<br/>1. "filename"    (string, required) The wallet directory or .dat file.<br/><br/>Result:<br/>{<br/>  "name" :    <wallet_name>,        (string) The wallet name if loaded successfully.<br/>  "warning" : <warning>,            (string) Warning message if wallet was not loaded cleanly.<br/>}<br/><br/>Examples:<br/>> bitcoin-cli loadwallet "test.dat"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "loadwallet", "params": ["test.dat"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/0fb9c87815d180031b7924607946e51f860c3ba8/src/wallet/rpcwallet.cpp#L3089-L3107">src/wallet/rpcwallet.cpp#L3089-L3107</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/wallet/rpcwallet.cpp#L3089-L3107">src/wallet/rpcwallet.cpp#L3089-L3107</a>.
 </div>
 </body>
 </html>

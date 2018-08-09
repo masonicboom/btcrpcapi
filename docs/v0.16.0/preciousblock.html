@@ -5,7 +5,7 @@
 <body>
 <h1>preciousblock</h1>
 <h2><a href="../../cats/blockchain.html">blockchain</a></h2>
-<h2>v0.16.0</h2>
+<h2><a href="../../tags/v0.16.0.html">v0.16.0</a></h2>
 
 <pre>
 preciousblock "blockhash"<br/><br/>Treats a block as if it were received before others with the same work.<br/><br/>A later preciousblock call can override the effect of an earlier one.<br/><br/>The effects of preciousblock are not retained across restarts.<br/><br/>Arguments:<br/>1. "blockhash"   (string, required) the hash of the block to mark as precious<br/><br/>Result:<br/><br/>Examples:<br/>> bitcoin-cli preciousblock "blockhash"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "preciousblock", "params": ["blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>

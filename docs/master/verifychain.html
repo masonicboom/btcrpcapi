@@ -5,14 +5,14 @@
 <body>
 <h1>verifychain</h1>
 <h2><a href="../../cats/blockchain.html">blockchain</a></h2>
-<h2>master</h2>
+<h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
 verifychain ( checklevel nblocks )<br/><br/>Verifies blockchain database.<br/><br/>Arguments:<br/>1. checklevel   (numeric, optional, 0-4, default=" + strprintf("%d", nCheckLevel) + ") How thorough the block verification is.<br/>2. nblocks      (numeric, optional, default=" + strprintf("%d", nCheckDepth) + ", 0=all) The number of blocks to check.<br/><br/>Result:<br/>true|false       (boolean) Verified or not<br/><br/>Examples:<br/>> bitcoin-cli verifychain <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifychain", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/0fb9c87815d180031b7924607946e51f860c3ba8/src/rpc/blockchain.cpp#L1080-L1096">src/rpc/blockchain.cpp#L1080-L1096</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/rpc/blockchain.cpp#L1081-L1097">src/rpc/blockchain.cpp#L1081-L1097</a>.
 </div>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <body>
 <h1>decodescript</h1>
 <h2><a href="../../cats/.html"></a></h2>
-<h2>v0.9.0</h2>
+<h2><a href="../../tags/v0.9.0.html">v0.9.0</a></h2>
 
 <pre>
 decodescript "hex"<br/><br/>Decode a hex-encoded script.<br/><br/>Arguments:<br/>1. "hex"     (string) the hex encoded script<br/><br/>Result:<br/>{<br/>  "asm":"asm",   (string) Script public key<br/>  "hex":"hex",   (string) hex encoded public key<br/>  "type":"type", (string) The output type<br/>  "reqSigs": n,    (numeric) The required signatures<br/>  "addresses": [   (json array of string)<br/>     "address"     (string) bitcoin address<br/>     ,...<br/>  ],<br/>  "p2sh","address" (string) script address<br/>}<br/><br/>Examples:<br/>> bitcoin-cli decodescript "hexstring"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "decodescript", "params": ["hexstring"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>

@@ -5,7 +5,7 @@
 <body>
 <h1>getnettotals</h1>
 <h2><a href="../../cats/network.html">network</a></h2>
-<h2>v0.10.2</h2>
+<h2><a href="../../tags/v0.10.2.html">v0.10.2</a></h2>
 
 <pre>
 getnettotals<br/><br/>Returns information about network traffic, including bytes in, bytes out,<br/>and current time.<br/><br/>Result:<br/>{<br/>  "totalbytesrecv": n,   (numeric) Total bytes received<br/>  "totalbytessent": n,   (numeric) Total bytes sent<br/>  "timemillis": t        (numeric) Total cpu time<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getnettotals <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnettotals", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>

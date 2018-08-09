@@ -5,7 +5,7 @@
 <body>
 <h1>getnetworkhashps</h1>
 <h2><a href="../../cats/mining.html">mining</a></h2>
-<h2>v0.16.0</h2>
+<h2><a href="../../tags/v0.16.0.html">v0.16.0</a></h2>
 
 <pre>
 getnetworkhashps ( nblocks height )<br/><br/>Returns the estimated network hashes per second based on the last n blocks.<br/>Pass in [blocks] to override # of blocks, -1 specifies since last difficulty change.<br/>Pass in [height] to estimate the network speed at the time when a certain block was found.<br/><br/>Arguments:<br/>1. nblocks     (numeric, optional, default=120) The number of blocks, or -1 for blocks since last difficulty change.<br/>2. height      (numeric, optional, default=-1) To estimate at the time of the given height.<br/><br/>Result:<br/>x             (numeric) Hashes per second estimated<br/><br/>Examples:<br/>> bitcoin-cli getnetworkhashps <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworkhashps", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
