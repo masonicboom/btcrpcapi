@@ -6,7 +6,10 @@
 <h1>getmempoolinfo</h1>
 <h2><a href="../../cats/blockchain.html">blockchain</a></h2>
 <h2>master</h2>
+
+<pre>
 getmempoolinfo<br/><br/>Returns details on the active state of the TX memory pool.<br/><br/>Result:<br/>{<br/>  "size": xxxxx,               (numeric) Current tx count<br/>  "bytes": xxxxx,              (numeric) Sum of all virtual transaction sizes as defined in BIP 141. Differs from actual serialized size because witness data is discounted<br/>  "usage": xxxxx,              (numeric) Total memory usage for the mempool<br/>  "maxmempool": xxxxx,         (numeric) Maximum memory usage for the mempool<br/>  "mempoolminfee": xxxxx       (numeric) Minimum fee rate in " + CURRENCY_UNIT + "/kB for tx to be accepted. Is the maximum of minrelaytxfee and minimum mempool fee<br/>  "minrelaytxfee": xxxxx       (numeric) Current minimum relay fee for transactions<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getmempoolinfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/0fb9c87815d180031b7924607946e51f860c3ba8/src/rpc/blockchain.cpp#L1413-L1431">src/rpc/blockchain.cpp#L1413-L1431</a>.

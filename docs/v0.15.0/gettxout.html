@@ -6,7 +6,10 @@
 <h1>gettxout</h1>
 <h2><a href="../../cats/blockchain.html">blockchain</a></h2>
 <h2>v0.15.0</h2>
+
+<pre>
 gettxout "txid" n ( include_mempool )<br/><br/>Returns details about an unspent transaction output.<br/><br/>Arguments:<br/>1. "txid"       (string, required) The transaction id<br/>2. n              (numeric, required) vout number<br/>3. include_mempool  (boolean, optional) Whether to include the mempool<br/><br/>Result:<br/>{<br/>  "bestblock" : "hash",    (string) the block hash<br/>  "confirmations" : n,       (numeric) The number of confirmations<br/>  "value" : x.xxx,           (numeric) The transaction value in " + CURRENCY_UNIT + "<br/>  "scriptPubKey" : {         (json object)<br/>     "asm" : "code",       (string) <br/>     "hex" : "hex",        (string) <br/>     "reqSigs" : n,          (numeric) Number of required signatures<br/>     "type" : "pubkeyhash", (string) The type, eg pubkeyhash<br/>     "addresses" : [          (array of string) array of bitcoin addresses<br/>        "address"     (string) bitcoin address<br/>        ,...<br/>     ]<br/>  },<br/>  "coinbase" : true|false   (boolean) Coinbase or not<br/>}<br/><br/>Examples:<br/><br/>Get unspent transactions<br/>> bitcoin-cli listunspent <br/><br/>View the details<br/>> bitcoin-cli gettxout "txid" 1<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxout", "params": ["txid", 1] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/3751912e8e044958d5ccea847a3f8eab0b026dc1/src/rpc/blockchain.cpp#L939-L974">src/rpc/blockchain.cpp#L939-L974</a>.

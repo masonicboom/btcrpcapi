@@ -6,7 +6,10 @@
 <h1>getmemorypool</h1>
 <h2><a href="../../cats/.html"></a></h2>
 <h2>v0.6.3</h2>
+
+<pre>
 getmemorypool [data]<br/>If [data] is not specified, returns data needed to construct a block to work on:<br/>  "version" : block version<br/>  "previousblockhash" : hash of current highest block<br/>  "transactions" : contents of non-coinbase transactions that should be included in the next block<br/>  "coinbasevalue" : maximum allowable input to coinbase transaction, including the generation award and transaction fees<br/>  "coinbaseflags" : data that should be included in coinbase so support for new features can be judged<br/>  "time" : timestamp appropriate for next block<br/>  "mintime" : minimum timestamp appropriate for next block<br/>  "curtime" : current timestamp<br/>  "bits" : compressed target of next block<br/>If [data] is specified, tries to solve the block and returns true if it was successful.
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/6e0c5e3778b83f128f6f14c311d5728392053581/src/bitcoinrpc.cpp#L1873-L1888">src/bitcoinrpc.cpp#L1873-L1888</a>.

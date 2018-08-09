@@ -6,7 +6,10 @@
 <h1>uptime</h1>
 <h2><a href="../../cats/control.html">control</a></h2>
 <h2>v0.16.1</h2>
+
+<pre>
 uptime<br/><br/>Returns the total uptime of the server.<br/><br/>Result:<br/>ttt        (numeric) The number of seconds that the server has been running<br/><br/>Examples:<br/>> bitcoin-cli uptime <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "uptime", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/dac5d68fc6cf136e0d7b21b9ed4fa053d54e6059/src/rpc/server.cpp#L242-L253">src/rpc/server.cpp#L242-L253</a>.

@@ -6,7 +6,10 @@
 <h1>dumpwallet</h1>
 <h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>v0.15.0</h2>
+
+<pre>
 dumpwallet "filename"<br/><br/>Dumps all wallet keys in a human-readable format.<br/><br/>Arguments:<br/>1. "filename"    (string, required) The filename with path (either absolute or relative to bitcoind)<br/><br/>Result:<br/>{                           (json object)<br/>  "filename" : {        (string) The filename with full absolute path<br/>}<br/><br/>Examples:<br/>> bitcoin-cli dumpwallet "test"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumpwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/3751912e8e044958d5ccea847a3f8eab0b026dc1/src/wallet/rpcdump.cpp#L587-L607">src/wallet/rpcdump.cpp#L587-L607</a>.

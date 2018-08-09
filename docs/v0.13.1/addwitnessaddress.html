@@ -6,7 +6,10 @@
 <h1>addwitnessaddress</h1>
 <h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>v0.13.1</h2>
+
+<pre>
 addwitnessaddress "address"<br/><br/>Add a witness address for a script (with pubkey or redeemscript known).<br/>It returns the witness script.<br/><br/>Arguments:<br/>1. "address"       (string, required) An address known to the wallet<br/><br/>Result:<br/>"witnessaddress",  (string) The value of the new address (P2SH of witness script).<br/>}<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/03422e564b552c1d3c16ae854f8471f7cb39e25d/src/wallet/rpcwallet.cpp#L1058-L1075">src/wallet/rpcwallet.cpp#L1058-L1075</a>.

@@ -6,7 +6,10 @@
 <h1>rescanblockchain</h1>
 <h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>v0.16.0</h2>
+
+<pre>
 rescanblockchain ("start_height") ("stop_height")<br/><br/>Rescan the local blockchain for wallet related transactions.<br/><br/>Arguments:<br/>1. "start_height"    (numeric, optional) block height where the rescan should start<br/>2. "stop_height"     (numeric, optional) the last block height that should be scanned<br/><br/>Result:<br/>{<br/>  "start_height"     (numeric) The block height where the rescan has started. If omitted, rescan started from the genesis block.<br/>  "stop_height"      (numeric) The height of the last rescanned block. If omitted, rescan stopped at the chain tip.<br/>}<br/><br/>Examples:<br/>> bitcoin-cli rescanblockchain 100000 120000<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "rescanblockchain", "params": [100000, 120000] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/4b4d7eb255ca8f9a94b92479e6061d129c91a991/src/wallet/rpcwallet.cpp#L3437-L3459">src/wallet/rpcwallet.cpp#L3437-L3459</a>.

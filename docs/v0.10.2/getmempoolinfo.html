@@ -6,7 +6,10 @@
 <h1>getmempoolinfo</h1>
 <h2><a href="../../cats/blockchain.html">blockchain</a></h2>
 <h2>v0.10.2</h2>
+
+<pre>
 getmempoolinfo<br/><br/>Returns details on the active state of the TX memory pool.<br/><br/>Result:<br/>{<br/>  "size": xxxxx                (numeric) Current tx count<br/>  "bytes": xxxxx               (numeric) Sum of all tx sizes<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getmempoolinfo <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/16f45600c8c372a738ffef544292864256382601/src/rpcblockchain.cpp#L583-L597">src/rpcblockchain.cpp#L583-L597</a>.

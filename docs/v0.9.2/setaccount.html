@@ -6,7 +6,10 @@
 <h1>setaccount</h1>
 <h2><a href="../../cats/.html"></a></h2>
 <h2>v0.9.2</h2>
+
+<pre>
 setaccount "bitcoinaddress" "account"<br/><br/>Sets the account associated with the given address.<br/><br/>Arguments:<br/>1. "bitcoinaddress"  (string, required) The bitcoin address to be associated with an account.<br/>2. "account"         (string, required) The account to assign the address to.<br/><br/>Examples:<br/>> bitcoin-cli setaccount "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XZ" "tabby"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setaccount", "params": ["1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XZ", "tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/505681f234685f2e17f1ebdbd8ba96eb061f1794/src/rpcwallet.cpp#L208-L220">src/rpcwallet.cpp#L208-L220</a>.

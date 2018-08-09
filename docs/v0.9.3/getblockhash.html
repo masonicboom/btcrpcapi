@@ -6,7 +6,10 @@
 <h1>getblockhash</h1>
 <h2><a href="../../cats/.html"></a></h2>
 <h2>v0.9.3</h2>
+
+<pre>
 getblockhash index<br/><br/>Returns hash of block in best-block-chain at index provided.<br/><br/>Arguments:<br/>1. index         (numeric, required) The block index<br/><br/>Result:<br/>"hash"         (string) The block hash<br/><br/>Examples:<br/>> bitcoin-cli getblockhash 1000<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhash", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/40d20412ff173e8eea2f456fd749663c8cabda18/src/rpcblockchain.cpp#L207-L220">src/rpcblockchain.cpp#L207-L220</a>.

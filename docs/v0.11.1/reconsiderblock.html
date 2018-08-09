@@ -6,7 +6,10 @@
 <h1>reconsiderblock</h1>
 <h2><a href="../../cats/hidden.html">hidden</a></h2>
 <h2>v0.11.1</h2>
+
+<pre>
 reconsiderblock "hash"<br/><br/>Removes invalidity status of a block and its descendants, reconsider them for activation.<br/>This can be used to undo the effects of invalidateblock.<br/><br/>Arguments:<br/>1. hash   (string, required) the hash of the block to reconsider<br/><br/>Result:<br/><br/>Examples:<br/>> bitcoin-cli reconsiderblock "blockhash"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "reconsiderblock", "params": ["blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/cf33f196e79b1e61d6266f8e5190a0c4bfae7224/src/rpcblockchain.cpp#L677-L690">src/rpcblockchain.cpp#L677-L690</a>.

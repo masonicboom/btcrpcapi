@@ -6,7 +6,10 @@
 <h1>walletpassphrase</h1>
 <h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>v0.14.0</h2>
+
+<pre>
 walletpassphrase "passphrase" timeout<br/><br/>Stores the wallet decryption key in memory for 'timeout' seconds.<br/>This is needed prior to performing transactions related to private keys such as sending bitcoins<br/><br/>Arguments:<br/>1. "passphrase"     (string, required) The wallet passphrase<br/>2. timeout            (numeric, required) The time to keep the decryption key in seconds.<br/><br/>Note:<br/>Issuing the walletpassphrase command while the wallet is already unlocked will set a new unlock<br/>time that overrides the old one.<br/><br/>Examples:<br/><br/>unlock the wallet for 60 seconds<br/>> bitcoin-cli walletpassphrase "my pass phrase" 60<br/><br/>Lock the wallet again (before 60 seconds)<br/>> bitcoin-cli walletlock <br/><br/>As json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletpassphrase", "params": ["my pass phrase", 60] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/43a987c1cbcd04b9c59052606c3c31c56abc826e/src/wallet/rpcwallet.cpp#L1949-L1972">src/wallet/rpcwallet.cpp#L1949-L1972</a>.

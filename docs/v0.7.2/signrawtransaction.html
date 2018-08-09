@@ -6,7 +6,10 @@
 <h1>signrawtransaction</h1>
 <h2><a href="../../cats/.html"></a></h2>
 <h2>v0.7.2</h2>
+
+<pre>
 signrawtransaction <hex string> [{"txid":txid,"vout":n,"scriptPubKey":hex},...] [<privatekey1>,...] [sighashtype="ALL"]<br/>Sign inputs for raw transaction (serialized, hex-encoded).<br/>Second optional argument (may be null) is an array of previous transaction outputs that<br/>this transaction depends on but may not yet be in the blockchain.<br/>Third optional argument (may be null) is an array of base58-encoded private<br/>keys that, if given, will be the only keys used to sign the transaction.<br/>Fourth optional argument is a string that is one of six values; ALL, NONE, SINGLE or<br/>ALL|ANYONECANPAY, NONE|ANYONECANPAY, SINGLE|ANYONECANPAY.<br/>Returns json object with keys:<br/>  hex : raw transaction with signature(s) (hex-encoded string)<br/>  complete : 1 if transaction has a complete set of signature (0 if not)
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/32a928e1d7b8c2db1f6fa8c2b5e716706c528fe3/src/rpcrawtransaction.cpp#L294-L309">src/rpcrawtransaction.cpp#L294-L309</a>.

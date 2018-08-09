@@ -6,7 +6,10 @@
 <h1>getnewaddress</h1>
 <h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>v0.12.1</h2>
+
+<pre>
 getnewaddress ( "account" )<br/><br/>Returns a new Bitcoin address for receiving payments.<br/>If 'account' is specified (DEPRECATED), it is added to the address book <br/>so payments received with the address will be credited to 'account'.<br/><br/>Arguments:<br/>1. "account"        (string, optional) DEPRECATED. The account name for the address to be linked to. If not provided, the default account "" is used. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.<br/><br/>Result:<br/>"bitcoinaddress"    (string) The new bitcoin address<br/><br/>Examples:<br/>> bitcoin-cli getnewaddress <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnewaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/9779e1e1f320a45255f2e81325f2feceec3fa944/src/wallet/rpcwallet.cpp#L108-L126">src/wallet/rpcwallet.cpp#L108-L126</a>.

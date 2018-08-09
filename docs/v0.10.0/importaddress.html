@@ -6,7 +6,10 @@
 <h1>importaddress</h1>
 <h2><a href="../../cats/wallet.html">wallet</a></h2>
 <h2>v0.10.0</h2>
+
+<pre>
 importaddress "address" ( "label" rescan )<br/><br/>Adds an address or script (in hex) that can be watched as if it were in your wallet but cannot be used to spend.<br/><br/>Arguments:<br/>1. "address"          (string, required) The address<br/>2. "label"            (string, optional, default="") An optional label<br/>3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions<br/><br/>Note: This call can take minutes to complete if rescan is true.<br/><br/>Examples:<br/><br/>Import an address with rescan<br/>> bitcoin-cli importaddress "myaddress"<br/><br/>Import using a label without rescan<br/>> bitcoin-cli importaddress "myaddress" "testing" false<br/><br/>As a JSON-RPC call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importaddress", "params": ["myaddress", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/047a89831760ff124740fe9f58411d57ee087078/src/rpcdump.cpp#L140-L158">src/rpcdump.cpp#L140-L158</a>.

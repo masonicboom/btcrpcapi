@@ -6,7 +6,10 @@
 <h1>listaddressgroupings</h1>
 <h2><a href="../../cats/.html"></a></h2>
 <h2>v0.9.0</h2>
+
+<pre>
 listaddressgroupings<br/><br/>Lists groups of addresses which have had their common ownership<br/>made public by common use as inputs or as the resulting change<br/>in past transactions<br/><br/>Result:<br/>[<br/>  [<br/>    [<br/>      "bitcoinaddress",     (string) The bitcoin address<br/>      amount,                 (numeric) The amount in btc<br/>      "account"             (string, optional) The account<br/>    ]<br/>    ,...<br/>  ]<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli listaddressgroupings <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressgroupings", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/92d25e4eebbc20c4b056faeab688b2cef5790bac/src/rpcwallet.cpp#L350-L373">src/rpcwallet.cpp#L350-L373</a>.

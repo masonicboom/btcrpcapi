@@ -6,7 +6,10 @@
 <h1>addnode</h1>
 <h2><a href="../../cats/network.html">network</a></h2>
 <h2>v0.16.0</h2>
+
+<pre>
 addnode "node" "add|remove|onetry"<br/><br/>Attempts to add or remove a node from the addnode list.<br/>Or try a connection to a node once.<br/>Nodes added using addnode (or -connect) are protected from DoS disconnection and are not required to be<br/>full nodes/support SegWit as other outbound peers are (though such peers will not be synced from).<br/><br/>Arguments:<br/>1. "node"     (string, required) The node (see getpeerinfo for nodes)<br/>2. "command"  (string, required) 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once<br/><br/>Examples:<br/>> bitcoin-cli addnode "192.168.0.6:8333" "onetry"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "addnode", "params": ["192.168.0.6:8333", "onetry"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/4b4d7eb255ca8f9a94b92479e6061d129c91a991/src/rpc/net.cpp#L192-L211">src/rpc/net.cpp#L192-L211</a>.

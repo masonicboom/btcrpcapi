@@ -6,7 +6,10 @@
 <h1>generate</h1>
 <h2><a href="../../cats/generating.html">generating</a></h2>
 <h2>v0.11.1</h2>
+
+<pre>
 generate numblocks<br/><br/>Mine blocks immediately (before the RPC call returns)<br/><br/>Note: this function can only be used on the regtest network<br/>1. numblocks    (numeric) How many blocks are generated immediately.<br/><br/>Result<br/>[ blockhashes ]     (array) hashes of blocks generated<br/><br/>Examples:<br/><br/>Generate 11 blocks<br/>> bitcoin-cli generate 11<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/cf33f196e79b1e61d6266f8e5190a0c4bfae7224/src/rpcmining.cpp#L116-L129">src/rpcmining.cpp#L116-L129</a>.

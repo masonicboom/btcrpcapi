@@ -6,7 +6,10 @@
 <h1>getchaintxstats</h1>
 <h2><a href="../../cats/blockchain.html">blockchain</a></h2>
 <h2>master</h2>
+
+<pre>
 getchaintxstats ( nblocks blockhash )<br/><br/>Compute statistics about the total number and rate of transactions in the chain.<br/><br/>Arguments:<br/>1. nblocks      (numeric, optional) Size of the window in number of blocks (default: one month).<br/>2. "blockhash"  (string, optional) The hash of the block that ends the window.<br/><br/>Result:<br/>{<br/>  "time": xxxxx,                         (numeric) The timestamp for the final block in the window in UNIX format.<br/>  "txcount": xxxxx,                      (numeric) The total number of transactions in the chain up to that point.<br/>  "window_final_block_hash": "...",      (string) The hash of the final block in the window.<br/>  "window_block_count": xxxxx,           (numeric) Size of the window in number of blocks.<br/>  "window_tx_count": xxxxx,              (numeric) The number of transactions in the window. Only returned if "window_block_count" is > 0.<br/>  "window_interval": xxxxx,              (numeric) The elapsed time in the window in seconds. Only returned if "window_block_count" is > 0.<br/>  "txrate": x.xx,                        (numeric) The average rate of transactions per second in the window. Only returned if "window_interval" is > 0.<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getchaintxstats <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getchaintxstats", "params": [2016] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/0fb9c87815d180031b7924607946e51f860c3ba8/src/rpc/blockchain.cpp#L1551-L1573">src/rpc/blockchain.cpp#L1551-L1573</a>.

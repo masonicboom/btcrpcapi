@@ -6,7 +6,10 @@
 <h1>getconnectioncount</h1>
 <h2><a href="../../cats/.html"></a></h2>
 <h2>v0.9.4</h2>
+
+<pre>
 getconnectioncount<br/><br/>Returns the number of connections to other nodes.<br/><br/>bResult:<br/>n          (numeric) The connection count<br/><br/>Examples:<br/>> bitcoin-cli getconnectioncount <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getconnectioncount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/41f94edf221019a6c4b8f78c2b17c389442f546e/src/rpcnet.cpp#L19-L30">src/rpcnet.cpp#L19-L30</a>.

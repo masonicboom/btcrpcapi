@@ -6,7 +6,10 @@
 <h1>getmempooldescendants</h1>
 <h2><a href="../../cats/blockchain.html">blockchain</a></h2>
 <h2>v0.14.1</h2>
+
+<pre>
 getmempooldescendants txid (verbose)<br/><br/>If txid is in the mempool, returns all in-mempool descendants.<br/><br/>Arguments:<br/>1. "txid"                 (string, required) The transaction id (must be in mempool)<br/>2. verbose                  (boolean, optional, default=false) True for a json object, false for array of transaction ids<br/><br/>Result (for verbose=false):<br/>[                       (json array of strings)<br/>  "transactionid"           (string) The transaction id of an in-mempool descendant transaction<br/>  ,...<br/>]<br/><br/>Result (for verbose=true):<br/>{                           (json object)<br/>  "transactionid" : {       (json object)<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/964a185cc83af34587194a6ecda3ed9cf6b49263/src/rpc/blockchain.cpp#L508-L525">src/rpc/blockchain.cpp#L508-L525</a>.

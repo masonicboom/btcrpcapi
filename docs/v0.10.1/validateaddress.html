@@ -6,7 +6,10 @@
 <h1>validateaddress</h1>
 <h2><a href="../../cats/util.html">util</a></h2>
 <h2>v0.10.1</h2>
+
+<pre>
 validateaddress "bitcoinaddress"<br/><br/>Return information about the given bitcoin address.<br/><br/>Arguments:<br/>1. "bitcoinaddress"     (string, required) The bitcoin address to validate<br/><br/>Result:<br/>{<br/>  "isvalid" : true|false,         (boolean) If the address is valid or not. If not, this is the only property returned.<br/>  "address" : "bitcoinaddress", (string) The bitcoin address validated<br/>  "ismine" : true|false,          (boolean) If the address is yours or not<br/>  "isscript" : true|false,        (boolean) If the key is a script<br/>  "pubkey" : "publickeyhex",    (string) The hex value of the raw public key<br/>  "iscompressed" : true|false,    (boolean) If the address is compressed<br/>  "account" : "account"         (string) The account associated with the address, "" is the default account<br/>}<br/><br/>Examples:<br/>> bitcoin-cli validateaddress "1PSSGeFHDnKNxiEyFrD1wcEaHr9hrQDDWc"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "validateaddress", "params": ["1PSSGeFHDnKNxiEyFrD1wcEaHr9hrQDDWc"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/d8ac90184254fea3a7f4991fd0529dfbd750aea0/src/rpcmisc.cpp#L152-L173">src/rpcmisc.cpp#L152-L173</a>.

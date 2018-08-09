@@ -6,7 +6,10 @@
 <h1>getblockcount</h1>
 <h2><a href="../../cats/.html"></a></h2>
 <h2>v0.9.5</h2>
+
+<pre>
 getblockcount<br/><br/>Returns the number of blocks in the longest block chain.<br/><br/>Result:<br/>n    (numeric) The current block count<br/><br/>Examples:<br/>> bitcoin-cli getblockcount <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockcount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/b880967f74aadc6b817cdb46a33548bc55bfc117/src/rpcblockchain.cpp#L81-L92">src/rpcblockchain.cpp#L81-L92</a>.
