@@ -15,7 +15,10 @@ html = """
 <h1>{name}</h1>
 <h2><a href="../../cats/{category}.html">{category}</a></h2>
 <h2>{version}</h2>
+
+<pre>
 {message}
+</pre>
 
 <div class="source">
     Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/{githash}/{filepath}#L{startLine}-L{endLine}">{filepath}#L{startLine}-L{endLine}</a>.
