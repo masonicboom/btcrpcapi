@@ -1,26 +1,19 @@
 #!/usr/bin/env python3
 # Extracts RPC API docs from bitcoin source files.
 
+import sqlite3
 import sys
 import re
 import json
 
-if len(sys.argv) < 6:
-    print("usage: dumpdocs.py <DATA_DIR> <VERSION> <FILEPATH> <GIT_HASH> <API_FILE>")
+if len(sys.argv) < 4:
+    print("usage: load-docs.py <DB_FILE> <TAG> <FILE_PATH>")
     sys.exit(1)
 
-data_dir = sys.argv[1]
-version = sys.argv[2]
-filepath = sys.argv[3]
-githash = sys.argv[4]
-apifile = sys.argv[5]
+dbfile, tag, filepath = sys.argv[1:4]
 
-# Load category map from apifile (table of [category, name, func]).
-categories = {}
-with open(apifile) as f:
-    for line in f:
-        [name, func, cat] = re.split(r'\t', line.rstrip('\n'))
-        categories[func] = cat
+conn = sqlite3.connect(dbfile)
+c = conn.cursor()
 
 # Parse source code for RPC doc strings, using a state machine.
 state = 'BEGIN'
@@ -30,21 +23,12 @@ startLine = -1
 endLine = -1
 
 def close():
-    f = open("{}/{}/{}.json".format(data_dir, version, name), "w")
     msg = "".join(msgs).replace(r"\n", "<br/>").replace(r"\"", "\"")
-    data = {
-        "name": name,
-        "category": categories[name],
-        "version": version,
-        "message": msg,
-        "deprecated": "DEPRECATED" in msg,
-        "githash": githash,
-        "filepath": filepath,
-        "startLine": startLine,
-        "endLine": endLine
-    }
-    f.write(json.dumps(data))
-    f.close()
+    deprecated = "DEPRECATED" in msg
+    c.execute('''
+        insert into docs (tag, func, message, deprecated, filepath, start_line, end_line)
+        values (?, ?, ?, ?, ?, ?, ?)
+    ''', [tag, name, msg, deprecated, filepath, startLine, endLine])
 
 for lineNum, line in enumerate(map(str.rstrip, sys.stdin)):
     if state == 'BEGIN':
@@ -107,3 +91,6 @@ for lineNum, line in enumerate(map(str.rstrip, sys.stdin)):
             endLine = lineNum
             close()
             state = 'BEGIN'
+
+conn.commit()
+conn.close()

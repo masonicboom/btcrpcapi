@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
-# Extracts RPC API calls from bitcoin source files.
+# Load RPC API calls from bitcoin source files into the database.
 
+import sqlite3
 import sys
 import re
 
+if len(sys.argv) < 3:
+    print("usage: load-release-api.py <DB_FILE> <TAG>")
+    sys.exit(1)
+
+dbfile, tag = sys.argv[1:3]
+
+# Extract APIs.
+apis = []
 in_rpcs = False
 for line in map(str.rstrip, sys.stdin):
     if not in_rpcs:
@@ -30,4 +39,15 @@ for line in map(str.rstrip, sys.stdin):
             # Output call and function name because docs will be indexed by function name.
             call_name = parts[col].strip('"')
             func_name = parts[col+1][1:]
-            print("{}\t{}\t{}".format(call_name, func_name, category))
+
+            apis.append([tag, call_name, func_name, category])
+
+# Load into database.
+conn = sqlite3.connect(dbfile)
+c = conn.cursor()
+c.executemany('''
+    insert into apis (tag, call, func, category)
+    values (?, ?, ?, ?)
+''', apis)
+conn.commit()
+conn.close()
