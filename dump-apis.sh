@@ -6,7 +6,7 @@ function dump {
     git checkout "$1"
 
     apifile="../apis/$1"
-    git grep --files-with-matches "static const CRPCCommand .*\[\] =" *.cpp | xargs cat | ../dumpapi.py > "$apifile"
+    git grep --files-with-matches "static const CRPCCommand .*\[\] =" *.cpp | xargs cat | ../dump-api.py > "$apifile"
 
     mkdir -p "../docdata/$1/"
     cat "$apifile" | cut -f 1 | while read call; do
@@ -16,7 +16,7 @@ function dump {
     githash=$(git rev-parse HEAD)
 
     sort targets | uniq | while read filepath; do
-        ../dumpdocs.py "../docdata" "$1" "$filepath" "$githash" "$apifile" < "$filepath"
+        ../dump-docs.py "../docdata" "$1" "$filepath" "$githash" "$apifile" < "$filepath"
     done
     rm targets
 }

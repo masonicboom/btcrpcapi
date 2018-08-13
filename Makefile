@@ -16,11 +16,11 @@ cats: generate-cats.sh generate-index.py
 docs: generate-docs.sh docdata/
 	./$<
 
-apis: dumpapis.sh dumpapi.py bitcoin
+apis: dump-apis.sh dump-api.py bitcoin
 	mkdir -p $@
 	./$<
 
-docdata: dumpapis.sh dumpdocs.py bitcoin apis/
+docdata: dump-apis.sh dump-docs.py bitcoin apis/
 	mkdir -p $@
 	./$<
 
