@@ -1,0 +1,18 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>move</h1>
+<h2><a href="../../cats/wallet.html">wallet</a></h2>
+<h2><a href="../../tags/v0.13.0.html">v0.13.0</a></h2>
+
+<pre>
+move "fromaccount" "toaccount" amount ( minconf "comment" )<br/><br/>DEPRECATED. Move a specified amount from one account in your wallet to another.<br/><br/>Arguments:<br/>1. "fromaccount"   (string, required) The name of the account to move funds from. May be the default account using "".<br/>2. "toaccount"     (string, required) The name of the account to move funds to. May be the default account using "".<br/>3. amount            (numeric) Quantity of " + CURRENCY_UNIT + " to move between accounts.<br/>4. minconf           (numeric, optional, default=1) Only use funds with at least this many confirmations.<br/>5. "comment"       (string, optional) An optional comment, stored in the wallet only.<br/><br/>Result:<br/>true|false           (boolean) true if successful.<br/><br/>Examples:<br/><br/>Move 0.01 " + CURRENCY_UNIT + " from the default account to the account named tabby<br/>> bitcoin-cli move "" "tabby" 0.01<br/><br/>Move 0.01 " + CURRENCY_UNIT + " timotei to akiko with a comment and funds have 6 confirmations<br/>> bitcoin-cli move "timotei" "akiko" 0.01 6 "happy birthday!"<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "move", "params": ["timotei", "akiko", 0.01, 6, "happy birthday!"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/a402396dce64c42ea73535b7dde4a9164d430438/src/wallet/rpcwallet.cpp#L740-L764">src/wallet/rpcwallet.cpp#L740-L764</a>.
+</div>
+</body>
+</html>
