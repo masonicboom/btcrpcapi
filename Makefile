@@ -1,4 +1,4 @@
-all: index.html style.css docs/ cats/ tags/
+all: docs cats tags index.html style.css
 
 style.css: generate-style.py
 	./$< > $@
