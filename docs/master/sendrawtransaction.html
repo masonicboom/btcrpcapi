@@ -8,11 +8,11 @@
 <h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
-sendrawtransaction "hexstring" ( allowhighfees )<br/><br/>Submits raw transaction (serialized, hex-encoded) to local node and network.<br/><br/>Also see createrawtransaction and signrawtransaction calls.<br/><br/>Arguments:<br/>1. "hexstring"    (string, required) The hex string of the raw transaction)<br/>2. allowhighfees    (boolean, optional, default=false) Allow high fees<br/><br/>Result:<br/>"hex"             (string) The transaction hash in hex<br/><br/>Examples:<br/><br/>Create a transaction<br/>> bitcoin-cli createrawtransaction "[{\\"txid\\" : \\"mytxid\\",\\"vout\\":0}]" "{\\"myaddress\\":0.01}"<br/>Sign the transaction, and get back the hex<br/>> bitcoin-cli signrawtransaction "myhex"<br/><br/>Send the transaction (signed hex)<br/>> bitcoin-cli sendrawtransaction "signedhex"<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendrawtransaction", "params": ["signedhex"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+sendrawtransaction "hexstring" ( allowhighfees )<br/><br/>Submits raw transaction (serialized, hex-encoded) to local node and network.<br/><br/>Also see createrawtransaction and signrawtransactionwithkey calls.<br/><br/>Arguments:<br/>1. "hexstring"    (string, required) The hex string of the raw transaction)<br/>2. allowhighfees    (boolean, optional, default=false) Allow high fees<br/><br/>Result:<br/>"hex"             (string) The transaction hash in hex<br/><br/>Examples:<br/><br/>Create a transaction<br/>> bitcoin-cli createrawtransaction "[{\\"txid\\" : \\"mytxid\\",\\"vout\\":0}]" "{\\"myaddress\\":0.01}"<br/>Sign the transaction, and get back the hex<br/>> bitcoin-cli signrawtransactionwithwallet "myhex"<br/><br/>Send the transaction (signed hex)<br/>> bitcoin-cli sendrawtransaction "signedhex"<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendrawtransaction", "params": ["signedhex"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/rpc/rawtransaction.cpp#L1082-L1103">src/rpc/rawtransaction.cpp#L1082-L1103</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f504a1402afd0760e9d348ecc8bad0094aa7d705/src/rpc/rawtransaction.cpp#L982-L1003">src/rpc/rawtransaction.cpp#L982-L1003</a>.
 </div>
 </body>
 </html>

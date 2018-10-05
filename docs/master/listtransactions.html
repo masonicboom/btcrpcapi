@@ -1,0 +1,18 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>listtransactions</h1>
+<h2><a href="../../cats/wallet.html">wallet</a></h2>
+<h2><a href="../../tags/master.html">master</a></h2>
+
+<pre>
+listtransactions (dummy count skip include_watchonly)<br/><br/>Returns up to 'count' most recent transactions skipping the first 'from' transactions.<br/><br/>Arguments:<br/>1. "dummy"    (string, optional) If set, should be "*" for backwards compatibility.<br/>2. count          (numeric, optional, default=10) The number of transactions to return<br/>3. skip           (numeric, optional, default=0) The number of transactions to skip<br/>4. include_watchonly (bool, optional, default=false) Include transactions to watch-only addresses (see 'importaddress')<br/><br/>Result:<br/>[<br/>  {<br/>    "address":"address",    (string) The bitcoin address of the transaction.<br/>    "category":"send|receive", (string) The transaction category.<br/>    "amount": x.xxx,          (numeric) The amount in " + CURRENCY_UNIT + ". This is negative for the 'send' category, and is positive<br/>                                        for the 'receive' category,<br/>    "label": "label",       (string) A comment for the address/transaction, if any<br/>    "vout": n,                (numeric) the vout value<br/>    "fee": x.xxx,             (numeric) The amount of the fee in " + CURRENCY_UNIT + ". This is negative and only available for the <br/>                                         'send' category of transactions.<br/>    "confirmations": n,       (numeric) The number of confirmations for the transaction. Negative confirmations indicate the<br/>                                         transaction conflicts with the block chain<br/>    "trusted": xxx,           (bool) Whether we consider the outputs of this unconfirmed transaction safe to spend.<br/>    "blockhash": "hashvalue", (string) The block hash containing the transaction.<br/>    "blockindex": n,          (numeric) The index of the transaction in the block that includes it.<br/>    "blocktime": xxx,         (numeric) The block time in seconds since epoch (1 Jan 1970 GMT).<br/>    "txid": "transactionid", (string) The transaction id.<br/>    "time": xxx,              (numeric) The transaction time in seconds since epoch (midnight Jan 1 1970 GMT).<br/>    "timereceived": xxx,      (numeric) The time received in seconds since epoch (midnight Jan 1 1970 GMT).<br/>    "comment": "...",       (string) If a comment is associated with the transaction.<br/>    "bip125-replaceable": "yes|no|unknown",  (string) Whether this transaction could be replaced due to BIP125 (replace-by-fee);<br/>                                                     may be unknown for unconfirmed transactions not in the mempool<br/>    "abandoned": xxx          (bool) 'true' if the transaction has been abandoned (inputs are respendable). Only available for the <br/>                                         'send' category of transactions.<br/>  }<br/>]<br/><br/>Examples:<br/><br/>List the most recent 10 transactions in the systems<br/>> bitcoin-cli listtransactions <br/><br/>List transactions 100 to 120<br/>> bitcoin-cli listtransactions "*" 20 100<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listtransactions", "params": ["*", 20, 100] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f504a1402afd0760e9d348ecc8bad0094aa7d705/src/wallet/rpcwallet.cpp#L1451-L1504">src/wallet/rpcwallet.cpp#L1451-L1504</a>.
+</div>
+</body>
+</html>

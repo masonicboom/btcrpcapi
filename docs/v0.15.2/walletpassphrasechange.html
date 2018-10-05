@@ -1,0 +1,18 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>walletpassphrasechange</h1>
+<h2><a href="../../cats/wallet.html">wallet</a></h2>
+<h2><a href="../../tags/v0.15.2.html">v0.15.2</a></h2>
+
+<pre>
+walletpassphrasechange "oldpassphrase" "newpassphrase"<br/><br/>Changes the wallet passphrase from 'oldpassphrase' to 'newpassphrase'.<br/><br/>Arguments:<br/>1. "oldpassphrase"      (string) The current passphrase<br/>2. "newpassphrase"      (string) The new passphrase<br/><br/>Examples:<br/>> bitcoin-cli walletpassphrasechange "old one" "new one"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletpassphrasechange", "params": ["old one", "new one"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/0602db06eb1530606b85b2c137ddf0c63347a4fa/src/wallet/rpcwallet.cpp#L2165-L2182">src/wallet/rpcwallet.cpp#L2165-L2182</a>.
+</div>
+</body>
+</html>
