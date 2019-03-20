@@ -1,0 +1,18 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>getreceivedbyaccount</h1>
+<h2><a href="../../cats/wallet.html">wallet</a></h2>
+<h2><a href="../../tags/v0.17.0.html">v0.17.0</a></h2>
+
+<pre>
+getreceivedbylabel "label" ( minconf )<br/><br/>Returns the total amount received by addresses with <label> in transactions with at least [minconf] confirmations.<br/><br/>Arguments:<br/>1. "label"        (string, required) The selected label, may be the default label using "".<br/>2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.<br/><br/>Result:<br/>amount              (numeric) The total amount in " + CURRENCY_UNIT + " received for this label.<br/><br/>Examples:<br/><br/>Amount received by the default label with at least 1 confirmation<br/>> bitcoin-cli getreceivedbylabel ""<br/><br/>Amount received at the tabby label including unconfirmed amounts with zero confirmations<br/>> bitcoin-cli getreceivedbylabel "tabby" 0<br/><br/>The amount with at least 6 confirmations<br/>> bitcoin-cli getreceivedbylabel "tabby" 6<br/><br/>As a json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getreceivedbylabel", "params": ["tabby", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/e1ed37edaedc85b8c3468bd9a726046344036243/src/wallet/rpcwallet.cpp#L782-L816">src/wallet/rpcwallet.cpp#L782-L816</a>.
+</div>
+</body>
+</html>

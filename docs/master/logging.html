@@ -8,11 +8,11 @@
 <h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
-logging ( <include> <exclude> )<br/>Gets and sets the logging configuration.<br/>When called without an argument, returns the list of categories with status that are currently being debug logged or not.<br/>When called with arguments, adds or removes categories from debug logging and return the lists above.<br/>The arguments are evaluated in order "include", "exclude".<br/>If an item is both included and excluded, it will thus end up being excluded.<br/>The valid logging categories are: " + ListLogCategories() + "<br/>In addition, the following are available as category names with special meanings:<br/>  - "all",  "1" : represent all logging categories.<br/>  - "none", "0" : even if other logging categories are specified, ignore all of them.<br/><br/>Arguments:<br/>1. "include"        (array of strings, optional) A json array of categories to add debug logging<br/>     [<br/>       "category"   (string) the valid logging category<br/>       ,...<br/>     ]<br/>2. "exclude"        (array of strings, optional) A json array of categories to remove debug logging<br/>     [<br/>       "category"   (string) the valid logging category<br/>       ,...<br/>     ]<br/><br/>Result:<br/>{                   (json object where keys are the logging categories, and values indicates its status<br/>  "category": 0|1,  (numeric) if being debug logged or not. 0:inactive, 1:active<br/>  ...<br/>}<br/><br/>Examples:<br/>> bitcoin-cli logging "[\\"all\\"]" "[\\"http\\"]"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "logging", "params": [["all"], "[libevent]"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/rpc/misc.cpp#L376-L409">src/rpc/misc.cpp#L376-L409</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/b3f82284ba9035411b3d2d83b507549a4b12cfc8/src/rpc/misc.cpp#L509-L513">src/rpc/misc.cpp#L509-L513</a>.
 </div>
 </body>
 </html>

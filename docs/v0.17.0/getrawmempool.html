@@ -1,0 +1,18 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>getrawmempool</h1>
+<h2><a href="../../cats/blockchain.html">blockchain</a></h2>
+<h2><a href="../../tags/v0.17.0.html">v0.17.0</a></h2>
+
+<pre>
+getrawmempool ( verbose )<br/><br/>Returns all transaction ids in memory pool as a json array of string transaction ids.<br/><br/>Hint: use getmempoolentry to fetch a specific transaction from the mempool.<br/><br/>Arguments:<br/>1. verbose (boolean, optional, default=false) True for a json object, false for array of transaction ids<br/><br/>Result: (for verbose = false):<br/>[                     (json array of string)<br/>  "transactionid"     (string) The transaction id<br/>  ,...<br/>]<br/><br/>Result: (for verbose = true):<br/>{                           (json object)<br/>  "transactionid" : {       (json object)<br/>
+</pre>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/e1ed37edaedc85b8c3468bd9a726046344036243/src/rpc/blockchain.cpp#L461-L478">src/rpc/blockchain.cpp#L461-L478</a>.
+</div>
+</body>
+</html>

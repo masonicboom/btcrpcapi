@@ -1,0 +1,18 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>getmempoolancestors</h1>
+<h2><a href="../../cats/blockchain.html">blockchain</a></h2>
+<h2><a href="../../tags/v0.17.1.html">v0.17.1</a></h2>
+
+<pre>
+getmempoolancestors txid (verbose)<br/><br/>If txid is in the mempool, returns all in-mempool ancestors.<br/><br/>Arguments:<br/>1. "txid"                 (string, required) The transaction id (must be in mempool)<br/>2. verbose                  (boolean, optional, default=false) True for a json object, false for array of transaction ids<br/><br/>Result (for verbose=false):<br/>[                       (json array of strings)<br/>  "transactionid"           (string) The transaction id of an in-mempool ancestor transaction<br/>  ,...<br/>]<br/><br/>Result (for verbose=true):<br/>{                           (json object)<br/>  "transactionid" : {       (json object)<br/>
+</pre>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/ef70f9b52b851c7997a9f1a0834714e3eebc1fd8/src/rpc/blockchain.cpp#L493-L510">src/rpc/blockchain.cpp#L493-L510</a>.
+</div>
+</body>
+</html>

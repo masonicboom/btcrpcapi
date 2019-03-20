@@ -8,11 +8,11 @@
 <h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
-finalizepsbt "psbt" ( extract )<br/>Finalize the inputs of a PSBT. If the transaction is fully signed, it will produce a<br/>network serialized transaction which can be broadcast with sendrawtransaction. Otherwise a PSBT will be<br/>created which has the final_scriptSig and final_scriptWitness fields filled for inputs that are complete.<br/>Implements the Finalizer and Extractor roles.<br/><br/>Arguments:<br/>1. "psbt"                 (string) A base64 string of a PSBT<br/>2. "extract"              (boolean, optional, default=true) If true and the transaction is complete, <br/>                             extract and return the complete transaction in normal network serialization instead of the PSBT.<br/><br/>Result:<br/>{<br/>  "psbt" : "value",          (string) The base64-encoded partially signed transaction if not extracted<br/>  "hex" : "value",           (string) The hex-encoded network transaction if extracted<br/>  "complete" : true|false,   (boolean) If the transaction has a complete set of signatures<br/>  ]<br/>}<br/><br/>Examples:<br/>> bitcoin-cli finalizepsbt "psbt"<br/>
+
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/rpc/rawtransaction.cpp#L1610-L1634">src/rpc/rawtransaction.cpp#L1610-L1634</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/b3f82284ba9035411b3d2d83b507549a4b12cfc8/src/rpc/rawtransaction.cpp#L1538-L1542">src/rpc/rawtransaction.cpp#L1538-L1542</a>.
 </div>
 </body>
 </html>

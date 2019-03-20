@@ -8,11 +8,11 @@
 <h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
-listlabels ( "purpose" )<br/><br/>Returns the list of all labels, or labels that are assigned to addresses with a specific purpose.<br/><br/>Arguments:<br/>1. "purpose"    (string, optional) Address purpose to list labels for ('send','receive'). An empty string is the same as not providing this argument.<br/><br/>Result:<br/>[               (json array of string)<br/>  "label",      (string) Label name<br/>  ...<br/>]<br/><br/>Examples:<br/><br/>List all labels<br/>> bitcoin-cli listlabels <br/><br/>List labels that have receiving addresses<br/>> bitcoin-cli listlabels receive<br/><br/>List labels that have sending addresses<br/>> bitcoin-cli listlabels send<br/><br/>As json rpc call<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listlabels", "params": [receive] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/wallet/rpcwallet.cpp#L4300-L4329">src/wallet/rpcwallet.cpp#L4300-L4329</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/b3f82284ba9035411b3d2d83b507549a4b12cfc8/src/wallet/rpcwallet.cpp#L3747-L3758">src/wallet/rpcwallet.cpp#L3747-L3758</a>.
 </div>
 </body>
 </html>

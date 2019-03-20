@@ -1,0 +1,18 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>setban</h1>
+<h2><a href="../../cats/network.html">network</a></h2>
+<h2><a href="../../tags/v0.17.1.html">v0.17.1</a></h2>
+
+<pre>
+setban "subnet" "add|remove" (bantime) (absolute)<br/><br/>Attempts to add or remove an IP/Subnet from the banned list.<br/><br/>Arguments:<br/>1. "subnet"       (string, required) The IP/Subnet (see getpeerinfo for nodes IP) with an optional netmask (default is /32 = single IP)<br/>2. "command"      (string, required) 'add' to add an IP/Subnet to the list, 'remove' to remove an IP/Subnet from the list<br/>3. "bantime"      (numeric, optional) time in seconds how long (or until when if [absolute] is set) the IP is banned (0 or empty means using the default time of 24h which can also be overwritten by the -bantime startup argument)<br/>4. "absolute"     (boolean, optional) If set, the bantime must be an absolute timestamp in seconds since epoch (Jan 1 1970 GMT)<br/><br/>Examples:<br/>> bitcoin-cli setban "192.168.0.6" "add" 86400<br/>> bitcoin-cli setban "192.168.0.0/24" "add"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setban", "params": ["192.168.0.6", "add", 86400] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/ef70f9b52b851c7997a9f1a0834714e3eebc1fd8/src/rpc/net.cpp#L491-L510">src/rpc/net.cpp#L491-L510</a>.
+</div>
+</body>
+</html>

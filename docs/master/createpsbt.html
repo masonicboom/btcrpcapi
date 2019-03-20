@@ -8,11 +8,11 @@
 <h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
-createpsbt [{"txid":"id","vout":n},...] [{"address":amount},{"data":"hex"},...] ( locktime ) ( replaceable )<br/><br/>Creates a transaction in the Partially Signed Transaction format.<br/>Implements the Creator role.<br/><br/>Arguments:<br/>1. "inputs"                (array, required) A json array of json objects<br/>     [<br/>       {<br/>         "txid":"id",      (string, required) The transaction id<br/>         "vout":n,         (numeric, required) The output number<br/>         "sequence":n      (numeric, optional) The sequence number<br/>       } <br/>       ,...<br/>     ]<br/>2. "outputs"               (array, required) a json array with outputs (key-value pairs)<br/>   [<br/>    {<br/>      "address": x.xxx,    (obj, optional) A key-value pair. The key (string) is the bitcoin address, the value (float or string) is the amount in " + CURRENCY_UNIT + "<br/>    },<br/>    {<br/>      "data": "hex"        (obj, optional) A key-value pair. The key must be "data", the value is hex encoded data<br/>    }<br/>    ,...                     More key-value pairs of the above form. For compatibility reasons, a dictionary, which holds the key-value pairs directly, is also<br/>                             accepted as second parameter.<br/>   ]<br/>3. locktime                  (numeric, optional, default=0) Raw locktime. Non-0 value also locktime-activates inputs<br/>4. replaceable               (boolean, optional, default=false) Marks this transaction as BIP125 replaceable.<br/>                             Allows this transaction to be replaced by a transaction with higher fees. If provided, it is an error if explicit sequence numbers are incompatible.<br/><br/>Result:<br/>  "psbt"        (string)  The resulting raw transaction (base64-encoded string)<br/><br/>Examples:<br/>> bitcoin-cli createpsbt "[{\\"txid\\":\\"myid\\",\\"vout\\":0}]" "[{\\"data\\":\\"00010203\\"}]"<br/>
+
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/rpc/rawtransaction.cpp#L1674-L1709">src/rpc/rawtransaction.cpp#L1674-L1709</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/b3f82284ba9035411b3d2d83b507549a4b12cfc8/src/rpc/rawtransaction.cpp#L1597-L1601">src/rpc/rawtransaction.cpp#L1597-L1601</a>.
 </div>
 </body>
 </html>

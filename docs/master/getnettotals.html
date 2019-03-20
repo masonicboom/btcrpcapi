@@ -8,11 +8,11 @@
 <h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
-getnettotals<br/><br/>Returns information about network traffic, including bytes in, bytes out,<br/>and current time.<br/><br/>Result:<br/>{<br/>  "totalbytesrecv": n,   (numeric) Total bytes received<br/>  "totalbytessent": n,   (numeric) Total bytes sent<br/>  "timemillis": t,       (numeric) Current UNIX time in milliseconds<br/>  "uploadtarget":<br/>  {<br/>    "timeframe": n,                         (numeric) Length of the measuring timeframe in seconds<br/>    "target": n,                            (numeric) Target in bytes<br/>    "target_reached": true|false,           (boolean) True if target is reached<br/>    "serve_historical_blocks": true|false,  (boolean) True if serving historical blocks<br/>    "bytes_left_in_cycle": t,               (numeric) Bytes left in current time cycle<br/>    "time_left_in_cycle": t                 (numeric) Seconds left in current time cycle<br/>  }<br/>}<br/><br/>Examples:<br/>> bitcoin-cli getnettotals <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnettotals", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/rpc/net.cpp#L349-L374">src/rpc/net.cpp#L349-L374</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/b3f82284ba9035411b3d2d83b507549a4b12cfc8/src/rpc/net.cpp#L375-L379">src/rpc/net.cpp#L375-L379</a>.
 </div>
 </body>
 </html>

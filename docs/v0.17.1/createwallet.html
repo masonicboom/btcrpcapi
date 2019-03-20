@@ -1,0 +1,18 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>createwallet</h1>
+<h2><a href="../../cats/wallet.html">wallet</a></h2>
+<h2><a href="../../tags/v0.17.1.html">v0.17.1</a></h2>
+
+<pre>
+createwallet "wallet_name" ( disable_private_keys )<br/><br/>Creates and loads a new wallet.<br/><br/>Arguments:<br/>1. "wallet_name"          (string, required) The name for the new wallet. If this is a path, the wallet will be created at the path location.<br/>2. disable_private_keys   (boolean, optional, default: false) Disable the possibility of private keys (only watchonlys are possible in this mode).<br/><br/>Result:<br/>{<br/>  "name" :    <wallet_name>,        (string) The wallet name if created successfully. If the wallet was created using a full path, the wallet_name will be the full path.<br/>  "warning" : <warning>,            (string) Warning message if wallet was not loaded cleanly.<br/>}<br/><br/>Examples:<br/>> bitcoin-cli createwallet "testwallet"<br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createwallet", "params": ["testwallet"] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+</pre>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/ef70f9b52b851c7997a9f1a0834714e3eebc1fd8/src/wallet/rpcwallet.cpp#L3153-L3170">src/wallet/rpcwallet.cpp#L3153-L3170</a>.
+</div>
+</body>
+</html>

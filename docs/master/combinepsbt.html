@@ -8,11 +8,11 @@
 <h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
-combinepsbt ["psbt",...]<br/><br/>Combine multiple partially signed Bitcoin transactions into one transaction.<br/>Implements the Combiner role.<br/><br/>Arguments:<br/>1. "txs"                   (string) A json array of base64 strings of partially signed transactions<br/>    [<br/>      "psbt"             (string) A base64 string of a PSBT<br/>      ,...<br/>    ]<br/><br/>Result:<br/>  "psbt"          (string) The base64-encoded partially signed transaction<br/><br/>Examples:<br/>> bitcoin-cli combinepsbt ["mybase64_1", "mybase64_2", "mybase64_3"]<br/>
+
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/rpc/rawtransaction.cpp#L1557-L1575">src/rpc/rawtransaction.cpp#L1557-L1575</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/b3f82284ba9035411b3d2d83b507549a4b12cfc8/src/rpc/rawtransaction.cpp#L1487-L1491">src/rpc/rawtransaction.cpp#L1487-L1491</a>.
 </div>
 </body>
 </html>

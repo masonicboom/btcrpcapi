@@ -1,0 +1,18 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h1>generatetoaddress</h1>
+<h2><a href="../../cats/generating.html">generating</a></h2>
+<h2><a href="../../tags/v0.17.1.html">v0.17.1</a></h2>
+
+<pre>
+generatetoaddress nblocks address (maxtries)<br/><br/>Mine blocks immediately to a specified address (before the RPC call returns)<br/><br/>Arguments:<br/>1. nblocks      (numeric, required) How many blocks are generated immediately.<br/>2. address      (string, required) The address to send the newly generated bitcoin to.<br/>3. maxtries     (numeric, optional) How many iterations to try (default = 1000000).<br/><br/>Result:<br/>[ blockhashes ]     (array) hashes of blocks generated<br/><br/>Examples:<br/><br/>Generate 11 blocks to myaddress<br/>> bitcoin-cli generatetoaddress 11 "myaddress"<br/>
+</pre>
+
+<div class="source">
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/ef70f9b52b851c7997a9f1a0834714e3eebc1fd8/src/rpc/mining.cpp#L153-L168">src/rpc/mining.cpp#L153-L168</a>.
+</div>
+</body>
+</html>

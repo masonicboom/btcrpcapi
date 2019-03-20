@@ -8,11 +8,11 @@
 <h2><a href="../../tags/master.html">master</a></h2>
 
 <pre>
-listaddressgroupings<br/><br/>Lists groups of addresses which have had their common ownership<br/>made public by common use as inputs or as the resulting change<br/>in past transactions<br/><br/>Result:<br/>[<br/>  [<br/>    [<br/>      "address",            (string) The bitcoin address<br/>      amount,                 (numeric) The amount in " + CURRENCY_UNIT + "<br/>      "label"               (string, optional) The label<br/>    ]<br/>    ,...<br/>  ]<br/>  ,...<br/>]<br/><br/>Examples:<br/>> bitcoin-cli listaddressgroupings <br/>> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressgroupings", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/<br/>
+
 </pre>
 
 <div class="source">
-    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/f66e1c793eda7a6143fd03400c98512a9b6f00c7/src/wallet/rpcwallet.cpp#L593-L623">src/wallet/rpcwallet.cpp#L593-L623</a>.
+    Don't trust. Verify. Docs extracted from <a href="https://github.com/bitcoin/bitcoin/blob/b3f82284ba9035411b3d2d83b507549a4b12cfc8/src/wallet/rpcwallet.cpp#L441-L452">src/wallet/rpcwallet.cpp#L441-L452</a>.
 </div>
 </body>
 </html>
